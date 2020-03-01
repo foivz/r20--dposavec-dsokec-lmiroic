@@ -26,6 +26,8 @@ U navedenoj aplikaciji "Car dealership & service" baziramo se na upravljanje, ev
 ## Specifikacija projekta
 Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
 
+![Visedretvenost](https://i.imgur.com/nd04YPb.jpg)
+
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | ------------------- 
 F01 | Log in i registracija zaposlenih, evidentiranje i upravljanje | Korisnik se prijavljuje kao zaposlenik ili administrator. Uloga administratora je dodavanje novih korisnika ili zaposlenika. Uloga zaposlenika je vođenje evidencije o vozilima na skladištu i servisu, brigu o poslovanju poduzeća, vođenje statistike prodaje i servise. | Luka Miroić
