@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PI20_023_DBModelStoreContainer" CdmEntityContainer="CarDealershipandServiceEntities">
+    <EntitySetMapping Name="Artikls">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Artikl">
+        <MappingFragment StoreEntitySet="Artikl">
+          <ScalarProperty Name="id_artikl" ColumnName="id_artikl" />
+          <ScalarProperty Name="godina_proizvodnje" ColumnName="godina_proizvodnje" />
+          <ScalarProperty Name="emisija_vozila" ColumnName="emisija_vozila" />
+          <ScalarProperty Name="snaga_vozila" ColumnName="snaga_vozila" />
+          <ScalarProperty Name="opis_artikla" ColumnName="opis_artikla" />
+          <ScalarProperty Name="vrsta_goriva" ColumnName="vrsta_goriva" />
+          <ScalarProperty Name="naziv_artikla" ColumnName="naziv_artikla" />
+          <ScalarProperty Name="cijena_artikla" ColumnName="cijena_artikla" />
+          <ScalarProperty Name="vrsta_artikla" ColumnName="vrsta_artikla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artikli_na_skladistu">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Artikli_na_skladistu">
+        <MappingFragment StoreEntitySet="Artikli_na_skladistu">
+          <ScalarProperty Name="id_artikli_na_skladistu" ColumnName="id_artikli_na_skladistu" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="skladiste" ColumnName="skladiste" />
+          <ScalarProperty Name="artikl" ColumnName="artikl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dnevnik_rada">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Dnevnik_rada">
+        <MappingFragment StoreEntitySet="Dnevnik_rada">
+          <ScalarProperty Name="id_dnevnik_rada_zaposlenika" ColumnName="id_dnevnik_rada_zaposlenika" />
+          <ScalarProperty Name="datum_obavljanja_rada" ColumnName="datum_obavljanja_rada" />
+          <ScalarProperty Name="opis_rada" ColumnName="opis_rada" />
+          <ScalarProperty Name="korisnik" ColumnName="korisnik" />
+          <ScalarProperty Name="radnja_dnevnika" ColumnName="radnja_dnevnika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dokuments">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Dokument">
+        <MappingFragment StoreEntitySet="Dokument">
+          <ScalarProperty Name="id_dokument" ColumnName="id_dokument" />
+          <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
+          <ScalarProperty Name="opis_dokumenta" ColumnName="opis_dokumenta" />
+          <ScalarProperty Name="ukupni_saldo" ColumnName="ukupni_saldo" />
+          <ScalarProperty Name="tip_dokumenta" ColumnName="tip_dokumenta" />
+          <ScalarProperty Name="korisnik" ColumnName="korisnik" />
+          <ScalarProperty Name="zaposlenik" ColumnName="zaposlenik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisniks">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="id_korisnik" ColumnName="id_korisnik" />
+          <ScalarProperty Name="ime_korisnika" ColumnName="ime_korisnika" />
+          <ScalarProperty Name="prezime_korisnika" ColumnName="prezime_korisnika" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
+          <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+          <ScalarProperty Name="tip_korisnika" ColumnName="tip_korisnika" />
+          <ScalarProperty Name="poslovnica" ColumnName="poslovnica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Poslovnicas">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Poslovnica">
+        <MappingFragment StoreEntitySet="Poslovnica">
+          <ScalarProperty Name="id_poslovnica" ColumnName="id_poslovnica" />
+          <ScalarProperty Name="OIB_poslovnice" ColumnName="OIB_poslovnice" />
+          <ScalarProperty Name="naziv_poslovnice" ColumnName="naziv_poslovnice" />
+          <ScalarProperty Name="adresa_poslovnice" ColumnName="adresa_poslovnice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Radnja_dnevnika">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Radnja_dnevnika">
+        <MappingFragment StoreEntitySet="Radnja_dnevnika">
+          <ScalarProperty Name="id_rad_zaposlenika" ColumnName="id_rad_zaposlenika" />
+          <ScalarProperty Name="naziv_rada" ColumnName="naziv_rada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skladistes">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Skladiste">
+        <MappingFragment StoreEntitySet="Skladiste">
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="id_skladiste" ColumnName="id_skladiste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skladiste_poslovnice">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Skladiste_poslovnice">
+        <MappingFragment StoreEntitySet="Skladiste_poslovnice">
+          <ScalarProperty Name="id_skladiste_poslovnice" ColumnName="id_skladiste_poslovnice" />
+          <ScalarProperty Name="poslovnica" ColumnName="poslovnica" />
+          <ScalarProperty Name="skladiste" ColumnName="skladiste" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stavke_dokumenta">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Stavke_dokumenta">
+        <MappingFragment StoreEntitySet="Stavke_dokumenta">
+          <ScalarProperty Name="id_stavke_dokumenta" ColumnName="id_stavke_dokumenta" />
+          <ScalarProperty Name="artikl" ColumnName="artikl" />
+          <ScalarProperty Name="dokument" ColumnName="dokument" />
+          <ScalarProperty Name="usluga" ColumnName="usluga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tip_dokumenta">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Tip_dokumenta">
+        <MappingFragment StoreEntitySet="Tip_dokumenta">
+          <ScalarProperty Name="id_tip_dokumenta" ColumnName="id_tip_dokumenta" />
+          <ScalarProperty Name="naziv_dokumenta" ColumnName="naziv_dokumenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tip_korisnika">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Tip_korisnika">
+        <MappingFragment StoreEntitySet="Tip_korisnika">
+          <ScalarProperty Name="id_tip_korisnika" ColumnName="id_tip_korisnika" />
+          <ScalarProperty Name="naziv_uloge" ColumnName="naziv_uloge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uslugas">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Usluga">
+        <MappingFragment StoreEntitySet="Usluga">
+          <ScalarProperty Name="id_usluga" ColumnName="id_usluga" />
+          <ScalarProperty Name="naziv_usluge" ColumnName="naziv_usluge" />
+          <ScalarProperty Name="vrsta_usluge" ColumnName="vrsta_usluge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vrsta_usluge">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Vrsta_usluge">
+        <MappingFragment StoreEntitySet="Vrsta_usluge">
+          <ScalarProperty Name="id_vrsta_usluge" ColumnName="id_vrsta_usluge" />
+          <ScalarProperty Name="naziv_usluge" ColumnName="naziv_usluge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vrste_artikla">
+      <EntityTypeMapping TypeName="PI20_023_DBModel.Vrste_artikla">
+        <MappingFragment StoreEntitySet="Vrste_artikla">
+          <ScalarProperty Name="id_vrste_artikla" ColumnName="id_vrste_artikla" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

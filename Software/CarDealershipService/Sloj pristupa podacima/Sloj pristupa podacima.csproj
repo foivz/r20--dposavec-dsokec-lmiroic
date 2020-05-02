@@ -50,40 +50,95 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Artikl.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Artikli_na_skladistu.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Dnevnik_rada.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dokument.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
     <Compile Include="EvidencijaAutokuce.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EvidencijaAutokuce.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvidencijaAutokuce.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
     </Compile>
     <Compile Include="EvidencijaAutokuce.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EvidencijaAutokuce.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Korisnik.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Poslovnica.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Radnja_dnevnika.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Skladiste.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Skladiste_poslovnice.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stavke_dokumenta.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_dokumenta.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_korisnika.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicima.cs" />
+    <Compile Include="Usluga.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vrsta_usluge.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vrste_artikla.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="EvidencijaAutokuce.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EvidencijaAutokuce.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="EvidencijaAutokuce.edmx.diagram">
       <DependentUpon>EvidencijaAutokuce.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EvidencijaAutokuce.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EvidencijaAutokuce.Context.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="EvidencijaAutokuce.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EvidencijaAutokuce.edmx</DependentUpon>
+      <LastGenOutput>EvidencijaAutokuce.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EvidencijaAutokuce.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EvidencijaAutokuce.edmx</DependentUpon>
+      <LastGenOutput>EvidencijaAutokuce.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

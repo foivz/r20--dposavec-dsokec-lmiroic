@@ -781,7 +781,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CarDealershipEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CarDealershipandServiceEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Artikls" EntityType="Self.Artikl" />
           <EntitySet Name="Artikli_na_skladistu" EntityType="Self.Artikli_na_skladistu" />
           <EntitySet Name="Dnevnik_rada" EntityType="Self.Dnevnik_rada" />
@@ -867,7 +867,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI20_023_DBModelStoreContainer" CdmEntityContainer="CarDealershipEntities">
+        <EntityContainerMapping StorageEntityContainer="PI20_023_DBModelStoreContainer" CdmEntityContainer="CarDealershipandServiceEntities">
           <EntitySetMapping Name="Artikls">
             <EntityTypeMapping TypeName="PI20_023_DBModel.Artikl">
               <MappingFragment StoreEntitySet="Artikl">

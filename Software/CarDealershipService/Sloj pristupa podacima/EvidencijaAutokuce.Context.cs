@@ -13,10 +13,10 @@ namespace Sloj_pristupa_podacima
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CarDealershipEntities : DbContext
+    public partial class CarDealershipandServiceEntities : DbContext
     {
-        public CarDealershipEntities()
-            : base("name=CarDealershipEntities")
+        public CarDealershipandServiceEntities()
+            : base("name=CarDealershipandServiceEntities")
         {
         }
     
