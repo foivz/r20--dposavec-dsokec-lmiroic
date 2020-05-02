@@ -1,0 +1,1046 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PI20_023_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Artikl">
+          <Key>
+            <PropertyRef Name="id_artikl" />
+          </Key>
+          <Property Name="id_artikl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="godina_proizvodnje" Type="int" Nullable="false" />
+          <Property Name="emisija_vozila" Type="int" />
+          <Property Name="snaga_vozila" Type="int" />
+          <Property Name="opis_artikla" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="vrsta_goriva" Type="int" />
+          <Property Name="naziv_artikla" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="cijena_artikla" Type="float" Nullable="false" />
+          <Property Name="vrsta_artikla" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artikli_na_skladistu">
+          <Key>
+            <PropertyRef Name="id_artikli_na_skladistu" />
+          </Key>
+          <Property Name="id_artikli_na_skladistu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kolicina" Type="int" Nullable="false" />
+          <Property Name="skladiste" Type="int" Nullable="false" />
+          <Property Name="artikl" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dnevnik_rada">
+          <Key>
+            <PropertyRef Name="id_dnevnik_rada_zaposlenika" />
+          </Key>
+          <Property Name="id_dnevnik_rada_zaposlenika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datum_obavljanja_rada" Type="datetime" Nullable="false" />
+          <Property Name="opis_rada" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="korisnik" Type="int" Nullable="false" />
+          <Property Name="radnja_dnevnika" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dokument">
+          <Key>
+            <PropertyRef Name="id_dokument" />
+          </Key>
+          <Property Name="id_dokument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="datum_izdavanja" Type="datetime" Nullable="false" />
+          <Property Name="opis_dokumenta" Type="varchar" MaxLength="45" />
+          <Property Name="ukupni_saldo" Type="float" />
+          <Property Name="tip_dokumenta" Type="int" Nullable="false" />
+          <Property Name="korisnik" Type="int" />
+          <Property Name="zaposlenik" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="id_korisnik" />
+          </Key>
+          <Property Name="id_korisnik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime_korisnika" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="prezime_korisnika" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="adresa" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="IBAN" Type="varchar" MaxLength="21" />
+          <Property Name="korisnicko_ime" Type="varchar" MaxLength="45" />
+          <Property Name="lozinka" Type="char" MaxLength="40" />
+          <Property Name="tip_korisnika" Type="int" Nullable="false" />
+          <Property Name="poslovnica" Type="int" />
+        </EntityType>
+        <EntityType Name="Poslovnica">
+          <Key>
+            <PropertyRef Name="id_poslovnica" />
+          </Key>
+          <Property Name="id_poslovnica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OIB_poslovnice" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="naziv_poslovnice" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="adresa_poslovnice" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Radnja_dnevnika">
+          <Key>
+            <PropertyRef Name="id_rad_zaposlenika" />
+          </Key>
+          <Property Name="id_rad_zaposlenika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv_rada" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skladiste">
+          <Key>
+            <PropertyRef Name="id_skladiste" />
+          </Key>
+          <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="adresa" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="id_skladiste" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skladiste_poslovnice">
+          <Key>
+            <PropertyRef Name="id_skladiste_poslovnice" />
+          </Key>
+          <Property Name="id_skladiste_poslovnice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="poslovnica" Type="int" Nullable="false" />
+          <Property Name="skladiste" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stavke_dokumenta">
+          <Key>
+            <PropertyRef Name="id_stavke_dokumenta" />
+          </Key>
+          <Property Name="id_stavke_dokumenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="artikl" Type="int" Nullable="false" />
+          <Property Name="dokument" Type="int" Nullable="false" />
+          <Property Name="usluga" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tip_dokumenta">
+          <Key>
+            <PropertyRef Name="id_tip_dokumenta" />
+          </Key>
+          <Property Name="id_tip_dokumenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv_dokumenta" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tip_korisnika">
+          <Key>
+            <PropertyRef Name="id_tip_korisnika" />
+          </Key>
+          <Property Name="id_tip_korisnika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv_uloge" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usluga">
+          <Key>
+            <PropertyRef Name="id_usluga" />
+          </Key>
+          <Property Name="id_usluga" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv_usluge" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="vrsta_usluge" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vrsta_usluge">
+          <Key>
+            <PropertyRef Name="id_vrsta_usluge" />
+          </Key>
+          <Property Name="id_vrsta_usluge" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv_usluge" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vrste_artikla">
+          <Key>
+            <PropertyRef Name="id_vrste_artikla" />
+          </Key>
+          <Property Name="id_vrste_artikla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <Association Name="Artikl_Vrste_artikla_id_vrste_artikla_fk">
+          <End Role="Vrste_artikla" Type="Self.Vrste_artikla" Multiplicity="1" />
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vrste_artikla">
+              <PropertyRef Name="id_vrste_artikla" />
+            </Principal>
+            <Dependent Role="Artikl">
+              <PropertyRef Name="vrsta_artikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Artikli_na_skladistu_Artikl_id_artikl_fk">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+          <End Role="Artikli_na_skladistu" Type="Self.Artikli_na_skladistu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="id_artikl" />
+            </Principal>
+            <Dependent Role="Artikli_na_skladistu">
+              <PropertyRef Name="artikl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Artikli_na_skladistu_Skladiste_id_skladiste_fk">
+          <End Role="Skladiste" Type="Self.Skladiste" Multiplicity="1" />
+          <End Role="Artikli_na_skladistu" Type="Self.Artikli_na_skladistu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skladiste">
+              <PropertyRef Name="id_skladiste" />
+            </Principal>
+            <Dependent Role="Artikli_na_skladistu">
+              <PropertyRef Name="skladiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dnevnik_rada_Korisnik_id_korisnik_fk">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Dnevnik_rada" Type="Self.Dnevnik_rada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="id_korisnik" />
+            </Principal>
+            <Dependent Role="Dnevnik_rada">
+              <PropertyRef Name="korisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk">
+          <End Role="Radnja_dnevnika" Type="Self.Radnja_dnevnika" Multiplicity="1" />
+          <End Role="Dnevnik_rada" Type="Self.Dnevnik_rada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Radnja_dnevnika">
+              <PropertyRef Name="id_rad_zaposlenika" />
+            </Principal>
+            <Dependent Role="Dnevnik_rada">
+              <PropertyRef Name="radnja_dnevnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dokument_Korisnik_id_korisnik_fk">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="id_korisnik" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="korisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dokument_Korisnik_id_korisnik_fk_2">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="id_korisnik" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="zaposlenik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dokument_Tip_dokumenta_id_tip_dokumenta_fk">
+          <End Role="Tip_dokumenta" Type="Self.Tip_dokumenta" Multiplicity="1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_dokumenta">
+              <PropertyRef Name="id_tip_dokumenta" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="tip_dokumenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Korisnik_Poslovnica_id_poslovnica_fk">
+          <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="0..1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poslovnica">
+              <PropertyRef Name="id_poslovnica" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="poslovnica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Korisnik_Tip_korisnika_id_tip_korisnika_fk">
+          <End Role="Tip_korisnika" Type="Self.Tip_korisnika" Multiplicity="1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_korisnika">
+              <PropertyRef Name="id_tip_korisnika" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="tip_korisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Skladiste_poslovnice_Poslovnica_id_poslovnica_fk">
+          <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="1" />
+          <End Role="Skladiste_poslovnice" Type="Self.Skladiste_poslovnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poslovnica">
+              <PropertyRef Name="id_poslovnica" />
+            </Principal>
+            <Dependent Role="Skladiste_poslovnice">
+              <PropertyRef Name="poslovnica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Skladiste_poslovnice_Skladiste_id_skladiste_fk">
+          <End Role="Skladiste" Type="Self.Skladiste" Multiplicity="1" />
+          <End Role="Skladiste_poslovnice" Type="Self.Skladiste_poslovnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skladiste">
+              <PropertyRef Name="id_skladiste" />
+            </Principal>
+            <Dependent Role="Skladiste_poslovnice">
+              <PropertyRef Name="skladiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stavke_dokumenta_Artikl_id_artikl_fk">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+          <End Role="Stavke_dokumenta" Type="Self.Stavke_dokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="id_artikl" />
+            </Principal>
+            <Dependent Role="Stavke_dokumenta">
+              <PropertyRef Name="artikl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stavke_dokumenta_Dokument_id_dokument_fk">
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="1" />
+          <End Role="Stavke_dokumenta" Type="Self.Stavke_dokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokument">
+              <PropertyRef Name="id_dokument" />
+            </Principal>
+            <Dependent Role="Stavke_dokumenta">
+              <PropertyRef Name="dokument" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stavke_dokumenta_Usluga_id_usluga_fk">
+          <End Role="Usluga" Type="Self.Usluga" Multiplicity="1" />
+          <End Role="Stavke_dokumenta" Type="Self.Stavke_dokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usluga">
+              <PropertyRef Name="id_usluga" />
+            </Principal>
+            <Dependent Role="Stavke_dokumenta">
+              <PropertyRef Name="usluga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Usluga_Vrsta_usluge_id_vrsta_usluge_fk">
+          <End Role="Vrsta_usluge" Type="Self.Vrsta_usluge" Multiplicity="1" />
+          <End Role="Usluga" Type="Self.Usluga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vrsta_usluge">
+              <PropertyRef Name="id_vrsta_usluge" />
+            </Principal>
+            <Dependent Role="Usluga">
+              <PropertyRef Name="vrsta_usluge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PI20_023_DBModelStoreContainer">
+          <EntitySet Name="Artikl" EntityType="Self.Artikl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artikli_na_skladistu" EntityType="Self.Artikli_na_skladistu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dnevnik_rada" EntityType="Self.Dnevnik_rada" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dokument" EntityType="Self.Dokument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Poslovnica" EntityType="Self.Poslovnica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Radnja_dnevnika" EntityType="Self.Radnja_dnevnika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skladiste" EntityType="Self.Skladiste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skladiste_poslovnice" EntityType="Self.Skladiste_poslovnice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stavke_dokumenta" EntityType="Self.Stavke_dokumenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tip_dokumenta" EntityType="Self.Tip_dokumenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tip_korisnika" EntityType="Self.Tip_korisnika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usluga" EntityType="Self.Usluga" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vrsta_usluge" EntityType="Self.Vrsta_usluge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vrste_artikla" EntityType="Self.Vrste_artikla" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Artikl_Vrste_artikla_id_vrste_artikla_fk" Association="Self.Artikl_Vrste_artikla_id_vrste_artikla_fk">
+            <End Role="Vrste_artikla" EntitySet="Vrste_artikla" />
+            <End Role="Artikl" EntitySet="Artikl" />
+          </AssociationSet>
+          <AssociationSet Name="Artikli_na_skladistu_Artikl_id_artikl_fk" Association="Self.Artikli_na_skladistu_Artikl_id_artikl_fk">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="Artikli_na_skladistu" EntitySet="Artikli_na_skladistu" />
+          </AssociationSet>
+          <AssociationSet Name="Artikli_na_skladistu_Skladiste_id_skladiste_fk" Association="Self.Artikli_na_skladistu_Skladiste_id_skladiste_fk">
+            <End Role="Skladiste" EntitySet="Skladiste" />
+            <End Role="Artikli_na_skladistu" EntitySet="Artikli_na_skladistu" />
+          </AssociationSet>
+          <AssociationSet Name="Dnevnik_rada_Korisnik_id_korisnik_fk" Association="Self.Dnevnik_rada_Korisnik_id_korisnik_fk">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Dnevnik_rada" EntitySet="Dnevnik_rada" />
+          </AssociationSet>
+          <AssociationSet Name="Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk" Association="Self.Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk">
+            <End Role="Radnja_dnevnika" EntitySet="Radnja_dnevnika" />
+            <End Role="Dnevnik_rada" EntitySet="Dnevnik_rada" />
+          </AssociationSet>
+          <AssociationSet Name="Dokument_Korisnik_id_korisnik_fk" Association="Self.Dokument_Korisnik_id_korisnik_fk">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Dokument" EntitySet="Dokument" />
+          </AssociationSet>
+          <AssociationSet Name="Dokument_Korisnik_id_korisnik_fk_2" Association="Self.Dokument_Korisnik_id_korisnik_fk_2">
+            <End Role="Korisnik" EntitySet="Korisnik" />
+            <End Role="Dokument" EntitySet="Dokument" />
+          </AssociationSet>
+          <AssociationSet Name="Dokument_Tip_dokumenta_id_tip_dokumenta_fk" Association="Self.Dokument_Tip_dokumenta_id_tip_dokumenta_fk">
+            <End Role="Tip_dokumenta" EntitySet="Tip_dokumenta" />
+            <End Role="Dokument" EntitySet="Dokument" />
+          </AssociationSet>
+          <AssociationSet Name="Korisnik_Poslovnica_id_poslovnica_fk" Association="Self.Korisnik_Poslovnica_id_poslovnica_fk">
+            <End Role="Poslovnica" EntitySet="Poslovnica" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="Korisnik_Tip_korisnika_id_tip_korisnika_fk" Association="Self.Korisnik_Tip_korisnika_id_tip_korisnika_fk">
+            <End Role="Tip_korisnika" EntitySet="Tip_korisnika" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="Skladiste_poslovnice_Poslovnica_id_poslovnica_fk" Association="Self.Skladiste_poslovnice_Poslovnica_id_poslovnica_fk">
+            <End Role="Poslovnica" EntitySet="Poslovnica" />
+            <End Role="Skladiste_poslovnice" EntitySet="Skladiste_poslovnice" />
+          </AssociationSet>
+          <AssociationSet Name="Skladiste_poslovnice_Skladiste_id_skladiste_fk" Association="Self.Skladiste_poslovnice_Skladiste_id_skladiste_fk">
+            <End Role="Skladiste" EntitySet="Skladiste" />
+            <End Role="Skladiste_poslovnice" EntitySet="Skladiste_poslovnice" />
+          </AssociationSet>
+          <AssociationSet Name="Stavke_dokumenta_Artikl_id_artikl_fk" Association="Self.Stavke_dokumenta_Artikl_id_artikl_fk">
+            <End Role="Artikl" EntitySet="Artikl" />
+            <End Role="Stavke_dokumenta" EntitySet="Stavke_dokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="Stavke_dokumenta_Dokument_id_dokument_fk" Association="Self.Stavke_dokumenta_Dokument_id_dokument_fk">
+            <End Role="Dokument" EntitySet="Dokument" />
+            <End Role="Stavke_dokumenta" EntitySet="Stavke_dokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="Stavke_dokumenta_Usluga_id_usluga_fk" Association="Self.Stavke_dokumenta_Usluga_id_usluga_fk">
+            <End Role="Usluga" EntitySet="Usluga" />
+            <End Role="Stavke_dokumenta" EntitySet="Stavke_dokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="Usluga_Vrsta_usluge_id_vrsta_usluge_fk" Association="Self.Usluga_Vrsta_usluge_id_vrsta_usluge_fk">
+            <End Role="Vrsta_usluge" EntitySet="Vrsta_usluge" />
+            <End Role="Usluga" EntitySet="Usluga" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PI20_023_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Artikl">
+          <Key>
+            <PropertyRef Name="id_artikl" />
+          </Key>
+          <Property Name="id_artikl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="godina_proizvodnje" Type="Int32" Nullable="false" />
+          <Property Name="emisija_vozila" Type="Int32" />
+          <Property Name="snaga_vozila" Type="Int32" />
+          <Property Name="opis_artikla" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vrsta_goriva" Type="Int32" />
+          <Property Name="naziv_artikla" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cijena_artikla" Type="Double" Nullable="false" />
+          <Property Name="vrsta_artikla" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Vrste_artikla" Relationship="Self.Artikl_Vrste_artikla_id_vrste_artikla_fk" FromRole="Artikl" ToRole="Vrste_artikla" />
+          <NavigationProperty Name="Artikli_na_skladistu" Relationship="Self.Artikli_na_skladistu_Artikl_id_artikl_fk" FromRole="Artikl" ToRole="Artikli_na_skladistu" />
+          <NavigationProperty Name="Stavke_dokumenta" Relationship="Self.Stavke_dokumenta_Artikl_id_artikl_fk" FromRole="Artikl" ToRole="Stavke_dokumenta" />
+        </EntityType>
+        <EntityType Name="Artikli_na_skladistu">
+          <Key>
+            <PropertyRef Name="id_artikli_na_skladistu" />
+          </Key>
+          <Property Name="id_artikli_na_skladistu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kolicina" Type="Int32" Nullable="false" />
+          <Property Name="skladiste" Type="Int32" Nullable="false" />
+          <Property Name="artikl" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artikl1" Relationship="Self.Artikli_na_skladistu_Artikl_id_artikl_fk" FromRole="Artikli_na_skladistu" ToRole="Artikl" />
+          <NavigationProperty Name="Skladiste1" Relationship="Self.Artikli_na_skladistu_Skladiste_id_skladiste_fk" FromRole="Artikli_na_skladistu" ToRole="Skladiste" />
+        </EntityType>
+        <EntityType Name="Dnevnik_rada">
+          <Key>
+            <PropertyRef Name="id_dnevnik_rada_zaposlenika" />
+          </Key>
+          <Property Name="id_dnevnik_rada_zaposlenika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datum_obavljanja_rada" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="opis_rada" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="korisnik" Type="Int32" Nullable="false" />
+          <Property Name="radnja_dnevnika" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Korisnik1" Relationship="Self.Dnevnik_rada_Korisnik_id_korisnik_fk" FromRole="Dnevnik_rada" ToRole="Korisnik" />
+          <NavigationProperty Name="Radnja_dnevnika1" Relationship="Self.Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk" FromRole="Dnevnik_rada" ToRole="Radnja_dnevnika" />
+        </EntityType>
+        <EntityType Name="Dokument">
+          <Key>
+            <PropertyRef Name="id_dokument" />
+          </Key>
+          <Property Name="id_dokument" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="datum_izdavanja" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="opis_dokumenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ukupni_saldo" Type="Double" />
+          <Property Name="tip_dokumenta" Type="Int32" Nullable="false" />
+          <Property Name="korisnik" Type="Int32" />
+          <Property Name="zaposlenik" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Korisnik1" Relationship="Self.Dokument_Korisnik_id_korisnik_fk" FromRole="Dokument" ToRole="Korisnik" />
+          <NavigationProperty Name="Korisnik2" Relationship="Self.Dokument_Korisnik_id_korisnik_fk_2" FromRole="Dokument" ToRole="Korisnik" />
+          <NavigationProperty Name="Tip_dokumenta1" Relationship="Self.Dokument_Tip_dokumenta_id_tip_dokumenta_fk" FromRole="Dokument" ToRole="Tip_dokumenta" />
+          <NavigationProperty Name="Stavke_dokumenta" Relationship="Self.Stavke_dokumenta_Dokument_id_dokument_fk" FromRole="Dokument" ToRole="Stavke_dokumenta" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="id_korisnik" />
+          </Key>
+          <Property Name="id_korisnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime_korisnika" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="prezime_korisnika" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IBAN" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="korisnicko_ime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="lozinka" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="tip_korisnika" Type="Int32" Nullable="false" />
+          <Property Name="poslovnica" Type="Int32" />
+          <NavigationProperty Name="Dnevnik_rada" Relationship="Self.Dnevnik_rada_Korisnik_id_korisnik_fk" FromRole="Korisnik" ToRole="Dnevnik_rada" />
+          <NavigationProperty Name="Dokuments" Relationship="Self.Dokument_Korisnik_id_korisnik_fk" FromRole="Korisnik" ToRole="Dokument" />
+          <NavigationProperty Name="Dokuments1" Relationship="Self.Dokument_Korisnik_id_korisnik_fk_2" FromRole="Korisnik" ToRole="Dokument" />
+          <NavigationProperty Name="Poslovnica1" Relationship="Self.Korisnik_Poslovnica_id_poslovnica_fk" FromRole="Korisnik" ToRole="Poslovnica" />
+          <NavigationProperty Name="Tip_korisnika1" Relationship="Self.Korisnik_Tip_korisnika_id_tip_korisnika_fk" FromRole="Korisnik" ToRole="Tip_korisnika" />
+        </EntityType>
+        <EntityType Name="Poslovnica">
+          <Key>
+            <PropertyRef Name="id_poslovnica" />
+          </Key>
+          <Property Name="id_poslovnica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OIB_poslovnice" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="naziv_poslovnice" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresa_poslovnice" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Korisniks" Relationship="Self.Korisnik_Poslovnica_id_poslovnica_fk" FromRole="Poslovnica" ToRole="Korisnik" />
+          <NavigationProperty Name="Skladiste_poslovnice" Relationship="Self.Skladiste_poslovnice_Poslovnica_id_poslovnica_fk" FromRole="Poslovnica" ToRole="Skladiste_poslovnice" />
+        </EntityType>
+        <EntityType Name="Radnja_dnevnika">
+          <Key>
+            <PropertyRef Name="id_rad_zaposlenika" />
+          </Key>
+          <Property Name="id_rad_zaposlenika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv_rada" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Dnevnik_rada" Relationship="Self.Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk" FromRole="Radnja_dnevnika" ToRole="Dnevnik_rada" />
+        </EntityType>
+        <EntityType Name="Skladiste">
+          <Key>
+            <PropertyRef Name="id_skladiste" />
+          </Key>
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="adresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_skladiste" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Artikli_na_skladistu" Relationship="Self.Artikli_na_skladistu_Skladiste_id_skladiste_fk" FromRole="Skladiste" ToRole="Artikli_na_skladistu" />
+          <NavigationProperty Name="Skladiste_poslovnice" Relationship="Self.Skladiste_poslovnice_Skladiste_id_skladiste_fk" FromRole="Skladiste" ToRole="Skladiste_poslovnice" />
+        </EntityType>
+        <EntityType Name="Skladiste_poslovnice">
+          <Key>
+            <PropertyRef Name="id_skladiste_poslovnice" />
+          </Key>
+          <Property Name="id_skladiste_poslovnice" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="poslovnica" Type="Int32" Nullable="false" />
+          <Property Name="skladiste" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Poslovnica1" Relationship="Self.Skladiste_poslovnice_Poslovnica_id_poslovnica_fk" FromRole="Skladiste_poslovnice" ToRole="Poslovnica" />
+          <NavigationProperty Name="Skladiste1" Relationship="Self.Skladiste_poslovnice_Skladiste_id_skladiste_fk" FromRole="Skladiste_poslovnice" ToRole="Skladiste" />
+        </EntityType>
+        <EntityType Name="Stavke_dokumenta">
+          <Key>
+            <PropertyRef Name="id_stavke_dokumenta" />
+          </Key>
+          <Property Name="id_stavke_dokumenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="artikl" Type="Int32" Nullable="false" />
+          <Property Name="dokument" Type="Int32" Nullable="false" />
+          <Property Name="usluga" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artikl1" Relationship="Self.Stavke_dokumenta_Artikl_id_artikl_fk" FromRole="Stavke_dokumenta" ToRole="Artikl" />
+          <NavigationProperty Name="Dokument1" Relationship="Self.Stavke_dokumenta_Dokument_id_dokument_fk" FromRole="Stavke_dokumenta" ToRole="Dokument" />
+          <NavigationProperty Name="Usluga1" Relationship="Self.Stavke_dokumenta_Usluga_id_usluga_fk" FromRole="Stavke_dokumenta" ToRole="Usluga" />
+        </EntityType>
+        <EntityType Name="Tip_dokumenta">
+          <Key>
+            <PropertyRef Name="id_tip_dokumenta" />
+          </Key>
+          <Property Name="id_tip_dokumenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv_dokumenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Dokuments" Relationship="Self.Dokument_Tip_dokumenta_id_tip_dokumenta_fk" FromRole="Tip_dokumenta" ToRole="Dokument" />
+        </EntityType>
+        <EntityType Name="Tip_korisnika">
+          <Key>
+            <PropertyRef Name="id_tip_korisnika" />
+          </Key>
+          <Property Name="id_tip_korisnika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv_uloge" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Korisniks" Relationship="Self.Korisnik_Tip_korisnika_id_tip_korisnika_fk" FromRole="Tip_korisnika" ToRole="Korisnik" />
+        </EntityType>
+        <EntityType Name="Usluga">
+          <Key>
+            <PropertyRef Name="id_usluga" />
+          </Key>
+          <Property Name="id_usluga" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv_usluge" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vrsta_usluge" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Stavke_dokumenta" Relationship="Self.Stavke_dokumenta_Usluga_id_usluga_fk" FromRole="Usluga" ToRole="Stavke_dokumenta" />
+          <NavigationProperty Name="Vrsta_usluge1" Relationship="Self.Usluga_Vrsta_usluge_id_vrsta_usluge_fk" FromRole="Usluga" ToRole="Vrsta_usluge" />
+        </EntityType>
+        <EntityType Name="Vrsta_usluge">
+          <Key>
+            <PropertyRef Name="id_vrsta_usluge" />
+          </Key>
+          <Property Name="id_vrsta_usluge" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv_usluge" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Uslugas" Relationship="Self.Usluga_Vrsta_usluge_id_vrsta_usluge_fk" FromRole="Vrsta_usluge" ToRole="Usluga" />
+        </EntityType>
+        <EntityType Name="Vrste_artikla">
+          <Key>
+            <PropertyRef Name="id_vrste_artikla" />
+          </Key>
+          <Property Name="id_vrste_artikla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Artikls" Relationship="Self.Artikl_Vrste_artikla_id_vrste_artikla_fk" FromRole="Vrste_artikla" ToRole="Artikl" />
+        </EntityType>
+        <Association Name="Artikl_Vrste_artikla_id_vrste_artikla_fk">
+          <End Role="Vrste_artikla" Type="Self.Vrste_artikla" Multiplicity="1" />
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vrste_artikla">
+              <PropertyRef Name="id_vrste_artikla" />
+            </Principal>
+            <Dependent Role="Artikl">
+              <PropertyRef Name="vrsta_artikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Artikli_na_skladistu_Artikl_id_artikl_fk">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+          <End Role="Artikli_na_skladistu" Type="Self.Artikli_na_skladistu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="id_artikl" />
+            </Principal>
+            <Dependent Role="Artikli_na_skladistu">
+              <PropertyRef Name="artikl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stavke_dokumenta_Artikl_id_artikl_fk">
+          <End Role="Artikl" Type="Self.Artikl" Multiplicity="1" />
+          <End Role="Stavke_dokumenta" Type="Self.Stavke_dokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikl">
+              <PropertyRef Name="id_artikl" />
+            </Principal>
+            <Dependent Role="Stavke_dokumenta">
+              <PropertyRef Name="artikl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Artikli_na_skladistu_Skladiste_id_skladiste_fk">
+          <End Role="Skladiste" Type="Self.Skladiste" Multiplicity="1" />
+          <End Role="Artikli_na_skladistu" Type="Self.Artikli_na_skladistu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skladiste">
+              <PropertyRef Name="id_skladiste" />
+            </Principal>
+            <Dependent Role="Artikli_na_skladistu">
+              <PropertyRef Name="skladiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dnevnik_rada_Korisnik_id_korisnik_fk">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Dnevnik_rada" Type="Self.Dnevnik_rada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="id_korisnik" />
+            </Principal>
+            <Dependent Role="Dnevnik_rada">
+              <PropertyRef Name="korisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk">
+          <End Role="Radnja_dnevnika" Type="Self.Radnja_dnevnika" Multiplicity="1" />
+          <End Role="Dnevnik_rada" Type="Self.Dnevnik_rada" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Radnja_dnevnika">
+              <PropertyRef Name="id_rad_zaposlenika" />
+            </Principal>
+            <Dependent Role="Dnevnik_rada">
+              <PropertyRef Name="radnja_dnevnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dokument_Korisnik_id_korisnik_fk">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="0..1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="id_korisnik" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="korisnik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dokument_Korisnik_id_korisnik_fk_2">
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnik">
+              <PropertyRef Name="id_korisnik" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="zaposlenik" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Dokument_Tip_dokumenta_id_tip_dokumenta_fk">
+          <End Role="Tip_dokumenta" Type="Self.Tip_dokumenta" Multiplicity="1" />
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_dokumenta">
+              <PropertyRef Name="id_tip_dokumenta" />
+            </Principal>
+            <Dependent Role="Dokument">
+              <PropertyRef Name="tip_dokumenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stavke_dokumenta_Dokument_id_dokument_fk">
+          <End Role="Dokument" Type="Self.Dokument" Multiplicity="1" />
+          <End Role="Stavke_dokumenta" Type="Self.Stavke_dokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dokument">
+              <PropertyRef Name="id_dokument" />
+            </Principal>
+            <Dependent Role="Stavke_dokumenta">
+              <PropertyRef Name="dokument" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Korisnik_Poslovnica_id_poslovnica_fk">
+          <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="0..1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poslovnica">
+              <PropertyRef Name="id_poslovnica" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="poslovnica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Korisnik_Tip_korisnika_id_tip_korisnika_fk">
+          <End Role="Tip_korisnika" Type="Self.Tip_korisnika" Multiplicity="1" />
+          <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tip_korisnika">
+              <PropertyRef Name="id_tip_korisnika" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="tip_korisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Skladiste_poslovnice_Poslovnica_id_poslovnica_fk">
+          <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="1" />
+          <End Role="Skladiste_poslovnice" Type="Self.Skladiste_poslovnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poslovnica">
+              <PropertyRef Name="id_poslovnica" />
+            </Principal>
+            <Dependent Role="Skladiste_poslovnice">
+              <PropertyRef Name="poslovnica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Skladiste_poslovnice_Skladiste_id_skladiste_fk">
+          <End Role="Skladiste" Type="Self.Skladiste" Multiplicity="1" />
+          <End Role="Skladiste_poslovnice" Type="Self.Skladiste_poslovnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Skladiste">
+              <PropertyRef Name="id_skladiste" />
+            </Principal>
+            <Dependent Role="Skladiste_poslovnice">
+              <PropertyRef Name="skladiste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Stavke_dokumenta_Usluga_id_usluga_fk">
+          <End Role="Usluga" Type="Self.Usluga" Multiplicity="1" />
+          <End Role="Stavke_dokumenta" Type="Self.Stavke_dokumenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usluga">
+              <PropertyRef Name="id_usluga" />
+            </Principal>
+            <Dependent Role="Stavke_dokumenta">
+              <PropertyRef Name="usluga" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Usluga_Vrsta_usluge_id_vrsta_usluge_fk">
+          <End Role="Vrsta_usluge" Type="Self.Vrsta_usluge" Multiplicity="1" />
+          <End Role="Usluga" Type="Self.Usluga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vrsta_usluge">
+              <PropertyRef Name="id_vrsta_usluge" />
+            </Principal>
+            <Dependent Role="Usluga">
+              <PropertyRef Name="vrsta_usluge" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarDealershipEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Artikls" EntityType="Self.Artikl" />
+          <EntitySet Name="Artikli_na_skladistu" EntityType="Self.Artikli_na_skladistu" />
+          <EntitySet Name="Dnevnik_rada" EntityType="Self.Dnevnik_rada" />
+          <EntitySet Name="Dokuments" EntityType="Self.Dokument" />
+          <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+          <EntitySet Name="Poslovnicas" EntityType="Self.Poslovnica" />
+          <EntitySet Name="Radnja_dnevnika" EntityType="Self.Radnja_dnevnika" />
+          <EntitySet Name="Skladistes" EntityType="Self.Skladiste" />
+          <EntitySet Name="Skladiste_poslovnice" EntityType="Self.Skladiste_poslovnice" />
+          <EntitySet Name="Stavke_dokumenta" EntityType="Self.Stavke_dokumenta" />
+          <EntitySet Name="Tip_dokumenta" EntityType="Self.Tip_dokumenta" />
+          <EntitySet Name="Tip_korisnika" EntityType="Self.Tip_korisnika" />
+          <EntitySet Name="Uslugas" EntityType="Self.Usluga" />
+          <EntitySet Name="Vrsta_usluge" EntityType="Self.Vrsta_usluge" />
+          <EntitySet Name="Vrste_artikla" EntityType="Self.Vrste_artikla" />
+          <AssociationSet Name="Artikl_Vrste_artikla_id_vrste_artikla_fk" Association="Self.Artikl_Vrste_artikla_id_vrste_artikla_fk">
+            <End Role="Vrste_artikla" EntitySet="Vrste_artikla" />
+            <End Role="Artikl" EntitySet="Artikls" />
+          </AssociationSet>
+          <AssociationSet Name="Artikli_na_skladistu_Artikl_id_artikl_fk" Association="Self.Artikli_na_skladistu_Artikl_id_artikl_fk">
+            <End Role="Artikl" EntitySet="Artikls" />
+            <End Role="Artikli_na_skladistu" EntitySet="Artikli_na_skladistu" />
+          </AssociationSet>
+          <AssociationSet Name="Stavke_dokumenta_Artikl_id_artikl_fk" Association="Self.Stavke_dokumenta_Artikl_id_artikl_fk">
+            <End Role="Artikl" EntitySet="Artikls" />
+            <End Role="Stavke_dokumenta" EntitySet="Stavke_dokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="Artikli_na_skladistu_Skladiste_id_skladiste_fk" Association="Self.Artikli_na_skladistu_Skladiste_id_skladiste_fk">
+            <End Role="Skladiste" EntitySet="Skladistes" />
+            <End Role="Artikli_na_skladistu" EntitySet="Artikli_na_skladistu" />
+          </AssociationSet>
+          <AssociationSet Name="Dnevnik_rada_Korisnik_id_korisnik_fk" Association="Self.Dnevnik_rada_Korisnik_id_korisnik_fk">
+            <End Role="Korisnik" EntitySet="Korisniks" />
+            <End Role="Dnevnik_rada" EntitySet="Dnevnik_rada" />
+          </AssociationSet>
+          <AssociationSet Name="Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk" Association="Self.Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk">
+            <End Role="Radnja_dnevnika" EntitySet="Radnja_dnevnika" />
+            <End Role="Dnevnik_rada" EntitySet="Dnevnik_rada" />
+          </AssociationSet>
+          <AssociationSet Name="Dokument_Korisnik_id_korisnik_fk" Association="Self.Dokument_Korisnik_id_korisnik_fk">
+            <End Role="Korisnik" EntitySet="Korisniks" />
+            <End Role="Dokument" EntitySet="Dokuments" />
+          </AssociationSet>
+          <AssociationSet Name="Dokument_Korisnik_id_korisnik_fk_2" Association="Self.Dokument_Korisnik_id_korisnik_fk_2">
+            <End Role="Korisnik" EntitySet="Korisniks" />
+            <End Role="Dokument" EntitySet="Dokuments" />
+          </AssociationSet>
+          <AssociationSet Name="Dokument_Tip_dokumenta_id_tip_dokumenta_fk" Association="Self.Dokument_Tip_dokumenta_id_tip_dokumenta_fk">
+            <End Role="Tip_dokumenta" EntitySet="Tip_dokumenta" />
+            <End Role="Dokument" EntitySet="Dokuments" />
+          </AssociationSet>
+          <AssociationSet Name="Stavke_dokumenta_Dokument_id_dokument_fk" Association="Self.Stavke_dokumenta_Dokument_id_dokument_fk">
+            <End Role="Dokument" EntitySet="Dokuments" />
+            <End Role="Stavke_dokumenta" EntitySet="Stavke_dokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="Korisnik_Poslovnica_id_poslovnica_fk" Association="Self.Korisnik_Poslovnica_id_poslovnica_fk">
+            <End Role="Poslovnica" EntitySet="Poslovnicas" />
+            <End Role="Korisnik" EntitySet="Korisniks" />
+          </AssociationSet>
+          <AssociationSet Name="Korisnik_Tip_korisnika_id_tip_korisnika_fk" Association="Self.Korisnik_Tip_korisnika_id_tip_korisnika_fk">
+            <End Role="Tip_korisnika" EntitySet="Tip_korisnika" />
+            <End Role="Korisnik" EntitySet="Korisniks" />
+          </AssociationSet>
+          <AssociationSet Name="Skladiste_poslovnice_Poslovnica_id_poslovnica_fk" Association="Self.Skladiste_poslovnice_Poslovnica_id_poslovnica_fk">
+            <End Role="Poslovnica" EntitySet="Poslovnicas" />
+            <End Role="Skladiste_poslovnice" EntitySet="Skladiste_poslovnice" />
+          </AssociationSet>
+          <AssociationSet Name="Skladiste_poslovnice_Skladiste_id_skladiste_fk" Association="Self.Skladiste_poslovnice_Skladiste_id_skladiste_fk">
+            <End Role="Skladiste" EntitySet="Skladistes" />
+            <End Role="Skladiste_poslovnice" EntitySet="Skladiste_poslovnice" />
+          </AssociationSet>
+          <AssociationSet Name="Stavke_dokumenta_Usluga_id_usluga_fk" Association="Self.Stavke_dokumenta_Usluga_id_usluga_fk">
+            <End Role="Usluga" EntitySet="Uslugas" />
+            <End Role="Stavke_dokumenta" EntitySet="Stavke_dokumenta" />
+          </AssociationSet>
+          <AssociationSet Name="Usluga_Vrsta_usluge_id_vrsta_usluge_fk" Association="Self.Usluga_Vrsta_usluge_id_vrsta_usluge_fk">
+            <End Role="Vrsta_usluge" EntitySet="Vrsta_usluge" />
+            <End Role="Usluga" EntitySet="Uslugas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PI20_023_DBModelStoreContainer" CdmEntityContainer="CarDealershipEntities">
+          <EntitySetMapping Name="Artikls">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Artikl">
+              <MappingFragment StoreEntitySet="Artikl">
+                <ScalarProperty Name="id_artikl" ColumnName="id_artikl" />
+                <ScalarProperty Name="godina_proizvodnje" ColumnName="godina_proizvodnje" />
+                <ScalarProperty Name="emisija_vozila" ColumnName="emisija_vozila" />
+                <ScalarProperty Name="snaga_vozila" ColumnName="snaga_vozila" />
+                <ScalarProperty Name="opis_artikla" ColumnName="opis_artikla" />
+                <ScalarProperty Name="vrsta_goriva" ColumnName="vrsta_goriva" />
+                <ScalarProperty Name="naziv_artikla" ColumnName="naziv_artikla" />
+                <ScalarProperty Name="cijena_artikla" ColumnName="cijena_artikla" />
+                <ScalarProperty Name="vrsta_artikla" ColumnName="vrsta_artikla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Artikli_na_skladistu">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Artikli_na_skladistu">
+              <MappingFragment StoreEntitySet="Artikli_na_skladistu">
+                <ScalarProperty Name="id_artikli_na_skladistu" ColumnName="id_artikli_na_skladistu" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+                <ScalarProperty Name="skladiste" ColumnName="skladiste" />
+                <ScalarProperty Name="artikl" ColumnName="artikl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dnevnik_rada">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Dnevnik_rada">
+              <MappingFragment StoreEntitySet="Dnevnik_rada">
+                <ScalarProperty Name="id_dnevnik_rada_zaposlenika" ColumnName="id_dnevnik_rada_zaposlenika" />
+                <ScalarProperty Name="datum_obavljanja_rada" ColumnName="datum_obavljanja_rada" />
+                <ScalarProperty Name="opis_rada" ColumnName="opis_rada" />
+                <ScalarProperty Name="korisnik" ColumnName="korisnik" />
+                <ScalarProperty Name="radnja_dnevnika" ColumnName="radnja_dnevnika" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dokuments">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Dokument">
+              <MappingFragment StoreEntitySet="Dokument">
+                <ScalarProperty Name="id_dokument" ColumnName="id_dokument" />
+                <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
+                <ScalarProperty Name="opis_dokumenta" ColumnName="opis_dokumenta" />
+                <ScalarProperty Name="ukupni_saldo" ColumnName="ukupni_saldo" />
+                <ScalarProperty Name="tip_dokumenta" ColumnName="tip_dokumenta" />
+                <ScalarProperty Name="korisnik" ColumnName="korisnik" />
+                <ScalarProperty Name="zaposlenik" ColumnName="zaposlenik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Korisniks">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Korisnik">
+              <MappingFragment StoreEntitySet="Korisnik">
+                <ScalarProperty Name="id_korisnik" ColumnName="id_korisnik" />
+                <ScalarProperty Name="ime_korisnika" ColumnName="ime_korisnika" />
+                <ScalarProperty Name="prezime_korisnika" ColumnName="prezime_korisnika" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="korisnicko_ime" ColumnName="korisnicko_ime" />
+                <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+                <ScalarProperty Name="tip_korisnika" ColumnName="tip_korisnika" />
+                <ScalarProperty Name="poslovnica" ColumnName="poslovnica" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Poslovnicas">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Poslovnica">
+              <MappingFragment StoreEntitySet="Poslovnica">
+                <ScalarProperty Name="id_poslovnica" ColumnName="id_poslovnica" />
+                <ScalarProperty Name="OIB_poslovnice" ColumnName="OIB_poslovnice" />
+                <ScalarProperty Name="naziv_poslovnice" ColumnName="naziv_poslovnice" />
+                <ScalarProperty Name="adresa_poslovnice" ColumnName="adresa_poslovnice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Radnja_dnevnika">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Radnja_dnevnika">
+              <MappingFragment StoreEntitySet="Radnja_dnevnika">
+                <ScalarProperty Name="id_rad_zaposlenika" ColumnName="id_rad_zaposlenika" />
+                <ScalarProperty Name="naziv_rada" ColumnName="naziv_rada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skladistes">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Skladiste">
+              <MappingFragment StoreEntitySet="Skladiste">
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="id_skladiste" ColumnName="id_skladiste" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skladiste_poslovnice">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Skladiste_poslovnice">
+              <MappingFragment StoreEntitySet="Skladiste_poslovnice">
+                <ScalarProperty Name="id_skladiste_poslovnice" ColumnName="id_skladiste_poslovnice" />
+                <ScalarProperty Name="poslovnica" ColumnName="poslovnica" />
+                <ScalarProperty Name="skladiste" ColumnName="skladiste" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stavke_dokumenta">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Stavke_dokumenta">
+              <MappingFragment StoreEntitySet="Stavke_dokumenta">
+                <ScalarProperty Name="id_stavke_dokumenta" ColumnName="id_stavke_dokumenta" />
+                <ScalarProperty Name="artikl" ColumnName="artikl" />
+                <ScalarProperty Name="dokument" ColumnName="dokument" />
+                <ScalarProperty Name="usluga" ColumnName="usluga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tip_dokumenta">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Tip_dokumenta">
+              <MappingFragment StoreEntitySet="Tip_dokumenta">
+                <ScalarProperty Name="id_tip_dokumenta" ColumnName="id_tip_dokumenta" />
+                <ScalarProperty Name="naziv_dokumenta" ColumnName="naziv_dokumenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tip_korisnika">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Tip_korisnika">
+              <MappingFragment StoreEntitySet="Tip_korisnika">
+                <ScalarProperty Name="id_tip_korisnika" ColumnName="id_tip_korisnika" />
+                <ScalarProperty Name="naziv_uloge" ColumnName="naziv_uloge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uslugas">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Usluga">
+              <MappingFragment StoreEntitySet="Usluga">
+                <ScalarProperty Name="id_usluga" ColumnName="id_usluga" />
+                <ScalarProperty Name="naziv_usluge" ColumnName="naziv_usluge" />
+                <ScalarProperty Name="vrsta_usluge" ColumnName="vrsta_usluge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vrsta_usluge">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Vrsta_usluge">
+              <MappingFragment StoreEntitySet="Vrsta_usluge">
+                <ScalarProperty Name="id_vrsta_usluge" ColumnName="id_vrsta_usluge" />
+                <ScalarProperty Name="naziv_usluge" ColumnName="naziv_usluge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vrste_artikla">
+            <EntityTypeMapping TypeName="PI20_023_DBModel.Vrste_artikla">
+              <MappingFragment StoreEntitySet="Vrste_artikla">
+                <ScalarProperty Name="id_vrste_artikla" ColumnName="id_vrste_artikla" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
