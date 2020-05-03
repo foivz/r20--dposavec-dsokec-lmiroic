@@ -11,8 +11,24 @@ namespace Sloj_poslovne_logike.UpravljanjeKorisnicima
         public static bool PrijaviKorisnika(string korisnickoIme, string lozinka)
         {
             bool provjera = Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.ProvjeriKorisnika(korisnickoIme, lozinka);
+            if (provjera)
+            {
+                Sesija.PrijavljenKorisnik = Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.DohvatiKorisnika(korisnickoIme, lozinka);
+            }
             return provjera;
 
+        }
+        public int ProvjeriTipKorisnika()
+        {
+           return Sesija.PrijavljenKorisnik.tip_korisnika;       
+        }
+        public bool ProvjeriUloguAdministratora()
+        {
+            if (ProvjeriTipKorisnika()==2)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

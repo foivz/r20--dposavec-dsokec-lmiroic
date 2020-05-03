@@ -37,13 +37,30 @@ namespace Sloj_pristupa_podacima.UpravljanjeKorisnicima
         }
         public static bool ProvjeriKorisnika(string korisnickoIme, string lozinka)
         {
-            bool provjera = false;
             Korisnik odabranKorisnik = null;
             odabranKorisnik= DohvatiSveKorisnike().Find(k => k.korisnicko_ime == korisnickoIme && k.lozinka == HashirajLozinku(lozinka));
             if (odabranKorisnik != null)
                 return true;
             else
                 return false;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="korisnickoIme"></param>
+        /// <param name="lozinka"></param>
+        /// <returns></returns>
+        public static Korisnik DohvatiKorisnika(string korisnickoIme,string lozinka)
+        {
+            Korisnik pronadenKorisnik = null;
+            using(var db=new CarDealershipandServiceEntities())
+            {
+                var dohvaceniKorisnik = from k in db.Korisniks
+                                        where k.korisnicko_ime == korisnickoIme && k.lozinka == lozinka
+                                        select k;
+                pronadenKorisnik = dohvaceniKorisnik as Korisnik;
+            }
+            return pronadenKorisnik;
         }
     }
 }
