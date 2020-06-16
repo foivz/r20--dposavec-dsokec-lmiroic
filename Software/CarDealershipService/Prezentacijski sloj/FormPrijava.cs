@@ -16,6 +16,8 @@ namespace Prezentacijski_sloj
         public FormPrijava()
         {
             InitializeComponent();
+            panelFrmPrijava.BackColor = Color.FromArgb(45, 45, 48);
+            uiActionPrijava.BackColor=Color.FromArgb(127, 127, 128);
         }
         private bool ProvjeraUnesenihPodataka()
         {
