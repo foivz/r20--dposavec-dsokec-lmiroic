@@ -104,6 +104,7 @@
       <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
     </Compile>
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicima.cs" />
+    <Compile Include="UpravljanjeSkladistem\UpravljanjeSkladistemDAL.cs" />
     <Compile Include="Usluga.cs">
       <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
     </Compile>
@@ -140,5 +141,6 @@
       <LastGenOutput>EvidencijaAutokuce.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

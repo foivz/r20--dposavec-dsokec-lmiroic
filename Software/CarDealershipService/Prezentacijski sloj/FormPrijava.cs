@@ -21,10 +21,10 @@ namespace Prezentacijski_sloj
         }
         private bool ProvjeraUnesenihPodataka()
         {
-            //string korisnickoIme = uiInputKorisnickoIme.Text;
-            //string lozinka = uiInputLozinka.Text;
-            string korisnickoIme = "mmarkic";
-            string lozinka = "marko";
+            string korisnickoIme = uiInputKorisnickoIme.Text;
+            string lozinka = uiInputLozinka.Text;
+            //string korisnickoIme = "mmarkic";
+            //string lozinka = "marko";
             if (korisnickoIme.Trim().Length != 0 && lozinka.Trim().Length != 0)
                 return true;
             else
@@ -35,10 +35,10 @@ namespace Prezentacijski_sloj
         {           
             if (ProvjeraUnesenihPodataka())
             {
-                //string korisnickoIme = uiInputKorisnickoIme.Text;
-                //string lozinka = uiInputLozinka.Text;
-                string korisnickoIme = "mmarkic";
-                string lozinka = "marko";
+                string korisnickoIme = uiInputKorisnickoIme.Text;
+                string lozinka = uiInputLozinka.Text;
+                //string korisnickoIme = "mmarkic";
+                //string lozinka = "marko";
                 if (Sloj_poslovne_logike.UpravljanjeKorisnicima.UpravljanjeKorisnicimaBLL.PrijaviKorisnika(korisnickoIme, lozinka))
                 {
                     GlavnaForma glavnaForma = new GlavnaForma();

@@ -18,11 +18,11 @@ namespace Sloj_poslovne_logike.UpravljanjeKorisnicima
             return provjera;
 
         }
-        public int ProvjeriTipKorisnika()
+        public static int ProvjeriTipKorisnika()
         {
            return Sesija.PrijavljenKorisnik.tip_korisnika;       
         }
-        public bool ProvjeriUloguAdministratora()
+        public static bool ProvjeriUloguAdministratora()
         {
             if (ProvjeriTipKorisnika()==2)
             {

@@ -199,6 +199,7 @@
             this.Name = "GlavnaForma";
             this.Text = "GlavnaForma";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.GlavnaForma_Load);
             this.panelGlFormaIzbornik.ResumeLayout(false);
             this.panelGlFormaNaslov.ResumeLayout(false);
             this.panelGlFormaNaslov.PerformLayout();

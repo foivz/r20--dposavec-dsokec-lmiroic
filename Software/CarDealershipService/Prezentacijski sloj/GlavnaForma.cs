@@ -89,5 +89,16 @@ namespace Prezentacijski_sloj
         {
             PrikaziFormu(FormUpravljanjePoslovnicama.instance, sender);
         }
+
+        private void GlavnaForma_Load(object sender, EventArgs e)
+        {
+            if (Sloj_poslovne_logike.Sesija.PrijavljenKorisnik.tip_korisnika!=2)
+            {
+                uiActionUpravljanjeKorisnicima.Enabled = false;
+                uiActionUpravljanjePoslovnicama.Enabled = false;
+            }
+            else
+                MessageBox.Show("Uspjesna prijava aministratora");
+        }
     }
 }
