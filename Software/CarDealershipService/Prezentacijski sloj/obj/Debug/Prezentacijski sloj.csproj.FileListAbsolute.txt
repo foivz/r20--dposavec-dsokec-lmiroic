@@ -18,3 +18,5 @@ C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski sloj.pdb
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormProdajaArtikla.resources
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormUpravljanjeSkladistem.resources

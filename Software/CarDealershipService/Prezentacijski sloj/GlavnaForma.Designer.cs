@@ -28,19 +28,163 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GlavnaForma));
+            this.panelGlFormaLogo = new System.Windows.Forms.Panel();
+            this.panelGlFormaIzbornik = new System.Windows.Forms.Panel();
+            this.uiActionUpravljanjeNarudzbama = new System.Windows.Forms.Button();
+            this.uiActionUpravljanjePoslovnicama = new System.Windows.Forms.Button();
+            this.uiActionUpravljanjeKorisnicima = new System.Windows.Forms.Button();
+            this.uiActionIzdavanjeDokumenata = new System.Windows.Forms.Button();
+            this.uiActionRezervacija = new System.Windows.Forms.Button();
+            this.uiActionUpravljanjeSkladištem = new System.Windows.Forms.Button();
+            this.uiActionProdaja = new System.Windows.Forms.Button();
+            this.panelGlFormaNaslov = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelGlFormaIzbornik.SuspendLayout();
+            this.panelGlFormaNaslov.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelGlFormaLogo
+            // 
+            this.panelGlFormaLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelGlFormaLogo.BackgroundImage")));
+            this.panelGlFormaLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelGlFormaLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelGlFormaLogo.Name = "panelGlFormaLogo";
+            this.panelGlFormaLogo.Size = new System.Drawing.Size(200, 100);
+            this.panelGlFormaLogo.TabIndex = 0;
+            // 
+            // panelGlFormaIzbornik
+            // 
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjeNarudzbama);
+            this.panelGlFormaIzbornik.Controls.Add(this.panelGlFormaLogo);
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjePoslovnicama);
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjeKorisnicima);
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionIzdavanjeDokumenata);
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionRezervacija);
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjeSkladištem);
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionProdaja);
+            this.panelGlFormaIzbornik.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelGlFormaIzbornik.Location = new System.Drawing.Point(0, 0);
+            this.panelGlFormaIzbornik.Name = "panelGlFormaIzbornik";
+            this.panelGlFormaIzbornik.Size = new System.Drawing.Size(200, 450);
+            this.panelGlFormaIzbornik.TabIndex = 1;
+            // 
+            // uiActionUpravljanjeNarudzbama
+            // 
+            this.uiActionUpravljanjeNarudzbama.Location = new System.Drawing.Point(0, 288);
+            this.uiActionUpravljanjeNarudzbama.Name = "uiActionUpravljanjeNarudzbama";
+            this.uiActionUpravljanjeNarudzbama.Size = new System.Drawing.Size(200, 45);
+            this.uiActionUpravljanjeNarudzbama.TabIndex = 1;
+            this.uiActionUpravljanjeNarudzbama.Text = "Upravljanje narudzbama";
+            this.uiActionUpravljanjeNarudzbama.UseVisualStyleBackColor = true;
+            // 
+            // uiActionUpravljanjePoslovnicama
+            // 
+            this.uiActionUpravljanjePoslovnicama.Location = new System.Drawing.Point(0, 371);
+            this.uiActionUpravljanjePoslovnicama.Name = "uiActionUpravljanjePoslovnicama";
+            this.uiActionUpravljanjePoslovnicama.Size = new System.Drawing.Size(200, 45);
+            this.uiActionUpravljanjePoslovnicama.TabIndex = 0;
+            this.uiActionUpravljanjePoslovnicama.Text = "Upravljanje poslovnicama";
+            this.uiActionUpravljanjePoslovnicama.UseVisualStyleBackColor = true;
+            // 
+            // uiActionUpravljanjeKorisnicima
+            // 
+            this.uiActionUpravljanjeKorisnicima.Location = new System.Drawing.Point(0, 329);
+            this.uiActionUpravljanjeKorisnicima.Name = "uiActionUpravljanjeKorisnicima";
+            this.uiActionUpravljanjeKorisnicima.Size = new System.Drawing.Size(200, 45);
+            this.uiActionUpravljanjeKorisnicima.TabIndex = 0;
+            this.uiActionUpravljanjeKorisnicima.Text = "Upravljanje korisnicima";
+            this.uiActionUpravljanjeKorisnicima.UseVisualStyleBackColor = true;
+            // 
+            // uiActionIzdavanjeDokumenata
+            // 
+            this.uiActionIzdavanjeDokumenata.Location = new System.Drawing.Point(0, 246);
+            this.uiActionIzdavanjeDokumenata.Name = "uiActionIzdavanjeDokumenata";
+            this.uiActionIzdavanjeDokumenata.Size = new System.Drawing.Size(200, 45);
+            this.uiActionIzdavanjeDokumenata.TabIndex = 0;
+            this.uiActionIzdavanjeDokumenata.Text = "Izdavanje dokumenata";
+            this.uiActionIzdavanjeDokumenata.UseVisualStyleBackColor = true;
+            // 
+            // uiActionRezervacija
+            // 
+            this.uiActionRezervacija.Location = new System.Drawing.Point(0, 204);
+            this.uiActionRezervacija.Name = "uiActionRezervacija";
+            this.uiActionRezervacija.Size = new System.Drawing.Size(200, 45);
+            this.uiActionRezervacija.TabIndex = 0;
+            this.uiActionRezervacija.Text = "Rezervacije";
+            this.uiActionRezervacija.UseVisualStyleBackColor = true;
+            // 
+            // uiActionUpravljanjeSkladištem
+            // 
+            this.uiActionUpravljanjeSkladištem.Location = new System.Drawing.Point(0, 163);
+            this.uiActionUpravljanjeSkladištem.Name = "uiActionUpravljanjeSkladištem";
+            this.uiActionUpravljanjeSkladištem.Size = new System.Drawing.Size(200, 45);
+            this.uiActionUpravljanjeSkladištem.TabIndex = 0;
+            this.uiActionUpravljanjeSkladištem.Text = "Skladište";
+            this.uiActionUpravljanjeSkladištem.UseVisualStyleBackColor = true;
+            this.uiActionUpravljanjeSkladištem.Click += new System.EventHandler(this.uiActionUpravljanjeSkladištem_Click);
+            // 
+            // uiActionProdaja
+            // 
+            this.uiActionProdaja.Location = new System.Drawing.Point(0, 121);
+            this.uiActionProdaja.Name = "uiActionProdaja";
+            this.uiActionProdaja.Size = new System.Drawing.Size(200, 45);
+            this.uiActionProdaja.TabIndex = 0;
+            this.uiActionProdaja.Text = "Prodaja";
+            this.uiActionProdaja.UseVisualStyleBackColor = true;
+            this.uiActionProdaja.Click += new System.EventHandler(this.uiActionProdaja_Click);
+            // 
+            // panelGlFormaNaslov
+            // 
+            this.panelGlFormaNaslov.Controls.Add(this.label1);
+            this.panelGlFormaNaslov.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelGlFormaNaslov.Location = new System.Drawing.Point(200, 0);
+            this.panelGlFormaNaslov.Name = "panelGlFormaNaslov";
+            this.panelGlFormaNaslov.Size = new System.Drawing.Size(600, 100);
+            this.panelGlFormaNaslov.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(128, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(385, 55);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Glavni izbornik";
             // 
             // GlavnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelGlFormaNaslov);
+            this.Controls.Add(this.panelGlFormaIzbornik);
+            this.IsMdiContainer = true;
             this.Name = "GlavnaForma";
             this.Text = "GlavnaForma";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panelGlFormaIzbornik.ResumeLayout(false);
+            this.panelGlFormaNaslov.ResumeLayout(false);
+            this.panelGlFormaNaslov.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panelGlFormaLogo;
+        private System.Windows.Forms.Panel panelGlFormaIzbornik;
+        private System.Windows.Forms.Panel panelGlFormaNaslov;
+        private System.Windows.Forms.Button uiActionUpravljanjePoslovnicama;
+        private System.Windows.Forms.Button uiActionUpravljanjeKorisnicima;
+        private System.Windows.Forms.Button uiActionIzdavanjeDokumenata;
+        private System.Windows.Forms.Button uiActionRezervacija;
+        private System.Windows.Forms.Button uiActionUpravljanjeSkladištem;
+        private System.Windows.Forms.Button uiActionProdaja;
+        private System.Windows.Forms.Button uiActionUpravljanjeNarudzbama;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -12,9 +12,26 @@ namespace Prezentacijski_sloj
 {
     public partial class FormProdajaArtikla : Form
     {
+        private static FormProdajaArtikla _instance;
+        public static FormProdajaArtikla instance
+        {
+            get
+            {                
+                if (_instance == null)
+                {
+                    _instance = new FormProdajaArtikla();
+                }
+                return _instance;
+            }
+        }
         public FormProdajaArtikla()
         {
             InitializeComponent();
+        }
+
+        private void FormProdajaArtikla_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
         }
     }
 }
