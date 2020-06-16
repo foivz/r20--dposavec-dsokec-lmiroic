@@ -9,3 +9,17 @@ C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.csproj.CopyComplete
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.dll
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.pdb
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\Sloj poslovne logike.dll.config
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\Sloj poslovne logike.dll
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\Sloj poslovne logike.pdb
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\EntityFramework.dll
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\Sloj pristupa podacima.dll
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\Sloj pristupa podacima.pdb
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\Sloj pristupa podacima.dll.config
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\EntityFramework.xml
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.csprojAssemblyReference.cache
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.csproj.CopyComplete
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.dll
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.pdb
