@@ -12,9 +12,26 @@ namespace Prezentacijski_sloj
 {
     public partial class FormIzdajDokumente : Form
     {
+        private static FormIzdajDokumente _instance;
+        public static FormIzdajDokumente instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new FormIzdajDokumente();
+                }
+                return _instance;
+            }
+        }
         public FormIzdajDokumente()
         {
             InitializeComponent();
+        }
+
+        private void FormIzdajDokumente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
         }
     }
 }

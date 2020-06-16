@@ -71,51 +71,80 @@
             // 
             // uiActionUpravljanjeNarudzbama
             // 
+            this.uiActionUpravljanjeNarudzbama.FlatAppearance.BorderSize = 0;
+            this.uiActionUpravljanjeNarudzbama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionUpravljanjeNarudzbama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionUpravljanjeNarudzbama.ForeColor = System.Drawing.Color.LightGray;
             this.uiActionUpravljanjeNarudzbama.Location = new System.Drawing.Point(0, 288);
             this.uiActionUpravljanjeNarudzbama.Name = "uiActionUpravljanjeNarudzbama";
             this.uiActionUpravljanjeNarudzbama.Size = new System.Drawing.Size(200, 45);
             this.uiActionUpravljanjeNarudzbama.TabIndex = 1;
             this.uiActionUpravljanjeNarudzbama.Text = "Upravljanje narudzbama";
             this.uiActionUpravljanjeNarudzbama.UseVisualStyleBackColor = true;
+            this.uiActionUpravljanjeNarudzbama.Click += new System.EventHandler(this.uiActionUpravljanjeNarudzbama_Click);
             // 
             // uiActionUpravljanjePoslovnicama
             // 
+            this.uiActionUpravljanjePoslovnicama.FlatAppearance.BorderSize = 0;
+            this.uiActionUpravljanjePoslovnicama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionUpravljanjePoslovnicama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionUpravljanjePoslovnicama.ForeColor = System.Drawing.Color.LightGray;
             this.uiActionUpravljanjePoslovnicama.Location = new System.Drawing.Point(0, 371);
             this.uiActionUpravljanjePoslovnicama.Name = "uiActionUpravljanjePoslovnicama";
             this.uiActionUpravljanjePoslovnicama.Size = new System.Drawing.Size(200, 45);
             this.uiActionUpravljanjePoslovnicama.TabIndex = 0;
             this.uiActionUpravljanjePoslovnicama.Text = "Upravljanje poslovnicama";
             this.uiActionUpravljanjePoslovnicama.UseVisualStyleBackColor = true;
+            this.uiActionUpravljanjePoslovnicama.Click += new System.EventHandler(this.uiActionUpravljanjePoslovnicama_Click);
             // 
             // uiActionUpravljanjeKorisnicima
             // 
+            this.uiActionUpravljanjeKorisnicima.FlatAppearance.BorderSize = 0;
+            this.uiActionUpravljanjeKorisnicima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionUpravljanjeKorisnicima.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionUpravljanjeKorisnicima.ForeColor = System.Drawing.Color.LightGray;
             this.uiActionUpravljanjeKorisnicima.Location = new System.Drawing.Point(0, 329);
             this.uiActionUpravljanjeKorisnicima.Name = "uiActionUpravljanjeKorisnicima";
             this.uiActionUpravljanjeKorisnicima.Size = new System.Drawing.Size(200, 45);
             this.uiActionUpravljanjeKorisnicima.TabIndex = 0;
             this.uiActionUpravljanjeKorisnicima.Text = "Upravljanje korisnicima";
             this.uiActionUpravljanjeKorisnicima.UseVisualStyleBackColor = true;
+            this.uiActionUpravljanjeKorisnicima.Click += new System.EventHandler(this.uiActionUpravljanjeKorisnicima_Click);
             // 
             // uiActionIzdavanjeDokumenata
             // 
+            this.uiActionIzdavanjeDokumenata.FlatAppearance.BorderSize = 0;
+            this.uiActionIzdavanjeDokumenata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionIzdavanjeDokumenata.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionIzdavanjeDokumenata.ForeColor = System.Drawing.Color.LightGray;
             this.uiActionIzdavanjeDokumenata.Location = new System.Drawing.Point(0, 246);
             this.uiActionIzdavanjeDokumenata.Name = "uiActionIzdavanjeDokumenata";
             this.uiActionIzdavanjeDokumenata.Size = new System.Drawing.Size(200, 45);
             this.uiActionIzdavanjeDokumenata.TabIndex = 0;
             this.uiActionIzdavanjeDokumenata.Text = "Izdavanje dokumenata";
             this.uiActionIzdavanjeDokumenata.UseVisualStyleBackColor = true;
+            this.uiActionIzdavanjeDokumenata.Click += new System.EventHandler(this.uiActionIzdavanjeDokumenata_Click);
             // 
             // uiActionRezervacija
             // 
+            this.uiActionRezervacija.FlatAppearance.BorderSize = 0;
+            this.uiActionRezervacija.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionRezervacija.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionRezervacija.ForeColor = System.Drawing.Color.LightGray;
             this.uiActionRezervacija.Location = new System.Drawing.Point(0, 204);
             this.uiActionRezervacija.Name = "uiActionRezervacija";
             this.uiActionRezervacija.Size = new System.Drawing.Size(200, 45);
             this.uiActionRezervacija.TabIndex = 0;
             this.uiActionRezervacija.Text = "Rezervacije";
             this.uiActionRezervacija.UseVisualStyleBackColor = true;
+            this.uiActionRezervacija.Click += new System.EventHandler(this.uiActionRezervacija_Click);
             // 
             // uiActionUpravljanjeSkladištem
             // 
+            this.uiActionUpravljanjeSkladištem.FlatAppearance.BorderSize = 0;
+            this.uiActionUpravljanjeSkladištem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionUpravljanjeSkladištem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionUpravljanjeSkladištem.ForeColor = System.Drawing.Color.LightGray;
             this.uiActionUpravljanjeSkladištem.Location = new System.Drawing.Point(0, 163);
             this.uiActionUpravljanjeSkladištem.Name = "uiActionUpravljanjeSkladištem";
             this.uiActionUpravljanjeSkladištem.Size = new System.Drawing.Size(200, 45);
@@ -126,6 +155,10 @@
             // 
             // uiActionProdaja
             // 
+            this.uiActionProdaja.FlatAppearance.BorderSize = 0;
+            this.uiActionProdaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionProdaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionProdaja.ForeColor = System.Drawing.Color.LightGray;
             this.uiActionProdaja.Location = new System.Drawing.Point(0, 121);
             this.uiActionProdaja.Name = "uiActionProdaja";
             this.uiActionProdaja.Size = new System.Drawing.Size(200, 45);

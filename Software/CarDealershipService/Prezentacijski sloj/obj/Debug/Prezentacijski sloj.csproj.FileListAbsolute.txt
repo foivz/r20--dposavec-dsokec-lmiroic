@@ -20,3 +20,8 @@ C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormProdajaArtikla.resources
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormUpravljanjeSkladistem.resources
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormIzdajDokumente.resources
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormUpravljanjeRezervacijama.resources
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormUpravljanjeKorisnicima.resources
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormUpravljanjeNarudzbama.resources
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormUpravljanjePoslovnicama.resources

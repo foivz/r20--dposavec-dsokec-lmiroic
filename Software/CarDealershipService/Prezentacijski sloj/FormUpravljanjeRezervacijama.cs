@@ -12,9 +12,26 @@ namespace Prezentacijski_sloj
 {
     public partial class FormUpravljanjeRezervacijama : Form
     {
+        private static FormUpravljanjeRezervacijama _instance;
+        public static FormUpravljanjeRezervacijama instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new FormUpravljanjeRezervacijama();
+                }
+                return _instance;
+            }
+        }
         public FormUpravljanjeRezervacijama()
         {
             InitializeComponent();
+        }
+
+        private void FormUpravljanjeRezervacijama_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
         }
     }
 }

@@ -118,11 +118,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormIzdajDokumente.resx">
+      <DependentUpon>FormIzdajDokumente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrijava.resx">
       <DependentUpon>FormPrijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProdajaArtikla.resx">
       <DependentUpon>FormProdajaArtikla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeKorisnicima.resx">
+      <DependentUpon>FormUpravljanjeKorisnicima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeNarudzbama.resx">
+      <DependentUpon>FormUpravljanjeNarudzbama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjePoslovnicama.resx">
+      <DependentUpon>FormUpravljanjePoslovnicama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeRezervacijama.resx">
+      <DependentUpon>FormUpravljanjeRezervacijama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUpravljanjeSkladistem.resx">
       <DependentUpon>FormUpravljanjeSkladistem.cs</DependentUpon>
