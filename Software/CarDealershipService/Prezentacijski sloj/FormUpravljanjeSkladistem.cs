@@ -80,6 +80,15 @@ namespace Prezentacijski_sloj
             form.Show();
             form.Activate();
         }
+        private void PrikazForme(FormKreirajVozilo form, object sender)
+        {
+            form.FormUpravljanjeSkladistem = this;
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            ActivateButton(sender);
+            form.Show();
+            form.Activate();
+        }
 
         private void uiActionBrisanje_Click(object sender, EventArgs e)
         {
@@ -93,7 +102,22 @@ namespace Prezentacijski_sloj
 
         private void uiActionKreiraj_Click(object sender, EventArgs e)
         {
-            PrikaziFormu(FormKreirajVozilo.Instance, sender);
+            
+            PrikazForme(FormKreirajVozilo.Instance, sender);
+        }
+
+        private void uiActionKreiranjeRezervnogDijela_Click(object sender, EventArgs e)
+        {
+            PrikaziFormu(FormKreirajRezervniDio.instance, sender);
+        }
+        public void OsvjeziPopisArtikala()
+        {
+            dgvSviArtikliNaSkladistu.DataSource = null;
+            dgvSviArtikliNaSkladistu.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.VratiSveArtikle();
+            dgvSviArtikliNaSkladistu.Columns[9].Visible = false;
+            dgvSviArtikliNaSkladistu.Columns[10].Visible = false;
+            dgvSviArtikliNaSkladistu.Columns[11].Visible = false;
+
         }
     }
 }

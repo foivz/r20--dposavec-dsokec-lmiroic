@@ -38,7 +38,6 @@
             this.uiInputOpisArtikla = new System.Windows.Forms.TextBox();
             this.uiInputNazivArtikla = new System.Windows.Forms.TextBox();
             this.uiInputCijenaArtikla = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.uiInputVrstaGoriva = new System.Windows.Forms.ComboBox();
             this.panelKreirajArtiklHeader.SuspendLayout();
             this.panelKreirajArtiklFooter.SuspendLayout();
@@ -69,9 +67,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(209, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(421, 55);
+            this.label1.Size = new System.Drawing.Size(398, 55);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Kreiranje artikla";
+            this.label1.Text = "Kreiranje vozila";
             // 
             // panelKreirajArtiklFooter
             // 
@@ -95,6 +93,7 @@
             this.uiActionSpremi.TabIndex = 0;
             this.uiActionSpremi.Text = "Spremi";
             this.uiActionSpremi.UseVisualStyleBackColor = true;
+            this.uiActionSpremi.Click += new System.EventHandler(this.uiActionSpremi_Click);
             // 
             // uiInputGodinaProizvodnje
             // 
@@ -119,7 +118,7 @@
             // 
             // uiInputOpisArtikla
             // 
-            this.uiInputOpisArtikla.Location = new System.Drawing.Point(179, 290);
+            this.uiInputOpisArtikla.Location = new System.Drawing.Point(324, 290);
             this.uiInputOpisArtikla.Multiline = true;
             this.uiInputOpisArtikla.Name = "uiInputOpisArtikla";
             this.uiInputOpisArtikla.Size = new System.Drawing.Size(204, 54);
@@ -138,13 +137,6 @@
             this.uiInputCijenaArtikla.Name = "uiInputCijenaArtikla";
             this.uiInputCijenaArtikla.Size = new System.Drawing.Size(204, 20);
             this.uiInputCijenaArtikla.TabIndex = 5;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(476, 290);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(204, 20);
-            this.textBox10.TabIndex = 5;
             // 
             // label2
             // 
@@ -176,7 +168,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(179, 274);
+            this.label5.Location = new System.Drawing.Point(324, 274);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 6;
@@ -196,27 +188,18 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(473, 173);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 13);
+            this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Naziv artikla";
+            this.label7.Text = "Naziv vozila";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(473, 220);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.Size = new System.Drawing.Size(66, 13);
             this.label8.TabIndex = 6;
-            this.label8.Text = "Cijena artikla";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(473, 274);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Vrsta artikla";
+            this.label8.Text = "Cijena vozila";
             // 
             // uiInputVrstaGoriva
             // 
@@ -226,13 +209,12 @@
             this.uiInputVrstaGoriva.Size = new System.Drawing.Size(204, 21);
             this.uiInputVrstaGoriva.TabIndex = 7;
             // 
-            // FormKreirajArtikl
+            // FormKreirajVozilo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.uiInputVrstaGoriva);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -242,14 +224,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.uiInputOpisArtikla);
             this.Controls.Add(this.uiInputSnagaVozila);
-            this.Controls.Add(this.textBox10);
             this.Controls.Add(this.uiInputCijenaArtikla);
             this.Controls.Add(this.uiInputNazivArtikla);
             this.Controls.Add(this.uiInputEmisijaVozila);
             this.Controls.Add(this.uiInputGodinaProizvodnje);
             this.Controls.Add(this.panelKreirajArtiklFooter);
             this.Controls.Add(this.panelKreirajArtiklHeader);
-            this.Name = "FormKreirajArtikl";
+            this.Name = "FormKreirajVozilo";
             this.Text = "FormKreirajArtikl";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajArtikl_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajArtikl_Load);
@@ -273,7 +254,6 @@
         private System.Windows.Forms.TextBox uiInputOpisArtikla;
         private System.Windows.Forms.TextBox uiInputNazivArtikla;
         private System.Windows.Forms.TextBox uiInputCijenaArtikla;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -281,7 +261,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox uiInputVrstaGoriva;
     }
 }
