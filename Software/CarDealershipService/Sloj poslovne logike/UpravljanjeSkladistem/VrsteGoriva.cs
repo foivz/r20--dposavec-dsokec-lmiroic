@@ -20,7 +20,5 @@ namespace Sloj_poslovne_logike.UpravljanjeSkladistem
         {
             return this.VrstaGoriva;
         }
-
-
     }
 }

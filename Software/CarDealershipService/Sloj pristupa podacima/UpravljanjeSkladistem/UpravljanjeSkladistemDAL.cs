@@ -17,5 +17,23 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
             }
             return SviArtikli;
         }
+        public static List<Vrste_artikla> VratiSveVrsteArtikla()
+        {
+            List<Vrste_artikla> SveVrsteArtikla = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                SveVrsteArtikla = db.Vrste_artikla.ToList();
+            }
+            return SveVrsteArtikla;
+        }
+        public static void KreiranjeArtikla(Artikl artikl)
+        {
+            using (var db = new Sloj_pristupa_podacima.CarDealershipandServiceEntities())
+            {
+
+                db.Artikls.Add(artikl);
+                db.SaveChanges();
+            }
+        }
     }
 }
