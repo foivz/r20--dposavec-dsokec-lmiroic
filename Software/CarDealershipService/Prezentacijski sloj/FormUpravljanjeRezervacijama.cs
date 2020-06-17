@@ -74,6 +74,14 @@ namespace Prezentacijski_sloj
                 }
             }
         }
+        private void PrikazForme(Form form, object sender)
+        {
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            ActivateButton(sender);
+            form.Show();
+            form.Activate();
+        }
 
         private void uiActionAzuriranjRervacije_Click(object sender, EventArgs e)
         {
@@ -87,7 +95,7 @@ namespace Prezentacijski_sloj
 
         private void uiActionKreirajRezervaciju_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            PrikazForme(FormKreirajRezervaciju.Instance, sender);
         }
     }
 }
