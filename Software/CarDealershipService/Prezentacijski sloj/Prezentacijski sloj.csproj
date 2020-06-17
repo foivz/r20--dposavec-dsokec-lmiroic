@@ -68,6 +68,12 @@
     <Compile Include="FormIzdajDokumente.Designer.cs">
       <DependentUpon>FormIzdajDokumente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKreirajVozilo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajVozilo.Designer.cs">
+      <DependentUpon>FormKreirajVozilo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormIzdajDokumente.resx">
       <DependentUpon>FormIzdajDokumente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajVozilo.resx">
+      <DependentUpon>FormKreirajVozilo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrijava.resx">
       <DependentUpon>FormPrijava.cs</DependentUpon>

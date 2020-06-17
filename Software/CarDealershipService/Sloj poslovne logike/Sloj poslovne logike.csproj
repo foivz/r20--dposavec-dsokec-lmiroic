@@ -56,6 +56,7 @@
     <Compile Include="Sesija.cs" />
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicimaBLL.cs" />
     <Compile Include="UpravljanjeSkladistem\UpravljanjeSkladistemBLL.cs" />
+    <Compile Include="UpravljanjeSkladistem\VrsteGoriva.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sloj pristupa podacima\Sloj pristupa podacima.csproj">

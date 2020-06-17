@@ -8,6 +8,6 @@ namespace Sloj_poslovne_logike.UpravljanjeSkladistem
 {
     public class UpravljanjeSkladistemBLL
     {
-
+        
     }
 }

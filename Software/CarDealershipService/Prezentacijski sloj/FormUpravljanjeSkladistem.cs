@@ -72,6 +72,14 @@ namespace Prezentacijski_sloj
             dgvSviArtikliNaSkladistu.Columns[10].Visible = false;
             dgvSviArtikliNaSkladistu.Columns[11].Visible = false;
         }
+        private void PrikaziFormu(Form form, object sender)
+        {
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            ActivateButton(sender);
+            form.Show();
+            form.Activate();
+        }
 
         private void uiActionBrisanje_Click(object sender, EventArgs e)
         {
@@ -85,7 +93,7 @@ namespace Prezentacijski_sloj
 
         private void uiActionKreiraj_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            PrikaziFormu(FormKreirajVozilo.Instance, sender);
         }
     }
 }

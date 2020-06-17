@@ -23,3 +23,6 @@ C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipServi
 C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.csproj.CopyComplete
 C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.dll
 C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.pdb
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\Sloj poslovne logike.dll.config
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\bin\Debug\EntityFramework.SqlServer.xml
