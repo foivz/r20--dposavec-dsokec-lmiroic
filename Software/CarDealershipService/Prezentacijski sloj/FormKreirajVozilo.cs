@@ -33,7 +33,7 @@ namespace Prezentacijski_sloj
             panelKreirajArtiklHeader.BackColor = Color.FromArgb(45, 45, 48);
             panelKreirajArtiklFooter.BackColor = Color.FromArgb(45, 45, 48);
         }
-
+        
         private void FormKreirajArtikl_FormClosed(object sender, FormClosedEventArgs e)
         {
             _Instance = null;

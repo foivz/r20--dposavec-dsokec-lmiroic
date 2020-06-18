@@ -28,10 +28,28 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
         }
         public static void KreiranjeArtikla(Artikl artikl)
         {
-            using (var db = new Sloj_pristupa_podacima.CarDealershipandServiceEntities())
+            using (var db = new CarDealershipandServiceEntities())
             {
 
                 db.Artikls.Add(artikl);
+                db.SaveChanges();
+            }
+        }
+        public static void BrisanjeArtikla(Artikl artikl)
+        {
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var selectedItem = db.Artikls.Where(t => t.id_artikl == artikl.id_artikl).FirstOrDefault();
+                db.Artikls.Remove(selectedItem);
+                db.SaveChanges();
+            }
+        }
+        public static void AzurirajArtikl(Artikl artikl)
+        {
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var selectedItem = db.Artikls.Where(t => t.id_artikl == artikl.id_artikl).FirstOrDefault();
+                db.Artikls.Attach(selectedItem);
                 db.SaveChanges();
             }
         }

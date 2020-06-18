@@ -93,6 +93,10 @@ namespace Prezentacijski_sloj
         private void uiActionBrisanje_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            Sloj_pristupa_podacima.Artikl artikl = new Sloj_pristupa_podacima.Artikl();
+            artikl = dgvSviArtikliNaSkladistu.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Artikl;
+            Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.BrisanjeArtikla(artikl);
+            OsvjeziPopisArtikala();
         }
 
         private void uiActionAzuriranje_Click(object sender, EventArgs e)
