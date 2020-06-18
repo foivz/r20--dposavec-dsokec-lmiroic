@@ -30,7 +30,6 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
         {
             using (var db = new CarDealershipandServiceEntities())
             {
-
                 db.Artikls.Add(artikl);
                 db.SaveChanges();
             }
@@ -46,10 +45,21 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
         }
         public static void AzurirajArtikl(Artikl artikl)
         {
+            int id_artikla = artikl.id_artikl;
             using (var db = new CarDealershipandServiceEntities())
             {
-                var selectedItem = db.Artikls.Where(t => t.id_artikl == artikl.id_artikl).FirstOrDefault();
-                db.Artikls.Attach(selectedItem);
+                Artikl artikl1 = (from a in db.Artikls
+                                    where a.id_artikl == id_artikla
+                                    select a).SingleOrDefault();
+                db.Artikls.Attach(artikl1);
+                artikl1.id_artikl = artikl.id_artikl;
+                artikl1.godina_proizvodnje = artikl.godina_proizvodnje;
+                artikl1.naziv_artikla = artikl.naziv_artikla;
+                artikl1.opis_artikla = artikl.opis_artikla;
+                artikl1.snaga_vozila = artikl.snaga_vozila;
+                artikl1.vrsta_artikla = artikl.vrsta_artikla;
+                artikl1.vrsta_goriva = artikl.vrsta_goriva;
+                artikl1.cijena_artikla = artikl.cijena_artikla;
                 db.SaveChanges();
             }
         }
