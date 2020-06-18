@@ -46,6 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.uiInputVrstaGoriva = new System.Windows.Forms.ComboBox();
+            this.uiActionAzurirajVozilo = new System.Windows.Forms.Button();
             this.panelKreirajArtiklHeader.SuspendLayout();
             this.panelKreirajArtiklFooter.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // panelKreirajArtiklFooter
             // 
+            this.panelKreirajArtiklFooter.Controls.Add(this.uiActionAzurirajVozilo);
             this.panelKreirajArtiklFooter.Controls.Add(this.uiActionSpremi);
             this.panelKreirajArtiklFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelKreirajArtiklFooter.Location = new System.Drawing.Point(0, 350);
@@ -87,7 +89,7 @@
             this.uiActionSpremi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionSpremi.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiActionSpremi.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionSpremi.Location = new System.Drawing.Point(300, 14);
+            this.uiActionSpremi.Location = new System.Drawing.Point(127, 21);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(201, 52);
             this.uiActionSpremi.TabIndex = 0;
@@ -209,6 +211,21 @@
             this.uiInputVrstaGoriva.Size = new System.Drawing.Size(204, 21);
             this.uiInputVrstaGoriva.TabIndex = 7;
             // 
+            // uiActionAzurirajVozilo
+            // 
+            this.uiActionAzurirajVozilo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uiActionAzurirajVozilo.FlatAppearance.BorderSize = 0;
+            this.uiActionAzurirajVozilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionAzurirajVozilo.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionAzurirajVozilo.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionAzurirajVozilo.Location = new System.Drawing.Point(476, 21);
+            this.uiActionAzurirajVozilo.Name = "uiActionAzurirajVozilo";
+            this.uiActionAzurirajVozilo.Size = new System.Drawing.Size(201, 52);
+            this.uiActionAzurirajVozilo.TabIndex = 1;
+            this.uiActionAzurirajVozilo.Text = "Ažuriraj";
+            this.uiActionAzurirajVozilo.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajVozilo.Click += new System.EventHandler(this.uiActionAzurirajVozilo_Click);
+            // 
             // FormKreirajVozilo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,5 +279,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox uiInputVrstaGoriva;
+        private System.Windows.Forms.Button uiActionAzurirajVozilo;
     }
 }
