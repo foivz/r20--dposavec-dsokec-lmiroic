@@ -43,23 +43,27 @@ namespace Prezentacijski_sloj
 
         private void FormKreirajArtikl_Load(object sender, EventArgs e)
         {
-            if (proslijedeniArtikl!=null)
+            if (VrsteGoriva.SveVrsteGoriva.Count==0)
             {
+                VrsteGoriva.SveVrsteGoriva.Add(new VrsteGoriva { Gorivo = 1, VrstaGoriva = "Dizel" });
+                VrsteGoriva.SveVrsteGoriva.Add(new VrsteGoriva { Gorivo = 2, VrstaGoriva = "Benzin" });
+                VrsteGoriva.SveVrsteGoriva.Add(new VrsteGoriva { Gorivo = 3, VrstaGoriva = "Hybrid" });
+                VrsteGoriva.SveVrsteGoriva.Add(new VrsteGoriva { Gorivo = 4, VrstaGoriva = "Elektricni" });
+            }
+            
+            uiInputVrstaGoriva.DataSource = VrsteGoriva.SveVrsteGoriva;
+            if (proslijedeniArtikl != null)
+            {             
                 uiInputGodinaProizvodnje.Text = proslijedeniArtikl.godina_proizvodnje.ToString();
                 uiInputEmisijaVozila.Text = proslijedeniArtikl.emisija_vozila.ToString();
                 uiInputSnagaVozila.Text = proslijedeniArtikl.snaga_vozila.ToString();
                 uiInputOpisArtikla.Text = proslijedeniArtikl.opis_artikla;
-                uiInputVrstaGoriva.SelectedItem= proslijedeniArtikl.vrsta_goriva;
+                uiInputVrstaGoriva.SelectedIndex = (int)proslijedeniArtikl.vrsta_goriva - 1;
                 uiInputNazivArtikla.Text = proslijedeniArtikl.naziv_artikla;
                 uiInputCijenaArtikla.Text = proslijedeniArtikl.cijena_artikla.ToString();
-                
+
             }
-            VrsteGoriva.SveVrsteGoriva.Add(new VrsteGoriva { Gorivo = 1, VrstaGoriva = "Dizel" });
-            VrsteGoriva.SveVrsteGoriva.Add(new VrsteGoriva { Gorivo = 2, VrstaGoriva = "Benzin" });
-            VrsteGoriva.SveVrsteGoriva.Add(new VrsteGoriva { Gorivo = 3, VrstaGoriva = "Hybrid" });
-            VrsteGoriva.SveVrsteGoriva.Add(new VrsteGoriva { Gorivo = 4, VrstaGoriva = "Elektricni" });
-            uiInputVrstaGoriva.DataSource = VrsteGoriva.SveVrsteGoriva;
-             
+                      
         }
 
         private void uiActionSpremi_Click(object sender, EventArgs e)
@@ -77,8 +81,7 @@ namespace Prezentacijski_sloj
                 artikl.vrsta_artikla = 2;
             }
             Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl);
-            FormUpravljanjeSkladistem.OsvjeziPopisArtikala();           
-            
+            FormUpravljanjeSkladistem.OsvjeziPopisArtikala();         
         }
 
         private void uiActionAzurirajVozilo_Click(object sender, EventArgs e)

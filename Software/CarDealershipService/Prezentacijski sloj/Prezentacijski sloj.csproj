@@ -68,6 +68,12 @@
     <Compile Include="FormIzdajDokumente.Designer.cs">
       <DependentUpon>FormIzdajDokumente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKreirajKorisnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajKorisnika.Designer.cs">
+      <DependentUpon>FormKreirajKorisnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKreirajRezervniDio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormIzdajDokumente.resx">
       <DependentUpon>FormIzdajDokumente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajKorisnika.resx">
+      <DependentUpon>FormKreirajKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKreirajRezervniDio.resx">
       <DependentUpon>FormKreirajRezervniDio.cs</DependentUpon>
