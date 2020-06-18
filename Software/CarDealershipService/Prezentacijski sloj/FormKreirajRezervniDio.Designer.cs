@@ -35,11 +35,12 @@
             this.uiInputGodinaProizvodnjeDijela = new System.Windows.Forms.TextBox();
             this.uiInputOpisRezervnogDijela = new System.Windows.Forms.TextBox();
             this.uiInputNazivRezervnogDijela = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.uiInputCijenaRezervnogDijela = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.uiInputCijenaRezervnogDijela = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.panelKreirajRezervniDioHeader.SuspendLayout();
             this.panelKreirajRezervniDioFooter.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // panelKreirajRezervniDioFooter
             // 
+            this.panelKreirajRezervniDioFooter.Controls.Add(this.uiActionAzuriraj);
             this.panelKreirajRezervniDioFooter.Controls.Add(this.uiActionSpremi);
             this.panelKreirajRezervniDioFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelKreirajRezervniDioFooter.Location = new System.Drawing.Point(0, 350);
@@ -81,7 +83,7 @@
             this.uiActionSpremi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionSpremi.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiActionSpremi.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionSpremi.Location = new System.Drawing.Point(300, 14);
+            this.uiActionSpremi.Location = new System.Drawing.Point(137, 27);
             this.uiActionSpremi.Name = "uiActionSpremi";
             this.uiActionSpremi.Size = new System.Drawing.Size(201, 52);
             this.uiActionSpremi.TabIndex = 0;
@@ -111,12 +113,12 @@
             this.uiInputNazivRezervnogDijela.Size = new System.Drawing.Size(193, 20);
             this.uiInputNazivRezervnogDijela.TabIndex = 6;
             // 
-            // textBox4
+            // uiInputCijenaRezervnogDijela
             // 
-            this.textBox4.Location = new System.Drawing.Point(455, 241);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 6;
+            this.uiInputCijenaRezervnogDijela.Location = new System.Drawing.Point(455, 241);
+            this.uiInputCijenaRezervnogDijela.Name = "uiInputCijenaRezervnogDijela";
+            this.uiInputCijenaRezervnogDijela.Size = new System.Drawing.Size(193, 20);
+            this.uiInputCijenaRezervnogDijela.TabIndex = 6;
             // 
             // label2
             // 
@@ -145,25 +147,40 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Naziv artikla";
             // 
-            // uiInputCijenaRezervnogDijela
+            // label5
             // 
-            this.uiInputCijenaRezervnogDijela.AutoSize = true;
-            this.uiInputCijenaRezervnogDijela.Location = new System.Drawing.Point(452, 225);
-            this.uiInputCijenaRezervnogDijela.Name = "uiInputCijenaRezervnogDijela";
-            this.uiInputCijenaRezervnogDijela.Size = new System.Drawing.Size(67, 13);
-            this.uiInputCijenaRezervnogDijela.TabIndex = 7;
-            this.uiInputCijenaRezervnogDijela.Text = "Cijena artikla";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(452, 225);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Cijena artikla";
+            // 
+            // uiActionAzuriraj
+            // 
+            this.uiActionAzuriraj.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uiActionAzuriraj.FlatAppearance.BorderSize = 0;
+            this.uiActionAzuriraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionAzuriraj.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionAzuriraj.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionAzuriraj.Location = new System.Drawing.Point(474, 27);
+            this.uiActionAzuriraj.Name = "uiActionAzuriraj";
+            this.uiActionAzuriraj.Size = new System.Drawing.Size(201, 52);
+            this.uiActionAzuriraj.TabIndex = 1;
+            this.uiActionAzuriraj.Text = "Ažuriraj";
+            this.uiActionAzuriraj.UseVisualStyleBackColor = true;
+            this.uiActionAzuriraj.Click += new System.EventHandler(this.uiActionAzuriraj_Click);
             // 
             // FormKreirajRezervniDio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.uiInputCijenaRezervnogDijela);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.uiInputCijenaRezervnogDijela);
             this.Controls.Add(this.uiInputNazivRezervnogDijela);
             this.Controls.Add(this.uiInputOpisRezervnogDijela);
             this.Controls.Add(this.uiInputGodinaProizvodnjeDijela);
@@ -172,6 +189,7 @@
             this.Name = "FormKreirajRezervniDio";
             this.Text = "FormKreirajRezervniDio";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajRezervniDio_FormClosed);
+            this.Load += new System.EventHandler(this.FormKreirajRezervniDio_Load);
             this.panelKreirajRezervniDioHeader.ResumeLayout(false);
             this.panelKreirajRezervniDioHeader.PerformLayout();
             this.panelKreirajRezervniDioFooter.ResumeLayout(false);
@@ -189,10 +207,11 @@
         private System.Windows.Forms.TextBox uiInputGodinaProizvodnjeDijela;
         private System.Windows.Forms.TextBox uiInputOpisRezervnogDijela;
         private System.Windows.Forms.TextBox uiInputNazivRezervnogDijela;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox uiInputCijenaRezervnogDijela;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label uiInputCijenaRezervnogDijela;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button uiActionAzuriraj;
     }
 }
