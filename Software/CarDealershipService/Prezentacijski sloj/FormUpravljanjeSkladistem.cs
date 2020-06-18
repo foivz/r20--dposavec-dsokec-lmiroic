@@ -72,15 +72,17 @@ namespace Prezentacijski_sloj
             dgvSviArtikliNaSkladistu.Columns[10].Visible = false;
             dgvSviArtikliNaSkladistu.Columns[11].Visible = false;
         }
-        private void PrikaziFormu(Form form, object sender)
+        private void PrikaziFormuAzuriranjeRezervnogDijela(FormKreirajRezervniDio form, object sender,Sloj_pristupa_podacima.Artikl artikl)
         {
+            form.proslijedeniArtikl = artikl;
+            form.FormUpravljanjeSkladistem = this;
             form.MdiParent = this.MdiParent;
             form.StartPosition = FormStartPosition.CenterScreen;
             ActivateButton(sender);
             form.Show();
             form.Activate();
         }
-        private void PrikazForme(FormKreirajVozilo form, object sender)
+        private void PrikazFormeKreirajVozilo(FormKreirajVozilo form, object sender)
         {
             form.FormUpravljanjeSkladistem = this;
             form.MdiParent = this.MdiParent;
@@ -89,7 +91,25 @@ namespace Prezentacijski_sloj
             form.Show();
             form.Activate();
         }
-
+        private void PrikaziFormuAzuriranjeVozila(FormKreirajVozilo form, object sender,Sloj_pristupa_podacima.Artikl artikl)
+        {
+            form.proslijedeniArtikl = artikl;
+            form.FormUpravljanjeSkladistem = this;
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            ActivateButton(sender);
+            form.Show();
+            form.Activate();
+        }
+        private void PrikaziFormuRezervniDio(FormKreirajRezervniDio form, object sender)
+        {
+            form.FormUpravljanjeSkladistem = this;
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            ActivateButton(sender);
+            form.Show();
+            form.Activate();
+        }
         private void uiActionBrisanje_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
@@ -102,17 +122,24 @@ namespace Prezentacijski_sloj
         private void uiActionAzuriranje_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            Sloj_pristupa_podacima.Artikl artikl = new Sloj_pristupa_podacima.Artikl();
+            artikl = dgvSviArtikliNaSkladistu.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Artikl;
+            if (artikl.vrsta_artikla==2)
+            {
+                PrikaziFormuAzuriranjeVozila(FormKreirajVozilo.Instance, sender,artikl);
+            }
+            else
+                PrikaziFormuAzuriranjeRezervnogDijela(FormKreirajRezervniDio.instance, sender,artikl);
         }
 
         private void uiActionKreiraj_Click(object sender, EventArgs e)
         {
-            
-            PrikazForme(FormKreirajVozilo.Instance, sender);
+            PrikazFormeKreirajVozilo(FormKreirajVozilo.Instance, sender);
         }
 
         private void uiActionKreiranjeRezervnogDijela_Click(object sender, EventArgs e)
         {
-            PrikaziFormu(FormKreirajRezervniDio.instance, sender);
+            PrikaziFormuRezervniDio(FormKreirajRezervniDio.instance, sender);
         }
         public void OsvjeziPopisArtikala()
         {
