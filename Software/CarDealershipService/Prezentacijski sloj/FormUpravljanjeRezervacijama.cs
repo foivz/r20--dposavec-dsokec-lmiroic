@@ -74,8 +74,9 @@ namespace Prezentacijski_sloj
                 }
             }
         }
-        private void PrikazForme(Form form, object sender)
+        private void PrikazForme(FormKreirajRezervaciju form, object sender)
         {
+            form.FormUpravljanjeRezervacijama = this;
             form.MdiParent = this.MdiParent;
             form.StartPosition = FormStartPosition.CenterScreen;
             ActivateButton(sender);
@@ -83,19 +84,46 @@ namespace Prezentacijski_sloj
             form.Activate();
         }
 
-        private void uiActionAzuriranjRervacije_Click(object sender, EventArgs e)
+        private void uiActionAzuriranjeRezervacije_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            Sloj_pristupa_podacima.Dokument dokument = new Sloj_pristupa_podacima.Dokument();
+            dokument = dgvUpravRezervacijamaSveRezervacije.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Dokument;              
+            PrikazFormeAzuriranjaRezervacije(FormKreirajRezervaciju.Instance, sender, dokument);
+            
+        }
+        private void PrikazFormeAzuriranjaRezervacije(FormKreirajRezervaciju form, object sender,Sloj_pristupa_podacima.Dokument dokument)
+        {
+            form.proslijedeniDokument = dokument;
+            form.FormUpravljanjeRezervacijama = this;
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            ActivateButton(sender);
+            form.Show();
+            form.Activate();
         }
 
         private void uiActionObrisiRezervacije_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+            Sloj_pristupa_podacima.Dokument dokument = new Sloj_pristupa_podacima.Dokument();
+            dokument = dgvUpravRezervacijamaSveRezervacije.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Dokument;
+            Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.BrisanjeRezervacije(dokument);
+            OsvjeziPrikaz();
         }
 
         private void uiActionKreirajRezervaciju_Click(object sender, EventArgs e)
         {
             PrikazForme(FormKreirajRezervaciju.Instance, sender);
+        }
+        public void OsvjeziPrikaz()
+        {
+            dgvUpravRezervacijamaSveRezervacije.DataSource = null;
+            dgvUpravRezervacijamaSveRezervacije.DataSource = Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.DohvatiSveRezervacije();
+            dgvUpravRezervacijamaSveRezervacije.Columns[7].Visible = false;
+            dgvUpravRezervacijamaSveRezervacije.Columns[8].Visible = false;
+            dgvUpravRezervacijamaSveRezervacije.Columns[9].Visible = false;
+            dgvUpravRezervacijamaSveRezervacije.Columns[10].Visible = false;
         }
     }
 }

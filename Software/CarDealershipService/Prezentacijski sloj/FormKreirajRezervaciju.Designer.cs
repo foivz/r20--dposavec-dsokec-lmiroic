@@ -30,20 +30,17 @@
         {
             this.panelKreirajRezervacijuHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.uiInputTipDokumenta = new System.Windows.Forms.TextBox();
-            this.uiInputUkupniSaldo = new System.Windows.Forms.TextBox();
-            this.uiInputZaposlenik = new System.Windows.Forms.TextBox();
             this.uiInputOpisDokumenta = new System.Windows.Forms.TextBox();
             this.dateTimeInputDatumIzdavanja = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.paneKreirajRezervacijuFooter = new System.Windows.Forms.Panel();
             this.uiACtionSpremiRezervaciju = new System.Windows.Forms.Button();
             this.cbInputKorisnik = new System.Windows.Forms.ComboBox();
+            this.cbInputZaposlenik = new System.Windows.Forms.ComboBox();
+            this.uiActionAzurirajRezervaciju = new System.Windows.Forms.Button();
             this.panelKreirajRezervacijuHeader.SuspendLayout();
             this.paneKreirajRezervacijuFooter.SuspendLayout();
             this.SuspendLayout();
@@ -68,32 +65,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Kreiraj rezervaciju";
             // 
-            // uiInputTipDokumenta
-            // 
-            this.uiInputTipDokumenta.Location = new System.Drawing.Point(518, 171);
-            this.uiInputTipDokumenta.Name = "uiInputTipDokumenta";
-            this.uiInputTipDokumenta.Size = new System.Drawing.Size(147, 20);
-            this.uiInputTipDokumenta.TabIndex = 3;
-            // 
-            // uiInputUkupniSaldo
-            // 
-            this.uiInputUkupniSaldo.Location = new System.Drawing.Point(166, 271);
-            this.uiInputUkupniSaldo.Name = "uiInputUkupniSaldo";
-            this.uiInputUkupniSaldo.Size = new System.Drawing.Size(147, 20);
-            this.uiInputUkupniSaldo.TabIndex = 3;
-            // 
-            // uiInputZaposlenik
-            // 
-            this.uiInputZaposlenik.Location = new System.Drawing.Point(518, 271);
-            this.uiInputZaposlenik.Name = "uiInputZaposlenik";
-            this.uiInputZaposlenik.Size = new System.Drawing.Size(147, 20);
-            this.uiInputZaposlenik.TabIndex = 3;
-            // 
             // uiInputOpisDokumenta
             // 
             this.uiInputOpisDokumenta.Location = new System.Drawing.Point(166, 222);
+            this.uiInputOpisDokumenta.Multiline = true;
             this.uiInputOpisDokumenta.Name = "uiInputOpisDokumenta";
-            this.uiInputOpisDokumenta.Size = new System.Drawing.Size(147, 20);
+            this.uiInputOpisDokumenta.Size = new System.Drawing.Size(147, 68);
             this.uiInputOpisDokumenta.TabIndex = 3;
             // 
             // dateTimeInputDatumIzdavanja
@@ -121,28 +98,10 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Opis dokumenta";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(163, 255);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Ukupni saldo";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(515, 155);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Tip dokumenta";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(515, 205);
+            this.label6.Location = new System.Drawing.Point(508, 159);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 5;
@@ -151,7 +110,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(515, 255);
+            this.label7.Location = new System.Drawing.Point(508, 209);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 5;
@@ -159,6 +118,7 @@
             // 
             // paneKreirajRezervacijuFooter
             // 
+            this.paneKreirajRezervacijuFooter.Controls.Add(this.uiActionAzurirajRezervaciju);
             this.paneKreirajRezervacijuFooter.Controls.Add(this.uiACtionSpremiRezervaciju);
             this.paneKreirajRezervacijuFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.paneKreirajRezervacijuFooter.Location = new System.Drawing.Point(0, 350);
@@ -173,39 +133,58 @@
             this.uiACtionSpremiRezervaciju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiACtionSpremiRezervaciju.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiACtionSpremiRezervaciju.ForeColor = System.Drawing.Color.LightGray;
-            this.uiACtionSpremiRezervaciju.Location = new System.Drawing.Point(324, 19);
+            this.uiACtionSpremiRezervaciju.Location = new System.Drawing.Point(457, 22);
             this.uiACtionSpremiRezervaciju.Name = "uiACtionSpremiRezervaciju";
-            this.uiACtionSpremiRezervaciju.Size = new System.Drawing.Size(162, 58);
+            this.uiACtionSpremiRezervaciju.Size = new System.Drawing.Size(201, 52);
             this.uiACtionSpremiRezervaciju.TabIndex = 0;
             this.uiACtionSpremiRezervaciju.Text = "Spremi ";
             this.uiACtionSpremiRezervaciju.UseVisualStyleBackColor = true;
+            this.uiACtionSpremiRezervaciju.Click += new System.EventHandler(this.uiACtionSpremiRezervaciju_Click);
             // 
             // cbInputKorisnik
             // 
             this.cbInputKorisnik.FormattingEnabled = true;
-            this.cbInputKorisnik.Location = new System.Drawing.Point(518, 220);
+            this.cbInputKorisnik.Location = new System.Drawing.Point(511, 174);
             this.cbInputKorisnik.Name = "cbInputKorisnik";
             this.cbInputKorisnik.Size = new System.Drawing.Size(147, 21);
             this.cbInputKorisnik.TabIndex = 7;
+            // 
+            // cbInputZaposlenik
+            // 
+            this.cbInputZaposlenik.FormattingEnabled = true;
+            this.cbInputZaposlenik.Location = new System.Drawing.Point(511, 223);
+            this.cbInputZaposlenik.Name = "cbInputZaposlenik";
+            this.cbInputZaposlenik.Size = new System.Drawing.Size(147, 21);
+            this.cbInputZaposlenik.TabIndex = 8;
+            // 
+            // uiActionAzurirajRezervaciju
+            // 
+            this.uiActionAzurirajRezervaciju.FlatAppearance.BorderSize = 0;
+            this.uiActionAzurirajRezervaciju.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionAzurirajRezervaciju.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionAzurirajRezervaciju.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionAzurirajRezervaciju.Location = new System.Drawing.Point(126, 22);
+            this.uiActionAzurirajRezervaciju.Name = "uiActionAzurirajRezervaciju";
+            this.uiActionAzurirajRezervaciju.Size = new System.Drawing.Size(201, 52);
+            this.uiActionAzurirajRezervaciju.TabIndex = 1;
+            this.uiActionAzurirajRezervaciju.Text = "Azuriraj";
+            this.uiActionAzurirajRezervaciju.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajRezervaciju.Click += new System.EventHandler(this.uiActionAzurirajRezervaciju_Click);
             // 
             // FormKreirajRezervaciju
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbInputZaposlenik);
             this.Controls.Add(this.cbInputKorisnik);
             this.Controls.Add(this.paneKreirajRezervacijuFooter);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimeInputDatumIzdavanja);
             this.Controls.Add(this.uiInputOpisDokumenta);
-            this.Controls.Add(this.uiInputZaposlenik);
-            this.Controls.Add(this.uiInputUkupniSaldo);
-            this.Controls.Add(this.uiInputTipDokumenta);
             this.Controls.Add(this.panelKreirajRezervacijuHeader);
             this.Name = "FormKreirajRezervaciju";
             this.Text = "FormKreirajRezervaciju";
@@ -223,19 +202,16 @@
 
         private System.Windows.Forms.Panel panelKreirajRezervacijuHeader;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox uiInputTipDokumenta;
-        private System.Windows.Forms.TextBox uiInputUkupniSaldo;
-        private System.Windows.Forms.TextBox uiInputZaposlenik;
         private System.Windows.Forms.TextBox uiInputOpisDokumenta;
         private System.Windows.Forms.DateTimePicker dateTimeInputDatumIzdavanja;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel paneKreirajRezervacijuFooter;
         private System.Windows.Forms.Button uiACtionSpremiRezervaciju;
         private System.Windows.Forms.ComboBox cbInputKorisnik;
+        private System.Windows.Forms.ComboBox cbInputZaposlenik;
+        private System.Windows.Forms.Button uiActionAzurirajRezervaciju;
     }
 }
