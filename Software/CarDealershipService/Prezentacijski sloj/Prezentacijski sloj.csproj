@@ -68,7 +68,6 @@
     <Compile Include="FormIzdajDokumente.Designer.cs">
       <DependentUpon>FormIzdajDokumente.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="FormKreirajKorisnika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,15 +77,15 @@
     <Compile Include="FormKreirajRezervniDio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormKreirajRezervniDio.Designer.cs">
-      <DependentUpon>FormKreirajRezervniDio.cs</DependentUpon>
-=======
+  <Compile Include="FormKreirajRezervniDio.Designer.cs">
+    <DependentUpon>FormKreirajRezervniDio.cs</DependentUpon>
+  </Compile>
     <Compile Include="FormKreirajRezervaciju.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormKreirajRezervaciju.Designer.cs">
       <DependentUpon>FormKreirajRezervaciju.cs</DependentUpon>
->>>>>>> UpravljanjeRezervacijama
+
     </Compile>
     <Compile Include="FormKreirajVozilo.cs">
       <SubType>Form</SubType>
@@ -147,16 +146,14 @@
     <EmbeddedResource Include="FormIzdajDokumente.resx">
       <DependentUpon>FormIzdajDokumente.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="FormKreirajKorisnika.resx">
       <DependentUpon>FormKreirajKorisnika.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormKreirajRezervniDio.resx">
-      <DependentUpon>FormKreirajRezervniDio.cs</DependentUpon>
-=======
+      <EmbeddedResource Include="FormKreirajRezervniDio.resx">
+        <DependentUpon>FormKreirajRezervniDio.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="FormKreirajRezervaciju.resx">
       <DependentUpon>FormKreirajRezervaciju.cs</DependentUpon>
->>>>>>> UpravljanjeRezervacijama
     </EmbeddedResource>
     <EmbeddedResource Include="FormKreirajVozilo.resx">
       <DependentUpon>FormKreirajVozilo.cs</DependentUpon>

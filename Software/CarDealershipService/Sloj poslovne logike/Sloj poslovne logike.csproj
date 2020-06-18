@@ -55,12 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesija.cs" />
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicimaBLL.cs" />
-<<<<<<< HEAD
     <Compile Include="UpravljanjeSkladistem\ParserVrsteArtikla.cs" />
-=======
     <Compile Include="UpravljanjeRezervacijama\Korisnik.cs" />
     <Compile Include="UpravljanjeRezervacijama\ParserKorisnik.cs" />
->>>>>>> UpravljanjeRezervacijama
     <Compile Include="UpravljanjeSkladistem\UpravljanjeSkladistemBLL.cs" />
     <Compile Include="UpravljanjeSkladistem\VrstaArtikla.cs" />
     <Compile Include="UpravljanjeSkladistem\VrsteGoriva.cs" />
