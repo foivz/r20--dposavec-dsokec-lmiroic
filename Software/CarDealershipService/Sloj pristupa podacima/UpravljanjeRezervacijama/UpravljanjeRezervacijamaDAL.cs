@@ -21,5 +21,40 @@ namespace Sloj_pristupa_podacima.UpravljanjeRezervacijama
             return SveRezervacije;
         }
 
+        public static void KreirajRezervaciju(Dokument rezervacija)
+        {
+            using(var db = new CarDealershipandServiceEntities())
+            {
+                db.Dokuments.Add(rezervacija);
+                db.SaveChanges();
+            }
+        }
+        public static void BrisanjeRezervacije(Dokument dokument)
+        {
+            using(var db=new CarDealershipandServiceEntities())
+            {
+                var selectedItem = db.Dokuments.Where(d => d.id_dokument == dokument.id_dokument).FirstOrDefault();
+                db.Dokuments.Remove(selectedItem);
+                db.SaveChanges();
+            }
+        }
+        public static void AzurirajRezervaciju(Dokument dokument)
+        {
+            int id_dokument = dokument.id_dokument;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                Dokument dokumenti = (from d in db.Dokuments
+                                     where d.id_dokument == id_dokument
+                                     select d).SingleOrDefault();
+                db.Dokuments.Attach(dokumenti);
+                dokumenti.id_dokument = dokument.id_dokument;
+                dokumenti.datum_izdavanja = dokument.datum_izdavanja;
+                dokumenti.opis_dokumenta = dokument.opis_dokumenta;
+                dokumenti.korisnik = dokument.korisnik;
+                dokumenti.zaposlenik = dokument.zaposlenik;
+                db.SaveChanges();
+            }
+        }
+
     }
 }

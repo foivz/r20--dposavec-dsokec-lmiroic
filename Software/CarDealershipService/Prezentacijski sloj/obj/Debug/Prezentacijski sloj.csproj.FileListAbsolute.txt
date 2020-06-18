@@ -55,5 +55,10 @@ C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipServi
 C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski sloj.pdb
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\Sloj poslovne logike.dll.config
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormKreirajVozilo.resources
+<<<<<<< HEAD
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormKreirajRezervniDio.resources
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormKreirajKorisnika.resources
+=======
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormKreirajVozilo.resources
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormKreirajRezervaciju.resources
+>>>>>>> UpravljanjeRezervacijama

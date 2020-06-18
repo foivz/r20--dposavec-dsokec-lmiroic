@@ -95,7 +95,7 @@
             this.uiActionAzuriranjRervacije.TabIndex = 0;
             this.uiActionAzuriranjRervacije.Text = "Azuriraj rezervaciju";
             this.uiActionAzuriranjRervacije.UseVisualStyleBackColor = true;
-            this.uiActionAzuriranjRervacije.Click += new System.EventHandler(this.uiActionAzuriranjRervacije_Click);
+            this.uiActionAzuriranjRervacije.Click += new System.EventHandler(this.uiActionAzuriranjeRezervacije_Click);
             // 
             // uiActionObrisiRezervacije
             // 
