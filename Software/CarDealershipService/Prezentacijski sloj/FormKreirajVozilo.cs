@@ -39,6 +39,7 @@ namespace Prezentacijski_sloj
         private void FormKreirajArtikl_FormClosed(object sender, FormClosedEventArgs e)
         {
             _Instance = null;
+            proslijedeniArtikl = null;
         }
 
         private void FormKreirajArtikl_Load(object sender, EventArgs e)
@@ -53,7 +54,7 @@ namespace Prezentacijski_sloj
             
             uiInputVrstaGoriva.DataSource = VrsteGoriva.SveVrsteGoriva;
             if (proslijedeniArtikl != null)
-            {             
+            {
                 uiInputGodinaProizvodnje.Text = proslijedeniArtikl.godina_proizvodnje.ToString();
                 uiInputEmisijaVozila.Text = proslijedeniArtikl.emisija_vozila.ToString();
                 uiInputSnagaVozila.Text = proslijedeniArtikl.snaga_vozila.ToString();
@@ -61,8 +62,14 @@ namespace Prezentacijski_sloj
                 uiInputVrstaGoriva.SelectedIndex = (int)proslijedeniArtikl.vrsta_goriva - 1;
                 uiInputNazivArtikla.Text = proslijedeniArtikl.naziv_artikla;
                 uiInputCijenaArtikla.Text = proslijedeniArtikl.cijena_artikla.ToString();
-
+                uiActionSpremi.Enabled = false;
             }
+            else
+            {
+                uiActionAzurirajVozilo.Enabled = false;
+                uiActionAzurirajVozilo.Hide();
+            }
+                
                       
         }
 
@@ -70,6 +77,7 @@ namespace Prezentacijski_sloj
         {
 
             Sloj_pristupa_podacima.Artikl artikl = new Sloj_pristupa_podacima.Artikl();
+            try
             {
                 artikl.godina_proizvodnje = int.Parse(uiInputGodinaProizvodnje.Text);
                 artikl.emisija_vozila = int.Parse(uiInputEmisijaVozila.Text);
@@ -79,14 +87,27 @@ namespace Prezentacijski_sloj
                 artikl.naziv_artikla = uiInputNazivArtikla.Text;
                 artikl.cijena_artikla = float.Parse(uiInputCijenaArtikla.Text);
                 artikl.vrsta_artikla = 2;
+                if (UpravljanjeSkladistemBLL.ProvjeraUnosaVozila(artikl) == true)
+                {
+                    Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl);
+                    FormUpravljanjeSkladistem.OsvjeziPopisArtikala();
+                }
+                else
+                {
+                    MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
+                }
             }
-            Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl);
-            FormUpravljanjeSkladistem.OsvjeziPopisArtikala();         
+            catch (Exception)
+            {
+
+                MessageBox.Show("Morate unijeti sve parametre!");
+            }      
         }
 
         private void uiActionAzurirajVozilo_Click(object sender, EventArgs e)
         {
             Sloj_pristupa_podacima.Artikl artikl = new Sloj_pristupa_podacima.Artikl();
+            try
             {
                 artikl.id_artikl = proslijedeniArtikl.id_artikl;
                 artikl.godina_proizvodnje = int.Parse(uiInputGodinaProizvodnje.Text);
@@ -97,10 +118,22 @@ namespace Prezentacijski_sloj
                 artikl.naziv_artikla = uiInputNazivArtikla.Text;
                 artikl.cijena_artikla = float.Parse(uiInputCijenaArtikla.Text);
                 artikl.vrsta_artikla = 2;
+                if (UpravljanjeSkladistemBLL.ProvjeraUnosaVozila(artikl) == true)
+                {
+                    Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.AzurirajArtikl(artikl);
+                    FormUpravljanjeSkladistem.OsvjeziPopisArtikala();
+                }
+                else
+                {
+                    MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
+                }
             }
-            Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.AzurirajArtikl(artikl);
-            FormUpravljanjeSkladistem.OsvjeziPopisArtikala();
-            proslijedeniArtikl = null;
+            catch (Exception)
+            {
+
+                MessageBox.Show("Morate unijeti sve parametre!");
+            }            
+            
         }
     }
 }
