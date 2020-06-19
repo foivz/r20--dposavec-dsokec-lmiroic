@@ -41,6 +41,8 @@ namespace Prezentacijski_sloj
         {
             dgvUpravRezervacijamaSveRezervacije.DataSource = null;
             dgvUpravRezervacijamaSveRezervacije.DataSource = Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.DohvatiSveRezervacije();
+            dgvUpravRezervacijamaSveRezervacije.Columns[2].Width = 200;
+            dgvUpravRezervacijamaSveRezervacije.Columns[3].Visible = false;
             dgvUpravRezervacijamaSveRezervacije.Columns[7].Visible = false;
             dgvUpravRezervacijamaSveRezervacije.Columns[8].Visible = false;
             dgvUpravRezervacijamaSveRezervacije.Columns[9].Visible = false;
@@ -120,6 +122,8 @@ namespace Prezentacijski_sloj
         {
             dgvUpravRezervacijamaSveRezervacije.DataSource = null;
             dgvUpravRezervacijamaSveRezervacije.DataSource = Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.DohvatiSveRezervacije();
+            dgvUpravRezervacijamaSveRezervacije.Columns[3].Visible = false;
+            dgvUpravRezervacijamaSveRezervacije.Columns[2].Width = 200;
             dgvUpravRezervacijamaSveRezervacije.Columns[7].Visible = false;
             dgvUpravRezervacijamaSveRezervacije.Columns[8].Visible = false;
             dgvUpravRezervacijamaSveRezervacije.Columns[9].Visible = false;
