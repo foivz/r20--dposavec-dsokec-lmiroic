@@ -10,7 +10,7 @@ namespace Sloj_poslovne_logike.UpravljanjeRezervacijama
     {
         public static bool ProvjeraUnosaRezervacije(Sloj_pristupa_podacima.Dokument dokument)
         {
-            if (dokument.datum_izdavanja==null|| dokument.korisnik==null || dokument.opis_dokumenta=="" || dokument.ukupni_saldo<0)
+            if (dokument.datum_izdavanja==null|| dokument.korisnik==null || dokument.opis_dokumenta=="" || dokument.ukupni_saldo<=0)
             {
                 return false;
             }
