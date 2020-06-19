@@ -63,6 +63,7 @@ namespace Prezentacijski_sloj
                 uiInputNazivArtikla.Text = proslijedeniArtikl.naziv_artikla;
                 uiInputCijenaArtikla.Text = proslijedeniArtikl.cijena_artikla.ToString();
                 uiActionSpremi.Enabled = false;
+                uiActionSpremi.Hide();
             }
             else
             {

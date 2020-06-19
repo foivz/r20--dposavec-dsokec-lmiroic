@@ -75,6 +75,7 @@ namespace Prezentacijski_sloj
                 uiInputNazivRezervnogDijela.Text = proslijedeniArtikl.naziv_artikla;
                 uiInputOpisRezervnogDijela.Text = proslijedeniArtikl.opis_artikla;
                 uiActionSpremi.Enabled = false;
+                uiActionSpremi.Hide();
             }
             else
             {
