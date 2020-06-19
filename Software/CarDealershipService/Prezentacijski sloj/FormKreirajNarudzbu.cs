@@ -41,16 +41,17 @@ namespace Prezentacijski_sloj
 
         private void FormKreirajNarudzbu_Load(object sender, EventArgs e)
         {
-            cbInputKorisnikKreirajNarudzbu.DataSource = ParserKorisnik.ParsirajKorisnika();
-            cbInputZaposlenikKreirajNarudzbu.DataSource = ParserKorisnik.ParsirajKorisnika();
-
+            List<Korisnik> listaKorisnika = ParserKorisnik.ParsirajKorisnika();
+            List<Korisnik> listaZaposlenika = ParserKorisnik.ParsirajKorisnika();
+            cbInputKorisnikKreirajNarudzbu.DataSource = listaKorisnika;
+            cbInputZaposlenikKreirajNarudzbu.DataSource = listaZaposlenika;
             if (proslijedeniDokument != null)
             {
                 dateTimeInputDatumIzdavanjaKreirajNarudzbu.Value = proslijedeniDokument.datum_izdavanja;
                 uiInputOpisDokumentaKn.Text = proslijedeniDokument.opis_dokumenta.ToString();
                 uiInputUkupniSaldo.Text = proslijedeniDokument.ukupni_saldo.ToString();
-                cbInputKorisnikKreirajNarudzbu.SelectedIndex = (int)proslijedeniDokument.korisnik - 1;
-                cbInputZaposlenikKreirajNarudzbu.SelectedIndex = (int)proslijedeniDokument.zaposlenik-1;
+                cbInputKorisnikKreirajNarudzbu.SelectedIndex = listaKorisnika.IndexOf(listaKorisnika.Find(x => x.id_korisnik == proslijedeniDokument.korisnik));
+                cbInputZaposlenikKreirajNarudzbu.SelectedIndex = listaZaposlenika.IndexOf(listaZaposlenika.Find(x => x.id_korisnik == proslijedeniDokument.zaposlenik));
             }
         }
 

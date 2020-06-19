@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sloj_poslovne_logike.UpravljanjePoslovnicama;
 
 namespace Prezentacijski_sloj
 {
@@ -52,12 +53,13 @@ namespace Prezentacijski_sloj
 
         private void FormKreirajKorisnika_Load(object sender, EventArgs e)
         {
+            List<Poslovnica> listaPoslovnica = ParserPoslovnica.ParsirajPoslovnicu();
             panelUpravKorisnicimaHeader.BackColor = Color.FromArgb(45, 45, 48);
             panelUpravKorisnicimaFooter.BackColor = Color.FromArgb(45, 45, 48);
             uiInputTipKorisnika.DataSource = null;
             uiInputTipKorisnika.DataSource = Sloj_poslovne_logike.UpravljanjeKorisnicima.ParserTipKorisnika.ParsirajTipKorisnika();
             uiInputKorisnikovaPoslovnica.DataSource = null;
-            uiInputKorisnikovaPoslovnica.DataSource = Sloj_poslovne_logike.UpravljanjePoslovnicama.ParserPoslovnica.ParsirajPoslovnicu();
+            uiInputKorisnikovaPoslovnica.DataSource = listaPoslovnica;
             if (ProsljedeniKorisnik != null)
             {
                 uiInputImeKorisnika.Text = ProsljedeniKorisnik.ime_korisnika;
@@ -70,7 +72,7 @@ namespace Prezentacijski_sloj
                 uiInputTipKorisnika.SelectedIndex = (int)ProsljedeniKorisnik.tip_korisnika - 1;
                 if (ProsljedeniKorisnik.poslovnica!=null)
                 {
-                    uiInputKorisnikovaPoslovnica.SelectedIndex = (int)ProsljedeniKorisnik.poslovnica-1;
+                    uiInputKorisnikovaPoslovnica.SelectedIndex = listaPoslovnica.IndexOf(listaPoslovnica.Find(x => x.id_poslovnica == ProsljedeniKorisnik.poslovnica));
                 }
             }
 
