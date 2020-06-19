@@ -96,9 +96,17 @@ namespace Prezentacijski_sloj
             {
                 uiActionUpravljanjeKorisnicima.Enabled = false;
                 uiActionUpravljanjePoslovnicama.Enabled = false;
-            }
-            else
-                MessageBox.Show("Uspjesna prijava aministratora");
+            }           
+              
+        }
+
+        private void uiActionOdjava_Click(object sender, EventArgs e)
+        {
+            FormPrijava formPrijava = new FormPrijava();
+            this.Hide();
+            this.Close();
+            formPrijava.ShowDialog();
+            
         }
     }
 }

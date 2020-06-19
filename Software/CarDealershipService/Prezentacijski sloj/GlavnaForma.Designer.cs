@@ -40,6 +40,7 @@
             this.uiActionProdaja = new System.Windows.Forms.Button();
             this.panelGlFormaNaslov = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.uiActionOdjava = new System.Windows.Forms.Button();
             this.panelGlFormaIzbornik.SuspendLayout();
             this.panelGlFormaNaslov.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             // panelGlFormaIzbornik
             // 
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionOdjava);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjeNarudzbama);
             this.panelGlFormaIzbornik.Controls.Add(this.panelGlFormaLogo);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjePoslovnicama);
@@ -66,7 +68,7 @@
             this.panelGlFormaIzbornik.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelGlFormaIzbornik.Location = new System.Drawing.Point(0, 0);
             this.panelGlFormaIzbornik.Name = "panelGlFormaIzbornik";
-            this.panelGlFormaIzbornik.Size = new System.Drawing.Size(200, 450);
+            this.panelGlFormaIzbornik.Size = new System.Drawing.Size(200, 519);
             this.panelGlFormaIzbornik.TabIndex = 1;
             // 
             // uiActionUpravljanjeNarudzbama
@@ -188,11 +190,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Glavni izbornik";
             // 
+            // uiActionOdjava
+            // 
+            this.uiActionOdjava.FlatAppearance.BorderSize = 0;
+            this.uiActionOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionOdjava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionOdjava.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionOdjava.Location = new System.Drawing.Point(0, 413);
+            this.uiActionOdjava.Name = "uiActionOdjava";
+            this.uiActionOdjava.Size = new System.Drawing.Size(200, 45);
+            this.uiActionOdjava.TabIndex = 2;
+            this.uiActionOdjava.Text = "Odjava";
+            this.uiActionOdjava.UseVisualStyleBackColor = true;
+            this.uiActionOdjava.Click += new System.EventHandler(this.uiActionOdjava_Click);
+            // 
             // GlavnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 519);
             this.Controls.Add(this.panelGlFormaNaslov);
             this.Controls.Add(this.panelGlFormaIzbornik);
             this.IsMdiContainer = true;
@@ -220,5 +236,6 @@
         private System.Windows.Forms.Button uiActionProdaja;
         private System.Windows.Forms.Button uiActionUpravljanjeNarudzbama;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button uiActionOdjava;
     }
 }
