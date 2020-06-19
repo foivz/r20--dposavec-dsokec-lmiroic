@@ -54,7 +54,11 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesija.cs" />
+    <Compile Include="UpravljanjeKorisnicima\ParserTipKorisnika.cs" />
+    <Compile Include="UpravljanjeKorisnicima\TipKorisnika.cs" />
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicimaBLL.cs" />
+    <Compile Include="UpravljanjePoslovnicama\ParserPoslovnica.cs" />
+    <Compile Include="UpravljanjePoslovnicama\Poslovnica.cs" />
     <Compile Include="UpravljanjeSkladistem\ParserVrsteArtikla.cs" />
     <Compile Include="UpravljanjeRezervacijama\Korisnik.cs" />
     <Compile Include="UpravljanjeRezervacijama\ParserKorisnik.cs" />
