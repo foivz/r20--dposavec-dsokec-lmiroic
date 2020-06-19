@@ -85,6 +85,7 @@
             this.uiActionAzuriranje.TabIndex = 0;
             this.uiActionAzuriranje.Text = "Azuriranje korisnika";
             this.uiActionAzuriranje.UseVisualStyleBackColor = true;
+            this.uiActionAzuriranje.Click += new System.EventHandler(this.uiActionAzuriranje_Click);
             // 
             // uiActionKreiraj
             // 

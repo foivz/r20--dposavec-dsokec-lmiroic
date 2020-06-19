@@ -70,10 +70,24 @@ namespace Prezentacijski_sloj
             form.Show();
             form.Activate();
         }
+        private void PrikaziFormuAzuriranjeKorisnika(FormKreirajKorisnika form, object sender, Sloj_pristupa_podacima.Korisnik korisnik)
+        {
+            form.ProsljedeniKorisnik = korisnik;
+            form.FormUpravljanjeKorisnicima = this;
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            ActivateButton(sender);
+            form.Show();
+            form.Activate();
+        }
 
         private void uiActionBrisanje_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender);
+            Sloj_pristupa_podacima.Korisnik korisnik = new Sloj_pristupa_podacima.Korisnik();
+            korisnik = dgvUpravljanjeKorisnicima.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Korisnik;
+            Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.BrisanjeKorisnika(korisnik);
+            OsvjeziPopisKorisnika();
         }
 
         private void FormUpravljanjeKorisnicima_Load(object sender, EventArgs e)
@@ -92,6 +106,24 @@ namespace Prezentacijski_sloj
         private void uiActionKreiraj_Click(object sender, EventArgs e)
         {
             PrikazFormeKreirajKorisnika(FormKreirajKorisnika.Instance, sender);
+        }
+        public void OsvjeziPopisKorisnika()
+        {
+            dgvUpravljanjeKorisnicima.DataSource = null;
+            dgvUpravljanjeKorisnicima.DataSource = Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.DohvatiSveKorisnike();
+            dgvUpravljanjeKorisnicima.Columns[10].Visible = false;
+            dgvUpravljanjeKorisnicima.Columns[11].Visible = false;
+            dgvUpravljanjeKorisnicima.Columns[12].Visible = false;
+            dgvUpravljanjeKorisnicima.Columns[13].Visible = false;
+            dgvUpravljanjeKorisnicima.Columns[14].Visible = false;
+        }
+
+        private void uiActionAzuriranje_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            Sloj_pristupa_podacima.Korisnik korisnik = new Sloj_pristupa_podacima.Korisnik();
+            korisnik = dgvUpravljanjeKorisnicima.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Korisnik;
+            PrikaziFormuAzuriranjeKorisnika(FormKreirajKorisnika.Instance, sender, korisnik);
         }
     }
 }
