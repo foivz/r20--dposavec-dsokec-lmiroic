@@ -107,6 +107,7 @@
       <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
     </Compile>
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicima.cs" />
+    <Compile Include="UpravljanjeNarudzbama\UpravljanjeNarudzbamaDAL.cs" />
     <Compile Include="UpravljanjeRezervacijama\UpravljanjeRezervacijamaDAL.cs" />
     <Compile Include="UpravljanjeSkladistem\UpravljanjeSkladistemDAL.cs" />
     <Compile Include="Usluga.cs">

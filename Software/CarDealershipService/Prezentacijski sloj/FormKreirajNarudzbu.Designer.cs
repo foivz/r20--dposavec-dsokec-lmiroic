@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelKreirajNarudzbuHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelKreirajNarudzbuFooter = new System.Windows.Forms.Panel();
             this.uiActionSpremiNarudzbu = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimeInputDatumIzdavanjaKreirajNarudzbu = new System.Windows.Forms.DateTimePicker();
+            this.uiInputOpisDokumentaKn = new System.Windows.Forms.TextBox();
+            this.cbInputKorisnikKreirajNarudzbu = new System.Windows.Forms.ComboBox();
+            this.cbInputZaposlenikKreirajNarudzbu = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.uiActionAzurirajNarudzbu = new System.Windows.Forms.Button();
+            this.panelKreirajNarudzbuHeader.SuspendLayout();
+            this.panelKreirajNarudzbuFooter.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelKreirajNarudzbuHeader
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
-            this.panel1.TabIndex = 1;
+            this.panelKreirajNarudzbuHeader.Controls.Add(this.label1);
+            this.panelKreirajNarudzbuHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelKreirajNarudzbuHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelKreirajNarudzbuHeader.Name = "panelKreirajNarudzbuHeader";
+            this.panelKreirajNarudzbuHeader.Size = new System.Drawing.Size(800, 100);
+            this.panelKreirajNarudzbuHeader.TabIndex = 1;
             // 
             // label1
             // 
@@ -64,14 +65,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Kreiraj narudzbu";
             // 
-            // panel2
+            // panelKreirajNarudzbuFooter
             // 
-            this.panel2.Controls.Add(this.uiActionSpremiNarudzbu);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 350);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 100);
-            this.panel2.TabIndex = 2;
+            this.panelKreirajNarudzbuFooter.Controls.Add(this.uiActionAzurirajNarudzbu);
+            this.panelKreirajNarudzbuFooter.Controls.Add(this.uiActionSpremiNarudzbu);
+            this.panelKreirajNarudzbuFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelKreirajNarudzbuFooter.Location = new System.Drawing.Point(0, 350);
+            this.panelKreirajNarudzbuFooter.Name = "panelKreirajNarudzbuFooter";
+            this.panelKreirajNarudzbuFooter.Size = new System.Drawing.Size(800, 100);
+            this.panelKreirajNarudzbuFooter.TabIndex = 2;
             // 
             // uiActionSpremiNarudzbu
             // 
@@ -79,43 +81,44 @@
             this.uiActionSpremiNarudzbu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionSpremiNarudzbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.uiActionSpremiNarudzbu.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionSpremiNarudzbu.Location = new System.Drawing.Point(310, 17);
+            this.uiActionSpremiNarudzbu.Location = new System.Drawing.Point(505, 17);
             this.uiActionSpremiNarudzbu.Name = "uiActionSpremiNarudzbu";
             this.uiActionSpremiNarudzbu.Size = new System.Drawing.Size(162, 58);
             this.uiActionSpremiNarudzbu.TabIndex = 0;
             this.uiActionSpremiNarudzbu.Text = "Spremi";
             this.uiActionSpremiNarudzbu.UseVisualStyleBackColor = true;
+            this.uiActionSpremiNarudzbu.Click += new System.EventHandler(this.uiActionSpremiNarudzbu_Click);
             // 
-            // dateTimePicker1
+            // dateTimeInputDatumIzdavanjaKreirajNarudzbu
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(150, 160);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(187, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.Location = new System.Drawing.Point(150, 160);
+            this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.Name = "dateTimeInputDatumIzdavanjaKreirajNarudzbu";
+            this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.Size = new System.Drawing.Size(187, 20);
+            this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.TabIndex = 3;
             // 
-            // textBox1
+            // uiInputOpisDokumentaKn
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 231);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 68);
-            this.textBox1.TabIndex = 4;
+            this.uiInputOpisDokumentaKn.Location = new System.Drawing.Point(147, 231);
+            this.uiInputOpisDokumentaKn.Multiline = true;
+            this.uiInputOpisDokumentaKn.Name = "uiInputOpisDokumentaKn";
+            this.uiInputOpisDokumentaKn.Size = new System.Drawing.Size(190, 68);
+            this.uiInputOpisDokumentaKn.TabIndex = 4;
             // 
-            // comboBox1
+            // cbInputKorisnikKreirajNarudzbu
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(499, 163);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(168, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbInputKorisnikKreirajNarudzbu.FormattingEnabled = true;
+            this.cbInputKorisnikKreirajNarudzbu.Location = new System.Drawing.Point(499, 163);
+            this.cbInputKorisnikKreirajNarudzbu.Name = "cbInputKorisnikKreirajNarudzbu";
+            this.cbInputKorisnikKreirajNarudzbu.Size = new System.Drawing.Size(168, 21);
+            this.cbInputKorisnikKreirajNarudzbu.TabIndex = 5;
             // 
-            // comboBox2
+            // cbInputZaposlenikKreirajNarudzbu
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(499, 231);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(168, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbInputZaposlenikKreirajNarudzbu.FormattingEnabled = true;
+            this.cbInputZaposlenikKreirajNarudzbu.Location = new System.Drawing.Point(499, 231);
+            this.cbInputZaposlenikKreirajNarudzbu.Name = "cbInputZaposlenikKreirajNarudzbu";
+            this.cbInputZaposlenikKreirajNarudzbu.Size = new System.Drawing.Size(168, 21);
+            this.cbInputZaposlenikKreirajNarudzbu.TabIndex = 6;
             // 
             // label2
             // 
@@ -153,6 +156,20 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Zaposlenik";
             // 
+            // uiActionAzurirajNarudzbu
+            // 
+            this.uiActionAzurirajNarudzbu.FlatAppearance.BorderSize = 0;
+            this.uiActionAzurirajNarudzbu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionAzurirajNarudzbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionAzurirajNarudzbu.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionAzurirajNarudzbu.Location = new System.Drawing.Point(164, 17);
+            this.uiActionAzurirajNarudzbu.Name = "uiActionAzurirajNarudzbu";
+            this.uiActionAzurirajNarudzbu.Size = new System.Drawing.Size(162, 58);
+            this.uiActionAzurirajNarudzbu.TabIndex = 0;
+            this.uiActionAzurirajNarudzbu.Text = "Azuriraj";
+            this.uiActionAzurirajNarudzbu.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajNarudzbu.Click += new System.EventHandler(this.uiActionAzurirajNarudzbu_Click);
+            // 
             // FormKreirajNarudzbu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,17 +179,19 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cbInputZaposlenikKreirajNarudzbu);
+            this.Controls.Add(this.cbInputKorisnikKreirajNarudzbu);
+            this.Controls.Add(this.uiInputOpisDokumentaKn);
+            this.Controls.Add(this.dateTimeInputDatumIzdavanjaKreirajNarudzbu);
+            this.Controls.Add(this.panelKreirajNarudzbuFooter);
+            this.Controls.Add(this.panelKreirajNarudzbuHeader);
             this.Name = "FormKreirajNarudzbu";
             this.Text = "FormKreirajNarudzbu";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajNarudzbu_FormClosed);
+            this.Load += new System.EventHandler(this.FormKreirajNarudzbu_Load);
+            this.panelKreirajNarudzbuHeader.ResumeLayout(false);
+            this.panelKreirajNarudzbuHeader.PerformLayout();
+            this.panelKreirajNarudzbuFooter.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,17 +199,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelKreirajNarudzbuHeader;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelKreirajNarudzbuFooter;
         private System.Windows.Forms.Button uiActionSpremiNarudzbu;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dateTimeInputDatumIzdavanjaKreirajNarudzbu;
+        private System.Windows.Forms.TextBox uiInputOpisDokumentaKn;
+        private System.Windows.Forms.ComboBox cbInputKorisnikKreirajNarudzbu;
+        private System.Windows.Forms.ComboBox cbInputZaposlenikKreirajNarudzbu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button uiActionAzurirajNarudzbu;
     }
 }
