@@ -48,8 +48,9 @@ namespace Prezentacijski_sloj
             {
                 dateTimeInputDatumIzdavanjaKreirajNarudzbu.Value = proslijedeniDokument.datum_izdavanja;
                 uiInputOpisDokumentaKn.Text = proslijedeniDokument.opis_dokumenta.ToString();
+                uiInputUkupniSaldo.Text = proslijedeniDokument.ukupni_saldo.ToString();
                 cbInputKorisnikKreirajNarudzbu.SelectedIndex = (int)proslijedeniDokument.korisnik - 1;
-                cbInputZaposlenikKreirajNarudzbu.SelectedIndex = (int)proslijedeniDokument.zaposlenik - 1;
+                cbInputZaposlenikKreirajNarudzbu.SelectedIndex = (int)proslijedeniDokument.zaposlenik-1;
             }
         }
 
@@ -58,11 +59,12 @@ namespace Prezentacijski_sloj
             Sloj_pristupa_podacima.Dokument narudzba = new Sloj_pristupa_podacima.Dokument();
             narudzba.datum_izdavanja = DateTime.Parse(dateTimeInputDatumIzdavanjaKreirajNarudzbu.Text.ToString());
             narudzba.opis_dokumenta = uiInputOpisDokumentaKn.Text;
+            narudzba.ukupni_saldo = float.Parse(uiInputUkupniSaldo.Text);
             narudzba.tip_dokumenta = 2;
             narudzba.korisnik = (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
             narudzba.zaposlenik = (cbInputZaposlenikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
 
-            Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.KreirajRezervaciju(narudzba);
+            Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajNarudzbu(narudzba);
             FormUpravljanjeNarudzbama.OsvjeziPrikaz();
         }
 
@@ -72,11 +74,12 @@ namespace Prezentacijski_sloj
             narudzba.id_dokument = proslijedeniDokument.id_dokument;
             narudzba.datum_izdavanja = DateTime.Parse(dateTimeInputDatumIzdavanjaKreirajNarudzbu.Text.ToString());
             narudzba.opis_dokumenta = uiInputOpisDokumentaKn.Text;
+            narudzba.ukupni_saldo = float.Parse(uiInputUkupniSaldo.Text);
             narudzba.tip_dokumenta = 2;
             narudzba.korisnik = (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
             narudzba.zaposlenik = (cbInputZaposlenikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
 
-            Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.AzurirajRezervaciju(narudzba);
+            Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.AzurirajNarudzbu(narudzba);
             FormUpravljanjeNarudzbama.OsvjeziPrikaz();
             proslijedeniDokument = null;
         }

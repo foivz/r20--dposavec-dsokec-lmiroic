@@ -94,7 +94,11 @@ namespace Prezentacijski_sloj
 
         private void uiActionObrisiNarudzbu_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender);
+            Sloj_pristupa_podacima.Dokument narudzba = new Sloj_pristupa_podacima.Dokument();
+            narudzba = dgvUpravljanjeNarudzbamaSveNarudzbe.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Dokument;
+            Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.BrisanjeNarudzbe(narudzba);
+            OsvjeziPrikaz();
         }
         private void PrikazFormeAzuriranjaNarudzbe(FormKreirajNarudzbu form, object sender, Sloj_pristupa_podacima.Dokument narudzba)
         {
@@ -108,7 +112,7 @@ namespace Prezentacijski_sloj
         }
         private void uiActionKreirajNarudzbu_Click(object sender, EventArgs e)
         {
-
+            PrikazForme(FormKreirajNarudzbu.Instance, sender);
         }
         public void OsvjeziPrikaz()
         {

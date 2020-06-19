@@ -31,6 +31,7 @@
             this.panelKreirajNarudzbuHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelKreirajNarudzbuFooter = new System.Windows.Forms.Panel();
+            this.uiActionAzurirajNarudzbu = new System.Windows.Forms.Button();
             this.uiActionSpremiNarudzbu = new System.Windows.Forms.Button();
             this.dateTimeInputDatumIzdavanjaKreirajNarudzbu = new System.Windows.Forms.DateTimePicker();
             this.uiInputOpisDokumentaKn = new System.Windows.Forms.TextBox();
@@ -40,7 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.uiActionAzurirajNarudzbu = new System.Windows.Forms.Button();
+            this.uiInputUkupniSaldo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panelKreirajNarudzbuHeader.SuspendLayout();
             this.panelKreirajNarudzbuFooter.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +77,20 @@
             this.panelKreirajNarudzbuFooter.Size = new System.Drawing.Size(800, 100);
             this.panelKreirajNarudzbuFooter.TabIndex = 2;
             // 
+            // uiActionAzurirajNarudzbu
+            // 
+            this.uiActionAzurirajNarudzbu.FlatAppearance.BorderSize = 0;
+            this.uiActionAzurirajNarudzbu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionAzurirajNarudzbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.uiActionAzurirajNarudzbu.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionAzurirajNarudzbu.Location = new System.Drawing.Point(164, 17);
+            this.uiActionAzurirajNarudzbu.Name = "uiActionAzurirajNarudzbu";
+            this.uiActionAzurirajNarudzbu.Size = new System.Drawing.Size(162, 58);
+            this.uiActionAzurirajNarudzbu.TabIndex = 0;
+            this.uiActionAzurirajNarudzbu.Text = "Azuriraj";
+            this.uiActionAzurirajNarudzbu.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajNarudzbu.Click += new System.EventHandler(this.uiActionAzurirajNarudzbu_Click);
+            // 
             // uiActionSpremiNarudzbu
             // 
             this.uiActionSpremiNarudzbu.FlatAppearance.BorderSize = 0;
@@ -107,7 +123,7 @@
             // cbInputKorisnikKreirajNarudzbu
             // 
             this.cbInputKorisnikKreirajNarudzbu.FormattingEnabled = true;
-            this.cbInputKorisnikKreirajNarudzbu.Location = new System.Drawing.Point(499, 163);
+            this.cbInputKorisnikKreirajNarudzbu.Location = new System.Drawing.Point(499, 210);
             this.cbInputKorisnikKreirajNarudzbu.Name = "cbInputKorisnikKreirajNarudzbu";
             this.cbInputKorisnikKreirajNarudzbu.Size = new System.Drawing.Size(168, 21);
             this.cbInputKorisnikKreirajNarudzbu.TabIndex = 5;
@@ -115,7 +131,7 @@
             // cbInputZaposlenikKreirajNarudzbu
             // 
             this.cbInputZaposlenikKreirajNarudzbu.FormattingEnabled = true;
-            this.cbInputZaposlenikKreirajNarudzbu.Location = new System.Drawing.Point(499, 231);
+            this.cbInputZaposlenikKreirajNarudzbu.Location = new System.Drawing.Point(499, 278);
             this.cbInputZaposlenikKreirajNarudzbu.Name = "cbInputZaposlenikKreirajNarudzbu";
             this.cbInputZaposlenikKreirajNarudzbu.Size = new System.Drawing.Size(168, 21);
             this.cbInputZaposlenikKreirajNarudzbu.TabIndex = 6;
@@ -141,7 +157,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(496, 147);
+            this.label4.Location = new System.Drawing.Point(496, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 7;
@@ -150,31 +166,35 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(496, 210);
+            this.label5.Location = new System.Drawing.Point(496, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 7;
             this.label5.Text = "Zaposlenik";
             // 
-            // uiActionAzurirajNarudzbu
+            // uiInputUkupniSaldo
             // 
-            this.uiActionAzurirajNarudzbu.FlatAppearance.BorderSize = 0;
-            this.uiActionAzurirajNarudzbu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionAzurirajNarudzbu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.uiActionAzurirajNarudzbu.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionAzurirajNarudzbu.Location = new System.Drawing.Point(164, 17);
-            this.uiActionAzurirajNarudzbu.Name = "uiActionAzurirajNarudzbu";
-            this.uiActionAzurirajNarudzbu.Size = new System.Drawing.Size(162, 58);
-            this.uiActionAzurirajNarudzbu.TabIndex = 0;
-            this.uiActionAzurirajNarudzbu.Text = "Azuriraj";
-            this.uiActionAzurirajNarudzbu.UseVisualStyleBackColor = true;
-            this.uiActionAzurirajNarudzbu.Click += new System.EventHandler(this.uiActionAzurirajNarudzbu_Click);
+            this.uiInputUkupniSaldo.Location = new System.Drawing.Point(499, 163);
+            this.uiInputUkupniSaldo.Name = "uiInputUkupniSaldo";
+            this.uiInputUkupniSaldo.Size = new System.Drawing.Size(168, 20);
+            this.uiInputUkupniSaldo.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(496, 147);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Ukupni saldo";
             // 
             // FormKreirajNarudzbu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.uiInputUkupniSaldo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -212,5 +232,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button uiActionAzurirajNarudzbu;
+        private System.Windows.Forms.TextBox uiInputUkupniSaldo;
+        private System.Windows.Forms.Label label6;
     }
 }
