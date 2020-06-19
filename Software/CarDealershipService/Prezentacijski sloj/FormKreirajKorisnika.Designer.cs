@@ -99,6 +99,7 @@
             this.uiActionAzuriranje.TabIndex = 0;
             this.uiActionAzuriranje.Text = "Ažuriraj";
             this.uiActionAzuriranje.UseVisualStyleBackColor = true;
+            this.uiActionAzuriranje.Click += new System.EventHandler(this.uiActionAzuriranje_Click);
             // 
             // uiActionKreiraj
             // 
@@ -288,6 +289,7 @@
             this.Controls.Add(this.panelUpravKorisnicimaHeader);
             this.Name = "FormKreirajKorisnika";
             this.Text = "FormKreirajKorisnika";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajKorisnika_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajKorisnika_Load);
             this.panelUpravKorisnicimaHeader.ResumeLayout(false);
             this.panelUpravKorisnicimaHeader.PerformLayout();
