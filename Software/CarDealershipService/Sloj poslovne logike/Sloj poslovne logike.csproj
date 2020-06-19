@@ -59,6 +59,8 @@
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicimaBLL.cs" />
     <Compile Include="UpravljanjePoslovnicama\ParserPoslovnica.cs" />
     <Compile Include="UpravljanjePoslovnicama\Poslovnica.cs" />
+    <Compile Include="UpravljanjePoslovnicama\UpravljanjePoslovnicamaBLL.cs" />
+    <Compile Include="UpravljanjeRezervacijama\UpravljanjeRezervacijamaBLL.cs" />
     <Compile Include="UpravljanjeSkladistem\ParserVrsteArtikla.cs" />
     <Compile Include="UpravljanjeRezervacijama\Korisnik.cs" />
     <Compile Include="UpravljanjeRezervacijama\ParserKorisnik.cs" />
