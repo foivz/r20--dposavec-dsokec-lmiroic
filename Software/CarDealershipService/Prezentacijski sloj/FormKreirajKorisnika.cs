@@ -48,7 +48,6 @@ namespace Prezentacijski_sloj
 
             Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.KreiranjeKorisnika(korisnik);
             FormUpravljanjeKorisnicima.OsvjeziPopisKorisnika();
-
         }
 
         private void FormKreirajKorisnika_Load(object sender, EventArgs e)
