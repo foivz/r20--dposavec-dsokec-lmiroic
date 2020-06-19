@@ -19,3 +19,4 @@ C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\obj\Debug\Sloj pristupa podacima.csproj.CopyComplete
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\obj\Debug\Sloj pristupa podacima.dll
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\obj\Debug\Sloj pristupa podacima.pdb
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\obj\Debug\Sloj pristupa podacima.csprojAssemblyReference.cache
