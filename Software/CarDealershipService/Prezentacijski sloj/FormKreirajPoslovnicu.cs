@@ -36,16 +36,31 @@ namespace Prezentacijski_sloj
         private void FormKreirajPoslovnicu_FormClosed(object sender, FormClosedEventArgs e)
         {
             _instance = null;
+            prosljedenaPoslovnica = null;
         }
 
         private void uiActionKreirajPoslovnicu_Click(object sender, EventArgs e)
         {
             Sloj_pristupa_podacima.Poslovnica poslovnica = new Sloj_pristupa_podacima.Poslovnica();
-            poslovnica.adresa_poslovnice = uiInputAdresaPoslovnice.Text;
-            poslovnica.OIB_poslovnice = uiInputOIBPoslovnice.Text;
-            poslovnica.naziv_poslovnice = uiInputNazivPoslovnice.Text;
-            Sloj_pristupa_podacima.UpravljanjePoslovnicama.UpravljanjePoslovnicamaDAL.KreirajPoslovnicu(poslovnica);
-            FormUpravljanjePoslovnicama.OsvjeziPopisPoslovnica();
+            try
+            {
+                poslovnica.adresa_poslovnice = uiInputAdresaPoslovnice.Text;
+                poslovnica.OIB_poslovnice = uiInputOIBPoslovnice.Text;
+                poslovnica.naziv_poslovnice = uiInputNazivPoslovnice.Text;
+                if (Sloj_poslovne_logike.UpravljanjePoslovnicama.UpravljanjePoslovnicamaBLL.ProvjeraUnosaPoslovnice(poslovnica)==true)
+                {
+                    Sloj_pristupa_podacima.UpravljanjePoslovnicama.UpravljanjePoslovnicamaDAL.KreirajPoslovnicu(poslovnica);
+                    FormUpravljanjePoslovnicama.OsvjeziPopisPoslovnica();
+                }
+                else
+                {
+                    MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Morate unijeti sve parametre!");
+            } 
         }
 
         private void FormKreirajPoslovnicu_Load(object sender, EventArgs e)
@@ -55,18 +70,39 @@ namespace Prezentacijski_sloj
                 uiInputAdresaPoslovnice.Text = prosljedenaPoslovnica.adresa_poslovnice;
                 uiInputNazivPoslovnice.Text = prosljedenaPoslovnica.naziv_poslovnice;
                 uiInputOIBPoslovnice.Text = prosljedenaPoslovnica.OIB_poslovnice;
+                uiActionKreirajPoslovnicu.Enabled = false;
+                uiActionKreirajPoslovnicu.Hide();
+            }
+            else
+            {
+                uiActionAzuriranjePoslovnice.Enabled = false;
+                uiActionAzuriranjePoslovnice.Hide();
             }
         }
 
         private void uiActionAzuriranjePoslovnice_Click(object sender, EventArgs e)
         {
             Sloj_pristupa_podacima.Poslovnica poslovnica = new Sloj_pristupa_podacima.Poslovnica();
-            poslovnica.id_poslovnica = prosljedenaPoslovnica.id_poslovnica;
-            poslovnica.adresa_poslovnice = uiInputAdresaPoslovnice.Text;
-            poslovnica.OIB_poslovnice = uiInputOIBPoslovnice.Text;
-            poslovnica.naziv_poslovnice = uiInputNazivPoslovnice.Text;
-            Sloj_pristupa_podacima.UpravljanjePoslovnicama.UpravljanjePoslovnicamaDAL.AzurirajPoslovnicu(poslovnica);
-            FormUpravljanjePoslovnicama.OsvjeziPopisPoslovnica();
+            try
+            {
+                poslovnica.id_poslovnica = prosljedenaPoslovnica.id_poslovnica;
+                poslovnica.adresa_poslovnice = uiInputAdresaPoslovnice.Text;
+                poslovnica.OIB_poslovnice = uiInputOIBPoslovnice.Text;
+                poslovnica.naziv_poslovnice = uiInputNazivPoslovnice.Text;
+                if (Sloj_poslovne_logike.UpravljanjePoslovnicama.UpravljanjePoslovnicamaBLL.ProvjeraUnosaPoslovnice(poslovnica) == true)
+                {
+                    Sloj_pristupa_podacima.UpravljanjePoslovnicama.UpravljanjePoslovnicamaDAL.AzurirajPoslovnicu(poslovnica);
+                    FormUpravljanjePoslovnicama.OsvjeziPopisPoslovnica();
+                }
+                else
+                {
+                    MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Morate unijeti sve parametre!");
+            }        
         }
     }
 }
