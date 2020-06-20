@@ -97,7 +97,7 @@ namespace Prezentacijski_sloj
                 uiActionUpravljanjeKorisnicima.Enabled = false;
                 uiActionUpravljanjePoslovnicama.Enabled = false;
             }           
-              
+
         }
 
         private void uiActionOdjava_Click(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace Prezentacijski_sloj
             this.Hide();
             this.Close();
             formPrijava.ShowDialog();
-            
+            Sloj_poslovne_logike.Sesija.PrijavljenKorisnik = null;            
         }
     }
 }
