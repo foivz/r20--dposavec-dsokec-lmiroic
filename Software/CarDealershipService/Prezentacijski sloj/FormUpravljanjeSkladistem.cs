@@ -67,7 +67,7 @@ namespace Prezentacijski_sloj
         private void FormUpravljanjeSkladistem_Load(object sender, EventArgs e)
         {
             dgvSviArtikliNaSkladistu.DataSource = null;
-            dgvSviArtikliNaSkladistu.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.VratiSveArtikle();
+            dgvSviArtikliNaSkladistu.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiArtiklePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
             dgvSviArtikliNaSkladistu.Columns[9].Visible = false;
             dgvSviArtikliNaSkladistu.Columns[10].Visible = false;
             dgvSviArtikliNaSkladistu.Columns[11].Visible = false;
@@ -144,7 +144,7 @@ namespace Prezentacijski_sloj
         public void OsvjeziPopisArtikala()
         {
             dgvSviArtikliNaSkladistu.DataSource = null;
-            dgvSviArtikliNaSkladistu.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.VratiSveArtikle();
+            dgvSviArtikliNaSkladistu.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiArtiklePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
             dgvSviArtikliNaSkladistu.Columns[9].Visible = false;
             dgvSviArtikliNaSkladistu.Columns[10].Visible = false;
             dgvSviArtikliNaSkladistu.Columns[11].Visible = false;
