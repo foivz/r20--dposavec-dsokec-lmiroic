@@ -40,7 +40,7 @@ namespace Prezentacijski_sloj
         private void FormUpravljanjeRezervacijama_Load(object sender, EventArgs e)
         {
             dgvUpravRezervacijamaSveRezervacije.DataSource = null;
-            dgvUpravRezervacijamaSveRezervacije.DataSource = Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.DohvatiSveRezervacije();
+            dgvUpravRezervacijamaSveRezervacije.DataSource = Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.DohvatiSverezervacijePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
             dgvUpravRezervacijamaSveRezervacije.Columns[2].Width = 200;
             dgvUpravRezervacijamaSveRezervacije.Columns[3].Visible = false;
             dgvUpravRezervacijamaSveRezervacije.Columns[7].Visible = false;
@@ -121,7 +121,7 @@ namespace Prezentacijski_sloj
         public void OsvjeziPrikaz()
         {
             dgvUpravRezervacijamaSveRezervacije.DataSource = null;
-            dgvUpravRezervacijamaSveRezervacije.DataSource = Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.DohvatiSveRezervacije();
+            dgvUpravRezervacijamaSveRezervacije.DataSource = Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.DohvatiSverezervacijePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
             dgvUpravRezervacijamaSveRezervacije.Columns[3].Visible = false;
             dgvUpravRezervacijamaSveRezervacije.Columns[2].Width = 200;
             dgvUpravRezervacijamaSveRezervacije.Columns[7].Visible = false;
