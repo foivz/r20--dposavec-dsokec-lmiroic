@@ -55,5 +55,18 @@ namespace Sloj_pristupa_podacima.UpravljanjeNarudzbama
 
             }
         }
+        public static List<Dokument> DohvatiSveNarudzbePoslovnice(Korisnik korisnik)
+        {
+            List<Dokument> NarudzbeUPoslovnici = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var narudzba = from d in db.Dokuments
+                                  from ps in db.Poslovnicas
+                                  where ps.id_poslovnica == korisnik.poslovnica && korisnik.id_korisnik == d.zaposlenik && d.tip_dokumenta == 2
+                                  select d;
+                NarudzbeUPoslovnici = narudzba.ToList();
+            }
+            return NarudzbeUPoslovnici;
+        }
     }
 }
