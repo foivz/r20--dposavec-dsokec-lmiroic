@@ -63,5 +63,20 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                 db.SaveChanges();
             }
         }
+        public static List<Artikl> DohvatiArtiklePoslovnice(Korisnik korisnik)
+        {
+            List<Artikl> ArtikliNaSkladistu = null;
+            using(var db= new CarDealershipandServiceEntities())
+            {
+                var artikli = from sp in db.Skladiste_poslovnice
+                              from s in db.Skladistes
+                              from artS in db.Artikli_na_skladistu
+                              from a in db.Artikls
+                              where sp.poslovnica == korisnik.poslovnica && artS.skladiste == s.id_skladiste && artS.artikl == a.id_artikl
+                              select a;
+                ArtikliNaSkladistu = artikli.ToList();
+            }
+            return ArtikliNaSkladistu;
+        }
     }
 }
