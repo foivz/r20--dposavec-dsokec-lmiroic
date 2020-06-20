@@ -39,7 +39,7 @@ namespace Prezentacijski_sloj
         private void FormUpravljanjeNarudzbama_Load(object sender, EventArgs e)
         {
             dgvUpravljanjeNarudzbamaSveNarudzbe.DataSource = null;
-            dgvUpravljanjeNarudzbamaSveNarudzbe.DataSource = Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.DohvatiSveNarudzbe();
+            dgvUpravljanjeNarudzbamaSveNarudzbe.DataSource = Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.DohvatiSveNarudzbePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
             dgvUpravljanjeNarudzbamaSveNarudzbe.Columns[4].Visible = false;
             dgvUpravljanjeNarudzbamaSveNarudzbe.Columns[7].Visible = false;
             dgvUpravljanjeNarudzbamaSveNarudzbe.Columns[8].Visible = false;
@@ -117,7 +117,7 @@ namespace Prezentacijski_sloj
         public void OsvjeziPrikaz()
         {
             dgvUpravljanjeNarudzbamaSveNarudzbe.DataSource = null;
-            dgvUpravljanjeNarudzbamaSveNarudzbe.DataSource = Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.DohvatiSveNarudzbe();
+            dgvUpravljanjeNarudzbamaSveNarudzbe.DataSource = Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.DohvatiSveNarudzbePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
             dgvUpravljanjeNarudzbamaSveNarudzbe.Columns[4].Visible = false;
             dgvUpravljanjeNarudzbamaSveNarudzbe.Columns[7].Visible = false;
             dgvUpravljanjeNarudzbamaSveNarudzbe.Columns[8].Visible = false;
