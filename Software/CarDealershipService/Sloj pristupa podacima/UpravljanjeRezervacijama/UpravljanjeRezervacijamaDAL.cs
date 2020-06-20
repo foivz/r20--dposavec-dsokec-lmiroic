@@ -55,6 +55,19 @@ namespace Sloj_pristupa_podacima.UpravljanjeRezervacijama
                 db.SaveChanges();
             }
         }
+        public static List<Dokument> DohvatiSverezervacijePoslovnice(Korisnik korisnik)
+        {
+            List<Dokument> DokumentUPoslovnici = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var rezervacija = from d in db.Dokuments
+                                  from ps in db.Poslovnicas
+                              where ps.id_poslovnica == korisnik.poslovnica && korisnik.id_korisnik==d.zaposlenik && d.tip_dokumenta==4
+                              select d;
+                DokumentUPoslovnici = rezervacija.ToList();
+            }
+            return DokumentUPoslovnici;
+        }
 
     }
 }
