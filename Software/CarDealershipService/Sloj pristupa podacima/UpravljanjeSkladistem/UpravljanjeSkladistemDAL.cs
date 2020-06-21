@@ -26,11 +26,21 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
             }
             return SveVrsteArtikla;
         }
-        public static void KreiranjeArtikla(Artikl artikl)
+        public static void KreiranjeArtikla(Artikl artikl,Korisnik korisnik)
         {
+            List<Skladiste> listaSkladista = DohvatiSkladisteKorisnika(korisnik);
+            Artikli_na_skladistu artikli_Na_Skladistu = new Artikli_na_skladistu();
             using (var db = new CarDealershipandServiceEntities())
             {
                 db.Artikls.Add(artikl);
+                foreach (var item in listaSkladista)
+                {
+                    artikli_Na_Skladistu.skladiste = item.id_skladiste;
+                    
+                }
+                artikli_Na_Skladistu.artikl = artikl.id_artikl;
+                artikli_Na_Skladistu.kolicina = 1;
+                db.Artikli_na_skladistu.Add(artikli_Na_Skladistu);
                 db.SaveChanges();
             }
         }
@@ -39,7 +49,9 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
             using (var db = new CarDealershipandServiceEntities())
             {
                 var selectedItem = db.Artikls.Where(t => t.id_artikl == artikl.id_artikl).FirstOrDefault();
+                var selectedItem1 = db.Artikli_na_skladistu.Where(x => x.artikl == artikl.id_artikl).FirstOrDefault();
                 db.Artikls.Remove(selectedItem);
+                db.Artikli_na_skladistu.Remove(selectedItem1);
                 db.SaveChanges();
             }
         }
@@ -77,6 +89,19 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                 ArtikliNaSkladistu = artikli.ToList();
             }
             return ArtikliNaSkladistu;
+        }
+        public static List<Skladiste> DohvatiSkladisteKorisnika(Korisnik korisnik)
+        {
+            List<Skladiste> SkladisteKorisnika = null;
+            using(var db=new CarDealershipandServiceEntities())
+            {
+                var skladiste = from s in db.Skladistes
+                                from sp in db.Skladiste_poslovnice
+                                where korisnik.poslovnica == sp.poslovnica && sp.skladiste == s.id_skladiste
+                                select s;
+                SkladisteKorisnika = skladiste.ToList();
+            }
+            return SkladisteKorisnika;
         }
     }
 }

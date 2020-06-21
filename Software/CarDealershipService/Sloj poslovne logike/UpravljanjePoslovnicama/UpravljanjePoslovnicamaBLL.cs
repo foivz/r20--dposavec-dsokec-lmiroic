@@ -17,5 +17,14 @@ namespace Sloj_poslovne_logike.UpravljanjePoslovnicama
             else
                 return true;
         }
+        public static bool ProvjeraUnosaSkladista(Sloj_pristupa_podacima.Skladiste skladiste)
+        {
+            if (skladiste.naziv == "" || skladiste.adresa == "")
+            {
+                return false;
+            }
+            else
+                return true;
+        }
     }
 }

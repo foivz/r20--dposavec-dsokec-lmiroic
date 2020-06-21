@@ -31,6 +31,8 @@ namespace Sloj_pristupa_podacima.UpravljanjePoslovnicama
             {
                 var selectedItem = db.Poslovnicas.Where(p => p.id_poslovnica == poslovnica.id_poslovnica).FirstOrDefault();
                 db.Poslovnicas.Remove(selectedItem);
+
+
                 db.SaveChanges();
             }
         }
@@ -50,6 +52,37 @@ namespace Sloj_pristupa_podacima.UpravljanjePoslovnicama
                 novaPoslovnica.OIB_poslovnice = poslovnica.OIB_poslovnice;
                 db.SaveChanges();
             }
+        }
+        
+        public static void KreiranjeSkladištaPoslovnice(Skladiste skladiste,Korisnik korisnik)
+        {
+            List<Poslovnica> listaPoslovnica = DohvatiPoslovnicuKorisnika(korisnik);
+            Skladiste_poslovnice skladiste_Poslovnice = new Skladiste_poslovnice();
+            using (var db=new CarDealershipandServiceEntities())
+            {            
+                db.Skladistes.Add(skladiste);
+                foreach (var item in listaPoslovnica)
+                {
+                    skladiste_Poslovnice.poslovnica = item.id_poslovnica;
+                }
+                skladiste_Poslovnice.skladiste = skladiste.id_skladiste;
+                db.Skladiste_poslovnice.Add(skladiste_Poslovnice);
+                db.SaveChanges();
+
+            }
+        }
+        public static List<Poslovnica>DohvatiPoslovnicuKorisnika(Korisnik korisnik)
+        {
+            List<Poslovnica> poslovnicaKorisnika = null;
+            using(var db=new CarDealershipandServiceEntities())
+            {
+                var poslovnica = from p in db.Poslovnicas
+                                 where p.id_poslovnica == korisnik.poslovnica
+                                 select p;
+                poslovnicaKorisnika = poslovnica.ToList();
+            }
+            return poslovnicaKorisnika;
+
         }
     }
 }
