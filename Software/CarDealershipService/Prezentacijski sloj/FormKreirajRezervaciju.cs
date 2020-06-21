@@ -43,14 +43,12 @@ namespace Prezentacijski_sloj
         private void FormKreirajRezervaciju_Load(object sender, EventArgs e)
         {
             cbInputKorisnik.DataSource = ParserKorisnik.ParsirajKorisnika();
-            cbInputZaposlenik.DataSource = ParserKorisnik.ParsirajKorisnika();
-
+            List<Korisnik> listaKorisnika = ParserKorisnik.ParsirajKorisnika();
             if (proslijedeniDokument != null)
             {
                 dateTimeInputDatumIzdavanja.Value = proslijedeniDokument.datum_izdavanja;
                 uiInputOpisDokumenta.Text = proslijedeniDokument.opis_dokumenta.ToString();
-                cbInputKorisnik.SelectedIndex = (int)proslijedeniDokument.korisnik-1;
-                cbInputZaposlenik.SelectedIndex = (int)proslijedeniDokument.zaposlenik - 1;
+                cbInputKorisnik.SelectedIndex = listaKorisnika.IndexOf(listaKorisnika.Find(x => x.id_korisnik == proslijedeniDokument.korisnik));
                 uiACtionSpremiRezervaciju.Enabled = false;
                 uiACtionSpremiRezervaciju.Hide();
             }
@@ -67,10 +65,10 @@ namespace Prezentacijski_sloj
             try
             {
                 rezervacija.datum_izdavanja = DateTime.Parse(dateTimeInputDatumIzdavanja.Text.ToString());
-                rezervacija.opis_dokumenta = uiInputOpisDokumenta.Text;
+                rezervacija.opis_dokumenta = uiInputOpisDokumenta.Text.ToString();
                 rezervacija.tip_dokumenta = 4;
                 rezervacija.korisnik = (cbInputKorisnik.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
-                rezervacija.zaposlenik = (cbInputZaposlenik.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
+                rezervacija.zaposlenik = Sloj_poslovne_logike.Sesija.PrijavljenKorisnik.id_korisnik;
                 if (UpravljanjeRezervacijamaBLL.ProvjeraUnosaRezervacije(rezervacija)==true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.KreirajRezervaciju(rezervacija);
@@ -81,10 +79,11 @@ namespace Prezentacijski_sloj
                     MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                MessageBox.Show("Morate unijeti sve parametre!");
+                //MessageBox.Show("Morate unijeti sve parametre!");
+                MessageBox.Show(ex.Message);
             }                                 
         }
 
@@ -95,10 +94,10 @@ namespace Prezentacijski_sloj
             {
                 rezervacija.id_dokument = proslijedeniDokument.id_dokument;
                 rezervacija.datum_izdavanja = DateTime.Parse(dateTimeInputDatumIzdavanja.Text.ToString());
-                rezervacija.opis_dokumenta = uiInputOpisDokumenta.Text;
+                rezervacija.opis_dokumenta = uiInputOpisDokumenta.Text.ToString();
                 rezervacija.tip_dokumenta = 4;
-                rezervacija.korisnik = (cbInputKorisnik.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
-                rezervacija.zaposlenik = (cbInputZaposlenik.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
+                rezervacija.korisnik = (cbInputKorisnik.SelectedItem as Korisnik).id_korisnik;
+                rezervacija.zaposlenik = Sloj_poslovne_logike.Sesija.PrijavljenKorisnik.id_korisnik;
                 if (UpravljanjeRezervacijamaBLL.ProvjeraUnosaRezervacije(rezervacija) == true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.AzurirajRezervaciju(rezervacija);
@@ -109,10 +108,10 @@ namespace Prezentacijski_sloj
                     MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                MessageBox.Show("Morate unijeti sve parametre!");
+                MessageBox.Show(ex.Message);
             }          
         }
     }

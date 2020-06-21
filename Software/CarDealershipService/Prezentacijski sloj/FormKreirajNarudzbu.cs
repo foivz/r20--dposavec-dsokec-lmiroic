@@ -74,7 +74,7 @@ namespace Prezentacijski_sloj
                 narudzba.tip_dokumenta = 2;
                 narudzba.korisnik = (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
                 narudzba.zaposlenik = (cbInputZaposlenikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
-                if (UpravljanjeRezervacijamaBLL.ProvjeraUnosaRezervacije(narudzba)==true)
+                if (Sloj_poslovne_logike.UpravljanjeNarudzbama.UpravljanjeNarudzbamaBLL.ProvjeraUnosaNarudzbe(narudzba)==true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajNarudzbu(narudzba);
                     FormUpravljanjeNarudzbama.OsvjeziPrikaz();
@@ -103,7 +103,7 @@ namespace Prezentacijski_sloj
                 narudzba.tip_dokumenta = 2;
                 narudzba.korisnik = (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
                 narudzba.zaposlenik = (cbInputZaposlenikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
-                if (UpravljanjeRezervacijamaBLL.ProvjeraUnosaRezervacije(narudzba) == true)
+                if (Sloj_poslovne_logike.UpravljanjeNarudzbama.UpravljanjeNarudzbamaBLL.ProvjeraUnosaNarudzbe(narudzba) == true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.AzurirajNarudzbu(narudzba);
                     FormUpravljanjeNarudzbama.OsvjeziPrikaz();

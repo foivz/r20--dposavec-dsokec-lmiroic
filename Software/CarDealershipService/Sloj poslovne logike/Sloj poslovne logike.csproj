@@ -57,6 +57,7 @@
     <Compile Include="UpravljanjeKorisnicima\ParserTipKorisnika.cs" />
     <Compile Include="UpravljanjeKorisnicima\TipKorisnika.cs" />
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicimaBLL.cs" />
+    <Compile Include="UpravljanjeNarudzbama\UpravljanjeNarudzbamaBLL.cs" />
     <Compile Include="UpravljanjePoslovnicama\ParserPoslovnica.cs" />
     <Compile Include="UpravljanjePoslovnicama\Poslovnica.cs" />
     <Compile Include="UpravljanjePoslovnicama\UpravljanjePoslovnicamaBLL.cs" />

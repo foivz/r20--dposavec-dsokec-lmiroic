@@ -67,6 +67,7 @@ namespace Prezentacijski_sloj
         private void FormKreirajKorisnika_Load(object sender, EventArgs e)
         {
             List<Poslovnica> listaPoslovnica = ParserPoslovnica.ParsirajPoslovnicu();
+            List<Sloj_poslovne_logike.UpravljanjeRezervacijama.Korisnik> listaKorisnika = Sloj_poslovne_logike.UpravljanjeRezervacijama.ParserKorisnik.ParsirajKorisnika();
             panelUpravKorisnicimaHeader.BackColor = Color.FromArgb(45, 45, 48);
             panelUpravKorisnicimaFooter.BackColor = Color.FromArgb(45, 45, 48);
             uiInputTipKorisnika.DataSource = null;
@@ -82,7 +83,7 @@ namespace Prezentacijski_sloj
                 uiInputMailKorisnika.Text = ProsljedeniKorisnik.email;
                 uiInputKorisnickoIme.Text = ProsljedeniKorisnik.korisnicko_ime;
                 uiInputLozinka.Text = ProsljedeniKorisnik.lozinka;
-                uiInputTipKorisnika.SelectedIndex = (int)ProsljedeniKorisnik.tip_korisnika - 1;
+                uiInputTipKorisnika.SelectedIndex = listaKorisnika.IndexOf(listaKorisnika.Find(x => x.id_korisnik == ProsljedeniKorisnik.id_korisnik));
                 if (ProsljedeniKorisnik.poslovnica!=null)
                 {
                     uiInputKorisnikovaPoslovnica.SelectedIndex = listaPoslovnica.IndexOf(listaPoslovnica.Find(x => x.id_poslovnica == ProsljedeniKorisnik.poslovnica));
