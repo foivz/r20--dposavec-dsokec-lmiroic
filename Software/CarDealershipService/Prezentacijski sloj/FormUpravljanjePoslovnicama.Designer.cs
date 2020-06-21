@@ -35,6 +35,7 @@
             this.uiActionFrmUpravPoslovnicamaKreiranje = new System.Windows.Forms.Button();
             this.uiActionFrmUpravPoslovnicamaBrisanje = new System.Windows.Forms.Button();
             this.dgvUpravljanjePoslovnicama = new System.Windows.Forms.DataGridView();
+            this.uiActionUpravljanjeSkladistima = new System.Windows.Forms.Button();
             this.panelUpravljanjePoslovnicamaHeader.SuspendLayout();
             this.panelUpravljanjePoslovnicamaFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpravljanjePoslovnicama)).BeginInit();
@@ -46,7 +47,7 @@
             this.panelUpravljanjePoslovnicamaHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelUpravljanjePoslovnicamaHeader.Location = new System.Drawing.Point(0, 0);
             this.panelUpravljanjePoslovnicamaHeader.Name = "panelUpravljanjePoslovnicamaHeader";
-            this.panelUpravljanjePoslovnicamaHeader.Size = new System.Drawing.Size(800, 100);
+            this.panelUpravljanjePoslovnicamaHeader.Size = new System.Drawing.Size(1084, 100);
             this.panelUpravljanjePoslovnicamaHeader.TabIndex = 4;
             // 
             // label1
@@ -55,7 +56,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(95, 26);
+            this.label1.Location = new System.Drawing.Point(237, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(616, 55);
             this.label1.TabIndex = 1;
@@ -63,13 +64,14 @@
             // 
             // panelUpravljanjePoslovnicamaFooter
             // 
+            this.panelUpravljanjePoslovnicamaFooter.Controls.Add(this.uiActionUpravljanjeSkladistima);
             this.panelUpravljanjePoslovnicamaFooter.Controls.Add(this.uiActionFrmUpravPoslovnicamaAzuriranje);
             this.panelUpravljanjePoslovnicamaFooter.Controls.Add(this.uiActionFrmUpravPoslovnicamaKreiranje);
             this.panelUpravljanjePoslovnicamaFooter.Controls.Add(this.uiActionFrmUpravPoslovnicamaBrisanje);
             this.panelUpravljanjePoslovnicamaFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelUpravljanjePoslovnicamaFooter.Location = new System.Drawing.Point(0, 350);
+            this.panelUpravljanjePoslovnicamaFooter.Location = new System.Drawing.Point(0, 383);
             this.panelUpravljanjePoslovnicamaFooter.Name = "panelUpravljanjePoslovnicamaFooter";
-            this.panelUpravljanjePoslovnicamaFooter.Size = new System.Drawing.Size(800, 100);
+            this.panelUpravljanjePoslovnicamaFooter.Size = new System.Drawing.Size(1084, 100);
             this.panelUpravljanjePoslovnicamaFooter.TabIndex = 5;
             // 
             // uiActionFrmUpravPoslovnicamaAzuriranje
@@ -79,7 +81,7 @@
             this.uiActionFrmUpravPoslovnicamaAzuriranje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionFrmUpravPoslovnicamaAzuriranje.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiActionFrmUpravPoslovnicamaAzuriranje.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionFrmUpravPoslovnicamaAzuriranje.Location = new System.Drawing.Point(300, 24);
+            this.uiActionFrmUpravPoslovnicamaAzuriranje.Location = new System.Drawing.Point(587, 26);
             this.uiActionFrmUpravPoslovnicamaAzuriranje.Name = "uiActionFrmUpravPoslovnicamaAzuriranje";
             this.uiActionFrmUpravPoslovnicamaAzuriranje.Size = new System.Drawing.Size(201, 52);
             this.uiActionFrmUpravPoslovnicamaAzuriranje.TabIndex = 0;
@@ -94,7 +96,7 @@
             this.uiActionFrmUpravPoslovnicamaKreiranje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionFrmUpravPoslovnicamaKreiranje.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiActionFrmUpravPoslovnicamaKreiranje.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionFrmUpravPoslovnicamaKreiranje.Location = new System.Drawing.Point(549, 24);
+            this.uiActionFrmUpravPoslovnicamaKreiranje.Location = new System.Drawing.Point(836, 26);
             this.uiActionFrmUpravPoslovnicamaKreiranje.Name = "uiActionFrmUpravPoslovnicamaKreiranje";
             this.uiActionFrmUpravPoslovnicamaKreiranje.Size = new System.Drawing.Size(201, 52);
             this.uiActionFrmUpravPoslovnicamaKreiranje.TabIndex = 0;
@@ -109,7 +111,7 @@
             this.uiActionFrmUpravPoslovnicamaBrisanje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionFrmUpravPoslovnicamaBrisanje.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiActionFrmUpravPoslovnicamaBrisanje.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionFrmUpravPoslovnicamaBrisanje.Location = new System.Drawing.Point(38, 24);
+            this.uiActionFrmUpravPoslovnicamaBrisanje.Location = new System.Drawing.Point(325, 26);
             this.uiActionFrmUpravPoslovnicamaBrisanje.Name = "uiActionFrmUpravPoslovnicamaBrisanje";
             this.uiActionFrmUpravPoslovnicamaBrisanje.Size = new System.Drawing.Size(201, 52);
             this.uiActionFrmUpravPoslovnicamaBrisanje.TabIndex = 0;
@@ -125,14 +127,29 @@
             this.dgvUpravljanjePoslovnicama.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUpravljanjePoslovnicama.Location = new System.Drawing.Point(0, 97);
             this.dgvUpravljanjePoslovnicama.Name = "dgvUpravljanjePoslovnicama";
-            this.dgvUpravljanjePoslovnicama.Size = new System.Drawing.Size(800, 256);
+            this.dgvUpravljanjePoslovnicama.Size = new System.Drawing.Size(1084, 289);
             this.dgvUpravljanjePoslovnicama.TabIndex = 6;
+            // 
+            // uiActionUpravljanjeSkladistima
+            // 
+            this.uiActionUpravljanjeSkladistima.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uiActionUpravljanjeSkladistima.FlatAppearance.BorderSize = 0;
+            this.uiActionUpravljanjeSkladistima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionUpravljanjeSkladistima.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionUpravljanjeSkladistima.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionUpravljanjeSkladistima.Location = new System.Drawing.Point(53, 26);
+            this.uiActionUpravljanjeSkladistima.Name = "uiActionUpravljanjeSkladistima";
+            this.uiActionUpravljanjeSkladistima.Size = new System.Drawing.Size(201, 52);
+            this.uiActionUpravljanjeSkladistima.TabIndex = 1;
+            this.uiActionUpravljanjeSkladistima.Text = "Kreiraj skladište";
+            this.uiActionUpravljanjeSkladistima.UseVisualStyleBackColor = true;
+            this.uiActionUpravljanjeSkladistima.Click += new System.EventHandler(this.uiActionUpravljanjeSkladistima_Click);
             // 
             // FormUpravljanjePoslovnicama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1084, 483);
             this.Controls.Add(this.dgvUpravljanjePoslovnicama);
             this.Controls.Add(this.panelUpravljanjePoslovnicamaFooter);
             this.Controls.Add(this.panelUpravljanjePoslovnicamaHeader);
@@ -157,5 +174,6 @@
         private System.Windows.Forms.Button uiActionFrmUpravPoslovnicamaKreiranje;
         private System.Windows.Forms.Button uiActionFrmUpravPoslovnicamaBrisanje;
         private System.Windows.Forms.DataGridView dgvUpravljanjePoslovnicama;
+        private System.Windows.Forms.Button uiActionUpravljanjeSkladistima;
     }
 }

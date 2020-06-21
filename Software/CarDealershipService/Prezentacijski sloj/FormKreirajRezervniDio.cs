@@ -51,7 +51,7 @@ namespace Prezentacijski_sloj
                 artikl.vrsta_artikla = 1;
                 if (Sloj_poslovne_logike.UpravljanjeSkladistem.UpravljanjeSkladistemBLL.ProvjeraUnosaRezervnogDijela(artikl) == true)
                 {
-                    Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl);
+                    Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl,Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
                     FormUpravljanjeSkladistem.OsvjeziPopisArtikala();
                 }
                 else

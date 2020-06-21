@@ -77,6 +77,15 @@ namespace Prezentacijski_sloj
             form.Show();
             form.Activate();
         }
+        private void PrikazFormeKreirajSkladiste(FormKreirajSkladiste form, object sender)
+        {
+            form.FormUpravljanjePoslovnicama = this;
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            ActivateButton(sender);
+            form.Show();
+            form.Activate();
+        }
 
         private void FormUpravljanjePoslovnicama_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -126,6 +135,11 @@ namespace Prezentacijski_sloj
             Sloj_pristupa_podacima.Poslovnica poslovnica = new Sloj_pristupa_podacima.Poslovnica();
             poslovnica = dgvUpravljanjePoslovnicama.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Poslovnica;
             PrikaziFormuAzuriranjePoslovnice(FormKreirajPoslovnicu.instance, sender, poslovnica);
+        }
+
+        private void uiActionUpravljanjeSkladistima_Click(object sender, EventArgs e)
+        {
+            PrikazFormeKreirajSkladiste(FormKreirajSkladiste.instance, sender);
         }
     }
 }

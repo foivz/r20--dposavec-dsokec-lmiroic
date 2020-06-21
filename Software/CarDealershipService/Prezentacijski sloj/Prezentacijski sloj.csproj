@@ -98,6 +98,12 @@
     <Compile Include="FormKreirajRezervaciju.Designer.cs">
       <DependentUpon>FormKreirajRezervaciju.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKreirajSkladiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajSkladiste.Designer.cs">
+      <DependentUpon>FormKreirajSkladiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKreirajVozilo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKreirajRezervaciju.resx">
       <DependentUpon>FormKreirajRezervaciju.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajSkladiste.resx">
+      <DependentUpon>FormKreirajSkladiste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKreirajVozilo.resx">
       <DependentUpon>FormKreirajVozilo.cs</DependentUpon>

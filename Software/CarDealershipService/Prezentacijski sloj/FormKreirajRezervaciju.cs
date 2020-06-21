@@ -41,10 +41,11 @@ namespace Prezentacijski_sloj
         }
 
         private void FormKreirajRezervaciju_Load(object sender, EventArgs e)
-        {
-            cbInputKorisnik.DataSource = ParserKorisnik.ParsirajKorisnika();
+        {           
             List<Korisnik> listaKorisnika = ParserKorisnik.ParsirajKorisnika();
             List<Korisnik> listaZaposlenika = ParserKorisnik.ParsirajKorisnika();
+            cbInputKorisnik.DataSource = listaKorisnika;
+            cbInputZaposlenik.DataSource = listaZaposlenika;
             if (proslijedeniDokument != null)
             {
                 dateTimeInputDatumIzdavanja.Value = proslijedeniDokument.datum_izdavanja;
@@ -84,11 +85,10 @@ namespace Prezentacijski_sloj
                     MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                //MessageBox.Show("Morate unijeti sve parametre!");
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Morate unijeti sve parametre!");
             }                                 
         }
 

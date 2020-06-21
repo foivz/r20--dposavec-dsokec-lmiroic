@@ -67,11 +67,11 @@ namespace Prezentacijski_sloj
         private void FormKreirajKorisnika_Load(object sender, EventArgs e)
         {
             List<Poslovnica> listaPoslovnica = ParserPoslovnica.ParsirajPoslovnicu();
-            List<Sloj_poslovne_logike.UpravljanjeRezervacijama.Korisnik> listaKorisnika = Sloj_poslovne_logike.UpravljanjeRezervacijama.ParserKorisnik.ParsirajKorisnika();
+            List<Sloj_poslovne_logike.UpravljanjeKorisnicima.TipKorisnika> listaTipaKorisnika = Sloj_poslovne_logike.UpravljanjeKorisnicima.ParserTipKorisnika.ParsirajTipKorisnika();
             panelUpravKorisnicimaHeader.BackColor = Color.FromArgb(45, 45, 48);
             panelUpravKorisnicimaFooter.BackColor = Color.FromArgb(45, 45, 48);
             uiInputTipKorisnika.DataSource = null;
-            uiInputTipKorisnika.DataSource = Sloj_poslovne_logike.UpravljanjeKorisnicima.ParserTipKorisnika.ParsirajTipKorisnika();
+            uiInputTipKorisnika.DataSource = listaTipaKorisnika;
             uiInputKorisnikovaPoslovnica.DataSource = null;
             uiInputKorisnikovaPoslovnica.DataSource = listaPoslovnica;
             if (ProsljedeniKorisnik != null)
@@ -83,7 +83,7 @@ namespace Prezentacijski_sloj
                 uiInputMailKorisnika.Text = ProsljedeniKorisnik.email;
                 uiInputKorisnickoIme.Text = ProsljedeniKorisnik.korisnicko_ime;
                 uiInputLozinka.Text = ProsljedeniKorisnik.lozinka;
-                uiInputTipKorisnika.SelectedIndex = listaKorisnika.IndexOf(listaKorisnika.Find(x => x.id_korisnik == ProsljedeniKorisnik.id_korisnik));
+                uiInputTipKorisnika.SelectedIndex = listaTipaKorisnika.IndexOf(listaTipaKorisnika.Find(x => x.id_tip_korisnika == ProsljedeniKorisnik.tip_korisnika));
                 if (ProsljedeniKorisnik.poslovnica!=null)
                 {
                     uiInputKorisnikovaPoslovnica.SelectedIndex = listaPoslovnica.IndexOf(listaPoslovnica.Find(x => x.id_poslovnica == ProsljedeniKorisnik.poslovnica));
@@ -111,7 +111,12 @@ namespace Prezentacijski_sloj
                 korisnik.email = uiInputMailKorisnika.Text;
                 korisnik.IBAN = uiInputIBANKorisnika.Text;
                 korisnik.korisnicko_ime = uiInputKorisnickoIme.Text;
-                korisnik.lozinka = Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.HashirajLozinku(uiInputLozinka.Text);
+                if (uiInputLozinka.Text.Length!=40)
+                {
+                    korisnik.lozinka = Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.HashirajLozinku(uiInputLozinka.Text);
+                }
+                else
+                    korisnik.lozinka = uiInputLozinka.Text;
                 korisnik.tip_korisnika = (uiInputTipKorisnika.SelectedItem as Sloj_pristupa_podacima.Tip_korisnika).id_tip_korisnika;
                 if (ProsljedeniKorisnik.poslovnica != null)
                 {

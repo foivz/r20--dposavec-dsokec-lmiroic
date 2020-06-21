@@ -90,7 +90,7 @@ namespace Prezentacijski_sloj
                 artikl.vrsta_artikla = 2;
                 if (UpravljanjeSkladistemBLL.ProvjeraUnosaVozila(artikl) == true)
                 {
-                    Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl);
+                    Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl,Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
                     FormUpravljanjeSkladistem.OsvjeziPopisArtikala();
                 }
                 else
