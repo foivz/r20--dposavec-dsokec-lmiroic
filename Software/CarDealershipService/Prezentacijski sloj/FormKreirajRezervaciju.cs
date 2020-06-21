@@ -44,16 +44,21 @@ namespace Prezentacijski_sloj
         {
             cbInputKorisnik.DataSource = ParserKorisnik.ParsirajKorisnika();
             List<Korisnik> listaKorisnika = ParserKorisnik.ParsirajKorisnika();
+            List<Korisnik> listaZaposlenika = ParserKorisnik.ParsirajKorisnika();
             if (proslijedeniDokument != null)
             {
                 dateTimeInputDatumIzdavanja.Value = proslijedeniDokument.datum_izdavanja;
                 uiInputOpisDokumenta.Text = proslijedeniDokument.opis_dokumenta.ToString();
                 cbInputKorisnik.SelectedIndex = listaKorisnika.IndexOf(listaKorisnika.Find(x => x.id_korisnik == proslijedeniDokument.korisnik));
+                cbInputZaposlenik.SelectedIndex= listaZaposlenika.IndexOf(listaZaposlenika.Find(x => x.id_korisnik == proslijedeniDokument.zaposlenik));
                 uiACtionSpremiRezervaciju.Enabled = false;
                 uiACtionSpremiRezervaciju.Hide();
             }
             else
             {
+                label4.Hide();
+                cbInputZaposlenik.Enabled = false;
+                cbInputZaposlenik.Hide();
                 uiActionAzurirajRezervaciju.Enabled = false;
                 uiActionAzurirajRezervaciju.Hide();
             }                        

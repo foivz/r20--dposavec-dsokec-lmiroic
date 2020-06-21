@@ -126,7 +126,7 @@
             this.ClientSize = new System.Drawing.Size(501, 353);
             this.Controls.Add(this.panelFrmPrijava);
             this.Name = "FormPrijava";
-            this.Text = "FormPrijava";
+            this.Text = "Prijava";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelFrmPrijava.ResumeLayout(false);
             this.panelFrmPrijava.PerformLayout();

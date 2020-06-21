@@ -137,7 +137,7 @@
             this.Controls.Add(this.panelUpravKorisnicimaFooter);
             this.Controls.Add(this.panelUpravKorisnicimaHeader);
             this.Name = "FormUpravljanjeKorisnicima";
-            this.Text = "FormUpravljanjeKorisnicima";
+            this.Text = "Upravljanje korisnicima";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjeKorisnicima_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjeKorisnicima_Load);
             this.panelUpravKorisnicimaHeader.ResumeLayout(false);

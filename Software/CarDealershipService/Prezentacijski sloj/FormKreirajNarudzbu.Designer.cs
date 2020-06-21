@@ -206,7 +206,7 @@
             this.Controls.Add(this.panelKreirajNarudzbuFooter);
             this.Controls.Add(this.panelKreirajNarudzbuHeader);
             this.Name = "FormKreirajNarudzbu";
-            this.Text = "FormKreirajNarudzbu";
+            this.Text = "Kreiranje narudzbe";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajNarudzbu_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajNarudzbu_Load);
             this.panelKreirajNarudzbuHeader.ResumeLayout(false);

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="CarDealershipandServiceEntities">
+  <EntityContainerMapping StorageEntityContainer="CarDealershipandServiceModelStoreContainer" CdmEntityContainer="CarDealershipandServiceEntities">
     <EntitySetMapping Name="Artikls">
-      <EntityTypeMapping TypeName="Model.Artikl">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Artikl">
         <MappingFragment StoreEntitySet="Artikl">
           <ScalarProperty Name="id_artikl" ColumnName="id_artikl" />
           <ScalarProperty Name="godina_proizvodnje" ColumnName="godina_proizvodnje" />
@@ -17,7 +17,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Artikli_na_skladistu">
-      <EntityTypeMapping TypeName="Model.Artikli_na_skladistu">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Artikli_na_skladistu">
         <MappingFragment StoreEntitySet="Artikli_na_skladistu">
           <ScalarProperty Name="id_artikli_na_skladistu" ColumnName="id_artikli_na_skladistu" />
           <ScalarProperty Name="kolicina" ColumnName="kolicina" />
@@ -27,7 +27,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Dnevnik_rada">
-      <EntityTypeMapping TypeName="Model.Dnevnik_rada">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Dnevnik_rada">
         <MappingFragment StoreEntitySet="Dnevnik_rada">
           <ScalarProperty Name="id_dnevnik_rada_zaposlenika" ColumnName="id_dnevnik_rada_zaposlenika" />
           <ScalarProperty Name="datum_obavljanja_rada" ColumnName="datum_obavljanja_rada" />
@@ -38,7 +38,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Dokuments">
-      <EntityTypeMapping TypeName="Model.Dokument">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Dokument">
         <MappingFragment StoreEntitySet="Dokument">
           <ScalarProperty Name="id_dokument" ColumnName="id_dokument" />
           <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
@@ -51,7 +51,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Korisniks">
-      <EntityTypeMapping TypeName="Model.Korisnik">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Korisnik">
         <MappingFragment StoreEntitySet="Korisnik">
           <ScalarProperty Name="id_korisnik" ColumnName="id_korisnik" />
           <ScalarProperty Name="ime_korisnika" ColumnName="ime_korisnika" />
@@ -67,7 +67,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Poslovnicas">
-      <EntityTypeMapping TypeName="Model.Poslovnica">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Poslovnica">
         <MappingFragment StoreEntitySet="Poslovnica">
           <ScalarProperty Name="id_poslovnica" ColumnName="id_poslovnica" />
           <ScalarProperty Name="OIB_poslovnice" ColumnName="OIB_poslovnice" />
@@ -77,7 +77,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Radnja_dnevnika">
-      <EntityTypeMapping TypeName="Model.Radnja_dnevnika">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Radnja_dnevnika">
         <MappingFragment StoreEntitySet="Radnja_dnevnika">
           <ScalarProperty Name="id_rad_zaposlenika" ColumnName="id_rad_zaposlenika" />
           <ScalarProperty Name="naziv_rada" ColumnName="naziv_rada" />
@@ -85,7 +85,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Skladistes">
-      <EntityTypeMapping TypeName="Model.Skladiste">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Skladiste">
         <MappingFragment StoreEntitySet="Skladiste">
           <ScalarProperty Name="naziv" ColumnName="naziv" />
           <ScalarProperty Name="adresa" ColumnName="adresa" />
@@ -94,7 +94,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Skladiste_poslovnice">
-      <EntityTypeMapping TypeName="Model.Skladiste_poslovnice">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Skladiste_poslovnice">
         <MappingFragment StoreEntitySet="Skladiste_poslovnice">
           <ScalarProperty Name="id_skladiste_poslovnice" ColumnName="id_skladiste_poslovnice" />
           <ScalarProperty Name="poslovnica" ColumnName="poslovnica" />
@@ -103,7 +103,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Stavke_dokumenta">
-      <EntityTypeMapping TypeName="Model.Stavke_dokumenta">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Stavke_dokumenta">
         <MappingFragment StoreEntitySet="Stavke_dokumenta">
           <ScalarProperty Name="id_stavke_dokumenta" ColumnName="id_stavke_dokumenta" />
           <ScalarProperty Name="artikl" ColumnName="artikl" />
@@ -113,7 +113,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tip_dokumenta">
-      <EntityTypeMapping TypeName="Model.Tip_dokumenta">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Tip_dokumenta">
         <MappingFragment StoreEntitySet="Tip_dokumenta">
           <ScalarProperty Name="id_tip_dokumenta" ColumnName="id_tip_dokumenta" />
           <ScalarProperty Name="naziv_dokumenta" ColumnName="naziv_dokumenta" />
@@ -121,7 +121,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tip_korisnika">
-      <EntityTypeMapping TypeName="Model.Tip_korisnika">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Tip_korisnika">
         <MappingFragment StoreEntitySet="Tip_korisnika">
           <ScalarProperty Name="id_tip_korisnika" ColumnName="id_tip_korisnika" />
           <ScalarProperty Name="naziv_uloge" ColumnName="naziv_uloge" />
@@ -129,7 +129,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Uslugas">
-      <EntityTypeMapping TypeName="Model.Usluga">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Usluga">
         <MappingFragment StoreEntitySet="Usluga">
           <ScalarProperty Name="id_usluga" ColumnName="id_usluga" />
           <ScalarProperty Name="naziv_usluge" ColumnName="naziv_usluge" />
@@ -138,7 +138,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Vrsta_usluge">
-      <EntityTypeMapping TypeName="Model.Vrsta_usluge">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Vrsta_usluge">
         <MappingFragment StoreEntitySet="Vrsta_usluge">
           <ScalarProperty Name="id_vrsta_usluge" ColumnName="id_vrsta_usluge" />
           <ScalarProperty Name="naziv_usluge" ColumnName="naziv_usluge" />
@@ -146,7 +146,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Vrste_artikla">
-      <EntityTypeMapping TypeName="Model.Vrste_artikla">
+      <EntityTypeMapping TypeName="CarDealershipandServiceModel.Vrste_artikla">
         <MappingFragment StoreEntitySet="Vrste_artikla">
           <ScalarProperty Name="id_vrste_artikla" ColumnName="id_vrste_artikla" />
           <ScalarProperty Name="naziv" ColumnName="naziv" />

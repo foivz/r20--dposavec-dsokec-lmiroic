@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PI20_023_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Artikl">
           <Key>
             <PropertyRef Name="id_artikl" />
@@ -44,7 +44,7 @@
           </Key>
           <Property Name="id_dokument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="datum_izdavanja" Type="datetime" Nullable="false" />
-          <Property Name="opis_dokumenta" Type="varchar" MaxLength="45" />
+          <Property Name="opis_dokumenta" Type="varchar" MaxLength="255" />
           <Property Name="ukupni_saldo" Type="float" />
           <Property Name="tip_dokumenta" Type="int" Nullable="false" />
           <Property Name="korisnik" Type="int" />
@@ -334,7 +334,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PI20_023_DBModelStoreContainer">
+        <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Artikl" EntityType="Self.Artikl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Artikli_na_skladistu" EntityType="Self.Artikli_na_skladistu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dnevnik_rada" EntityType="Self.Dnevnik_rada" Schema="dbo" store:Type="Tables" />
@@ -419,7 +419,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="PI20_023_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Artikl">
           <Key>
             <PropertyRef Name="id_artikl" />
@@ -466,7 +466,7 @@
           </Key>
           <Property Name="id_dokument" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="datum_izdavanja" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="opis_dokumenta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="opis_dokumenta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="ukupni_saldo" Type="Double" />
           <Property Name="tip_dokumenta" Type="Int32" Nullable="false" />
           <Property Name="korisnik" Type="Int32" />
@@ -867,9 +867,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PI20_023_DBModelStoreContainer" CdmEntityContainer="CarDealershipandServiceEntities">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="CarDealershipandServiceEntities">
           <EntitySetMapping Name="Artikls">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Artikl">
+            <EntityTypeMapping TypeName="Model.Artikl">
               <MappingFragment StoreEntitySet="Artikl">
                 <ScalarProperty Name="id_artikl" ColumnName="id_artikl" />
                 <ScalarProperty Name="godina_proizvodnje" ColumnName="godina_proizvodnje" />
@@ -884,7 +884,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Artikli_na_skladistu">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Artikli_na_skladistu">
+            <EntityTypeMapping TypeName="Model.Artikli_na_skladistu">
               <MappingFragment StoreEntitySet="Artikli_na_skladistu">
                 <ScalarProperty Name="id_artikli_na_skladistu" ColumnName="id_artikli_na_skladistu" />
                 <ScalarProperty Name="kolicina" ColumnName="kolicina" />
@@ -894,7 +894,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Dnevnik_rada">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Dnevnik_rada">
+            <EntityTypeMapping TypeName="Model.Dnevnik_rada">
               <MappingFragment StoreEntitySet="Dnevnik_rada">
                 <ScalarProperty Name="id_dnevnik_rada_zaposlenika" ColumnName="id_dnevnik_rada_zaposlenika" />
                 <ScalarProperty Name="datum_obavljanja_rada" ColumnName="datum_obavljanja_rada" />
@@ -905,7 +905,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Dokuments">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Dokument">
+            <EntityTypeMapping TypeName="Model.Dokument">
               <MappingFragment StoreEntitySet="Dokument">
                 <ScalarProperty Name="id_dokument" ColumnName="id_dokument" />
                 <ScalarProperty Name="datum_izdavanja" ColumnName="datum_izdavanja" />
@@ -918,7 +918,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Korisniks">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Korisnik">
+            <EntityTypeMapping TypeName="Model.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">
                 <ScalarProperty Name="id_korisnik" ColumnName="id_korisnik" />
                 <ScalarProperty Name="ime_korisnika" ColumnName="ime_korisnika" />
@@ -934,7 +934,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Poslovnicas">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Poslovnica">
+            <EntityTypeMapping TypeName="Model.Poslovnica">
               <MappingFragment StoreEntitySet="Poslovnica">
                 <ScalarProperty Name="id_poslovnica" ColumnName="id_poslovnica" />
                 <ScalarProperty Name="OIB_poslovnice" ColumnName="OIB_poslovnice" />
@@ -944,7 +944,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Radnja_dnevnika">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Radnja_dnevnika">
+            <EntityTypeMapping TypeName="Model.Radnja_dnevnika">
               <MappingFragment StoreEntitySet="Radnja_dnevnika">
                 <ScalarProperty Name="id_rad_zaposlenika" ColumnName="id_rad_zaposlenika" />
                 <ScalarProperty Name="naziv_rada" ColumnName="naziv_rada" />
@@ -952,7 +952,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Skladistes">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Skladiste">
+            <EntityTypeMapping TypeName="Model.Skladiste">
               <MappingFragment StoreEntitySet="Skladiste">
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="adresa" ColumnName="adresa" />
@@ -961,7 +961,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Skladiste_poslovnice">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Skladiste_poslovnice">
+            <EntityTypeMapping TypeName="Model.Skladiste_poslovnice">
               <MappingFragment StoreEntitySet="Skladiste_poslovnice">
                 <ScalarProperty Name="id_skladiste_poslovnice" ColumnName="id_skladiste_poslovnice" />
                 <ScalarProperty Name="poslovnica" ColumnName="poslovnica" />
@@ -970,7 +970,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Stavke_dokumenta">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Stavke_dokumenta">
+            <EntityTypeMapping TypeName="Model.Stavke_dokumenta">
               <MappingFragment StoreEntitySet="Stavke_dokumenta">
                 <ScalarProperty Name="id_stavke_dokumenta" ColumnName="id_stavke_dokumenta" />
                 <ScalarProperty Name="artikl" ColumnName="artikl" />
@@ -980,7 +980,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tip_dokumenta">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Tip_dokumenta">
+            <EntityTypeMapping TypeName="Model.Tip_dokumenta">
               <MappingFragment StoreEntitySet="Tip_dokumenta">
                 <ScalarProperty Name="id_tip_dokumenta" ColumnName="id_tip_dokumenta" />
                 <ScalarProperty Name="naziv_dokumenta" ColumnName="naziv_dokumenta" />
@@ -988,7 +988,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tip_korisnika">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Tip_korisnika">
+            <EntityTypeMapping TypeName="Model.Tip_korisnika">
               <MappingFragment StoreEntitySet="Tip_korisnika">
                 <ScalarProperty Name="id_tip_korisnika" ColumnName="id_tip_korisnika" />
                 <ScalarProperty Name="naziv_uloge" ColumnName="naziv_uloge" />
@@ -996,7 +996,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Uslugas">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Usluga">
+            <EntityTypeMapping TypeName="Model.Usluga">
               <MappingFragment StoreEntitySet="Usluga">
                 <ScalarProperty Name="id_usluga" ColumnName="id_usluga" />
                 <ScalarProperty Name="naziv_usluge" ColumnName="naziv_usluge" />
@@ -1005,7 +1005,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vrsta_usluge">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Vrsta_usluge">
+            <EntityTypeMapping TypeName="Model.Vrsta_usluge">
               <MappingFragment StoreEntitySet="Vrsta_usluge">
                 <ScalarProperty Name="id_vrsta_usluge" ColumnName="id_vrsta_usluge" />
                 <ScalarProperty Name="naziv_usluge" ColumnName="naziv_usluge" />
@@ -1013,7 +1013,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vrste_artikla">
-            <EntityTypeMapping TypeName="PI20_023_DBModel.Vrste_artikla">
+            <EntityTypeMapping TypeName="Model.Vrste_artikla">
               <MappingFragment StoreEntitySet="Vrste_artikla">
                 <ScalarProperty Name="id_vrste_artikla" ColumnName="id_vrste_artikla" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />

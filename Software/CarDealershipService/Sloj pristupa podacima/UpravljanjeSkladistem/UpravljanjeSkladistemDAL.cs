@@ -72,7 +72,7 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                               from s in db.Skladistes
                               from artS in db.Artikli_na_skladistu
                               from a in db.Artikls
-                              where sp.poslovnica == korisnik.poslovnica && artS.skladiste == s.id_skladiste && artS.artikl == a.id_artikl
+                              where sp.poslovnica == korisnik.poslovnica && artS.skladiste == s.id_skladiste && artS.artikl == a.id_artikl&&sp.skladiste==s.id_skladiste
                               select a;
                 ArtikliNaSkladistu = artikli.ToList();
             }

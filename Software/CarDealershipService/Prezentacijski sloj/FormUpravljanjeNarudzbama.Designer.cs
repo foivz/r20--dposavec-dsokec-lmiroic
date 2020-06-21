@@ -130,7 +130,7 @@
             this.Controls.Add(this.panelUpravljanjeNarudzbamaFooter);
             this.Controls.Add(this.panelUpravljanjeNarudzbamaHeader);
             this.Name = "FormUpravljanjeNarudzbama";
-            this.Text = "FormUpravljanjeNarudzbama";
+            this.Text = "Upravljanje narudzbama";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjeNarudzbama_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjeNarudzbama_Load);
             this.panelUpravljanjeNarudzbamaHeader.ResumeLayout(false);

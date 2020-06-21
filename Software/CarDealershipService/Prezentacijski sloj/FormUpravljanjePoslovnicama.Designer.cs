@@ -137,7 +137,7 @@
             this.Controls.Add(this.panelUpravljanjePoslovnicamaFooter);
             this.Controls.Add(this.panelUpravljanjePoslovnicamaHeader);
             this.Name = "FormUpravljanjePoslovnicama";
-            this.Text = "FormUpravljanjePoslovnicama";
+            this.Text = "Upravljanje poslovnicama";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjePoslovnicama_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjePoslovnicama_Load);
             this.panelUpravljanjePoslovnicamaHeader.ResumeLayout(false);

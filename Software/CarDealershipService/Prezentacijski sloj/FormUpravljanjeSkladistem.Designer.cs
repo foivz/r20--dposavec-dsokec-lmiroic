@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panelUpravSkladistemHeader = new System.Windows.Forms.Panel();
             this.panelUpravSkladistemFooter = new System.Windows.Forms.Panel();
+            this.uiActionKreiranjeRezervnogDijela = new System.Windows.Forms.Button();
             this.uiActionAzuriranje = new System.Windows.Forms.Button();
             this.uiActionKreiraj = new System.Windows.Forms.Button();
             this.uiActionBrisanje = new System.Windows.Forms.Button();
-            this.uiActionKreiranjeRezervnogDijela = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSviArtikliNaSkladistu)).BeginInit();
             this.panelUpravSkladistemHeader.SuspendLayout();
             this.panelUpravSkladistemFooter.SuspendLayout();
@@ -85,6 +85,21 @@
             this.panelUpravSkladistemFooter.Size = new System.Drawing.Size(938, 100);
             this.panelUpravSkladistemFooter.TabIndex = 3;
             // 
+            // uiActionKreiranjeRezervnogDijela
+            // 
+            this.uiActionKreiranjeRezervnogDijela.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uiActionKreiranjeRezervnogDijela.FlatAppearance.BorderSize = 0;
+            this.uiActionKreiranjeRezervnogDijela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionKreiranjeRezervnogDijela.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionKreiranjeRezervnogDijela.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionKreiranjeRezervnogDijela.Location = new System.Drawing.Point(703, 24);
+            this.uiActionKreiranjeRezervnogDijela.Name = "uiActionKreiranjeRezervnogDijela";
+            this.uiActionKreiranjeRezervnogDijela.Size = new System.Drawing.Size(201, 52);
+            this.uiActionKreiranjeRezervnogDijela.TabIndex = 1;
+            this.uiActionKreiranjeRezervnogDijela.Text = "Kreiranje rezervnog dijela";
+            this.uiActionKreiranjeRezervnogDijela.UseVisualStyleBackColor = true;
+            this.uiActionKreiranjeRezervnogDijela.Click += new System.EventHandler(this.uiActionKreiranjeRezervnogDijela_Click);
+            // 
             // uiActionAzuriranje
             // 
             this.uiActionAzuriranje.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -130,21 +145,6 @@
             this.uiActionBrisanje.UseVisualStyleBackColor = true;
             this.uiActionBrisanje.Click += new System.EventHandler(this.uiActionBrisanje_Click);
             // 
-            // uiActionKreiranjeRezervnogDijela
-            // 
-            this.uiActionKreiranjeRezervnogDijela.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uiActionKreiranjeRezervnogDijela.FlatAppearance.BorderSize = 0;
-            this.uiActionKreiranjeRezervnogDijela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionKreiranjeRezervnogDijela.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiActionKreiranjeRezervnogDijela.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionKreiranjeRezervnogDijela.Location = new System.Drawing.Point(703, 24);
-            this.uiActionKreiranjeRezervnogDijela.Name = "uiActionKreiranjeRezervnogDijela";
-            this.uiActionKreiranjeRezervnogDijela.Size = new System.Drawing.Size(201, 52);
-            this.uiActionKreiranjeRezervnogDijela.TabIndex = 1;
-            this.uiActionKreiranjeRezervnogDijela.Text = "Kreiranje rezervnog dijela";
-            this.uiActionKreiranjeRezervnogDijela.UseVisualStyleBackColor = true;
-            this.uiActionKreiranjeRezervnogDijela.Click += new System.EventHandler(this.uiActionKreiranjeRezervnogDijela_Click);
-            // 
             // FormUpravljanjeSkladistem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,7 +154,7 @@
             this.Controls.Add(this.panelUpravSkladistemHeader);
             this.Controls.Add(this.dgvSviArtikliNaSkladistu);
             this.Name = "FormUpravljanjeSkladistem";
-            this.Text = "FormUpravljanjeSkladistem";
+            this.Text = "Upravljanje skladistem";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjeSkladistem_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjeSkladistem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSviArtikliNaSkladistu)).EndInit();

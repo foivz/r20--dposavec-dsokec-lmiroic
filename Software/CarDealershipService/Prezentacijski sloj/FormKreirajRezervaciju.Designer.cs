@@ -39,6 +39,8 @@
             this.uiActionAzurirajRezervaciju = new System.Windows.Forms.Button();
             this.uiACtionSpremiRezervaciju = new System.Windows.Forms.Button();
             this.cbInputKorisnik = new System.Windows.Forms.ComboBox();
+            this.cbInputZaposlenik = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelKreirajRezervacijuHeader.SuspendLayout();
             this.paneKreirajRezervacijuFooter.SuspendLayout();
             this.SuspendLayout();
@@ -152,11 +154,30 @@
             this.cbInputKorisnik.Size = new System.Drawing.Size(147, 21);
             this.cbInputKorisnik.TabIndex = 7;
             // 
+            // cbInputZaposlenik
+            // 
+            this.cbInputZaposlenik.FormattingEnabled = true;
+            this.cbInputZaposlenik.Location = new System.Drawing.Point(511, 222);
+            this.cbInputZaposlenik.Name = "cbInputZaposlenik";
+            this.cbInputZaposlenik.Size = new System.Drawing.Size(147, 21);
+            this.cbInputZaposlenik.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(511, 203);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Zaposlenik";
+            // 
             // FormKreirajRezervaciju
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbInputZaposlenik);
             this.Controls.Add(this.cbInputKorisnik);
             this.Controls.Add(this.paneKreirajRezervacijuFooter);
             this.Controls.Add(this.label6);
@@ -166,7 +187,7 @@
             this.Controls.Add(this.uiInputOpisDokumenta);
             this.Controls.Add(this.panelKreirajRezervacijuHeader);
             this.Name = "FormKreirajRezervaciju";
-            this.Text = "FormKreirajRezervaciju";
+            this.Text = "Kreiranje rezervacije";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajRezervaciju_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajRezervaciju_Load);
             this.panelKreirajRezervacijuHeader.ResumeLayout(false);
@@ -190,5 +211,7 @@
         private System.Windows.Forms.Button uiACtionSpremiRezervaciju;
         private System.Windows.Forms.ComboBox cbInputKorisnik;
         private System.Windows.Forms.Button uiActionAzurirajRezervaciju;
+        private System.Windows.Forms.ComboBox cbInputZaposlenik;
+        private System.Windows.Forms.Label label4;
     }
 }

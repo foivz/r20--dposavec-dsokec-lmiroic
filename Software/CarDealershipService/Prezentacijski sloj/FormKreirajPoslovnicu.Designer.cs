@@ -166,7 +166,7 @@
             this.Controls.Add(this.panelKreirajPoslovnicuFooter);
             this.Controls.Add(this.panelKreirajPoslovnicuHeader);
             this.Name = "FormKreirajPoslovnicu";
-            this.Text = "FormKreirajPoslovnicu";
+            this.Text = "Kreiranje poslovnice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajPoslovnicu_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajPoslovnicu_Load);
             this.panelKreirajPoslovnicuHeader.ResumeLayout(false);

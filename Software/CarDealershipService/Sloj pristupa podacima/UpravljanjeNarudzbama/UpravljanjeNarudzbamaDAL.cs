@@ -62,8 +62,8 @@ namespace Sloj_pristupa_podacima.UpravljanjeNarudzbama
             {
                 var narudzba = from d in db.Dokuments
                                   from ps in db.Poslovnicas
-                                  where ps.id_poslovnica == korisnik.poslovnica && korisnik.id_korisnik == d.zaposlenik && d.tip_dokumenta == 2
-                                  select d;
+                               where d.zaposlenik == korisnik.id_korisnik && ps.id_poslovnica == korisnik.poslovnica && d.tip_dokumenta == 2
+                               select d;
                 NarudzbeUPoslovnici = narudzba.ToList();
             }
             return NarudzbeUPoslovnici;

@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "FormIzdajDokumente";
-            this.Text = "FormIzdajDokumente";
+            this.Text = "Izdaj dokumente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIzdajDokumente_FormClosed);
             this.ResumeLayout(false);
 

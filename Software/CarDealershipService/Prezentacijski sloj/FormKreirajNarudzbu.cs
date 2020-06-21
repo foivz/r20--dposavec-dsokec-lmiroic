@@ -58,6 +58,9 @@ namespace Prezentacijski_sloj
             }
             else
             {
+                label5.Hide();
+                cbInputZaposlenikKreirajNarudzbu.Enabled = false;
+                cbInputZaposlenikKreirajNarudzbu.Hide();
                 uiActionAzurirajNarudzbu.Enabled=false;
                 uiActionAzurirajNarudzbu.Hide();
             }
@@ -73,7 +76,7 @@ namespace Prezentacijski_sloj
                 narudzba.ukupni_saldo = float.Parse(uiInputUkupniSaldo.Text);
                 narudzba.tip_dokumenta = 2;
                 narudzba.korisnik = (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
-                narudzba.zaposlenik = (cbInputZaposlenikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
+                narudzba.zaposlenik = Sloj_poslovne_logike.Sesija.PrijavljenKorisnik.id_korisnik;
                 if (Sloj_poslovne_logike.UpravljanjeNarudzbama.UpravljanjeNarudzbamaBLL.ProvjeraUnosaNarudzbe(narudzba)==true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajNarudzbu(narudzba);

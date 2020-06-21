@@ -31,6 +31,7 @@
             this.panelKreirajRezervniDioHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelKreirajRezervniDioFooter = new System.Windows.Forms.Panel();
+            this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.uiInputGodinaProizvodnjeDijela = new System.Windows.Forms.TextBox();
             this.uiInputOpisRezervnogDijela = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.uiActionAzuriraj = new System.Windows.Forms.Button();
             this.panelKreirajRezervniDioHeader.SuspendLayout();
             this.panelKreirajRezervniDioFooter.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,21 @@
             this.panelKreirajRezervniDioFooter.Name = "panelKreirajRezervniDioFooter";
             this.panelKreirajRezervniDioFooter.Size = new System.Drawing.Size(800, 100);
             this.panelKreirajRezervniDioFooter.TabIndex = 5;
+            // 
+            // uiActionAzuriraj
+            // 
+            this.uiActionAzuriraj.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uiActionAzuriraj.FlatAppearance.BorderSize = 0;
+            this.uiActionAzuriraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionAzuriraj.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionAzuriraj.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionAzuriraj.Location = new System.Drawing.Point(474, 27);
+            this.uiActionAzuriraj.Name = "uiActionAzuriraj";
+            this.uiActionAzuriraj.Size = new System.Drawing.Size(201, 52);
+            this.uiActionAzuriraj.TabIndex = 1;
+            this.uiActionAzuriraj.Text = "Ažuriraj";
+            this.uiActionAzuriraj.UseVisualStyleBackColor = true;
+            this.uiActionAzuriraj.Click += new System.EventHandler(this.uiActionAzuriraj_Click);
             // 
             // uiActionSpremi
             // 
@@ -156,21 +171,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Cijena artikla";
             // 
-            // uiActionAzuriraj
-            // 
-            this.uiActionAzuriraj.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uiActionAzuriraj.FlatAppearance.BorderSize = 0;
-            this.uiActionAzuriraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionAzuriraj.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiActionAzuriraj.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionAzuriraj.Location = new System.Drawing.Point(474, 27);
-            this.uiActionAzuriraj.Name = "uiActionAzuriraj";
-            this.uiActionAzuriraj.Size = new System.Drawing.Size(201, 52);
-            this.uiActionAzuriraj.TabIndex = 1;
-            this.uiActionAzuriraj.Text = "Ažuriraj";
-            this.uiActionAzuriraj.UseVisualStyleBackColor = true;
-            this.uiActionAzuriraj.Click += new System.EventHandler(this.uiActionAzuriraj_Click);
-            // 
             // FormKreirajRezervniDio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,7 +187,7 @@
             this.Controls.Add(this.panelKreirajRezervniDioFooter);
             this.Controls.Add(this.panelKreirajRezervniDioHeader);
             this.Name = "FormKreirajRezervniDio";
-            this.Text = "FormKreirajRezervniDio";
+            this.Text = "Kreiranje rezervnih dijelova";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajRezervniDio_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajRezervniDio_Load);
             this.panelKreirajRezervniDioHeader.ResumeLayout(false);

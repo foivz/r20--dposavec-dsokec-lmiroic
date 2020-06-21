@@ -31,6 +31,7 @@
             this.panelKreirajArtiklHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelKreirajArtiklFooter = new System.Windows.Forms.Panel();
+            this.uiActionAzurirajVozilo = new System.Windows.Forms.Button();
             this.uiActionSpremi = new System.Windows.Forms.Button();
             this.uiInputGodinaProizvodnje = new System.Windows.Forms.TextBox();
             this.uiInputEmisijaVozila = new System.Windows.Forms.TextBox();
@@ -46,7 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.uiInputVrstaGoriva = new System.Windows.Forms.ComboBox();
-            this.uiActionAzurirajVozilo = new System.Windows.Forms.Button();
             this.panelKreirajArtiklHeader.SuspendLayout();
             this.panelKreirajArtiklFooter.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,21 @@
             this.panelKreirajArtiklFooter.Name = "panelKreirajArtiklFooter";
             this.panelKreirajArtiklFooter.Size = new System.Drawing.Size(800, 100);
             this.panelKreirajArtiklFooter.TabIndex = 4;
+            // 
+            // uiActionAzurirajVozilo
+            // 
+            this.uiActionAzurirajVozilo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uiActionAzurirajVozilo.FlatAppearance.BorderSize = 0;
+            this.uiActionAzurirajVozilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionAzurirajVozilo.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionAzurirajVozilo.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionAzurirajVozilo.Location = new System.Drawing.Point(476, 21);
+            this.uiActionAzurirajVozilo.Name = "uiActionAzurirajVozilo";
+            this.uiActionAzurirajVozilo.Size = new System.Drawing.Size(201, 52);
+            this.uiActionAzurirajVozilo.TabIndex = 1;
+            this.uiActionAzurirajVozilo.Text = "Ažuriraj";
+            this.uiActionAzurirajVozilo.UseVisualStyleBackColor = true;
+            this.uiActionAzurirajVozilo.Click += new System.EventHandler(this.uiActionAzurirajVozilo_Click);
             // 
             // uiActionSpremi
             // 
@@ -211,21 +226,6 @@
             this.uiInputVrstaGoriva.Size = new System.Drawing.Size(204, 21);
             this.uiInputVrstaGoriva.TabIndex = 7;
             // 
-            // uiActionAzurirajVozilo
-            // 
-            this.uiActionAzurirajVozilo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uiActionAzurirajVozilo.FlatAppearance.BorderSize = 0;
-            this.uiActionAzurirajVozilo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionAzurirajVozilo.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiActionAzurirajVozilo.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionAzurirajVozilo.Location = new System.Drawing.Point(476, 21);
-            this.uiActionAzurirajVozilo.Name = "uiActionAzurirajVozilo";
-            this.uiActionAzurirajVozilo.Size = new System.Drawing.Size(201, 52);
-            this.uiActionAzurirajVozilo.TabIndex = 1;
-            this.uiActionAzurirajVozilo.Text = "Ažuriraj";
-            this.uiActionAzurirajVozilo.UseVisualStyleBackColor = true;
-            this.uiActionAzurirajVozilo.Click += new System.EventHandler(this.uiActionAzurirajVozilo_Click);
-            // 
             // FormKreirajVozilo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,7 +248,7 @@
             this.Controls.Add(this.panelKreirajArtiklFooter);
             this.Controls.Add(this.panelKreirajArtiklHeader);
             this.Name = "FormKreirajVozilo";
-            this.Text = "FormKreirajArtikl";
+            this.Text = "Kreiranje artikala";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajArtikl_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajArtikl_Load);
             this.panelKreirajArtiklHeader.ResumeLayout(false);
