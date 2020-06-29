@@ -67,8 +67,33 @@ namespace Prezentacijski_sloj
             dokument.ukupni_saldo = suma;
             dokument.zaposlenik = Sloj_poslovne_logike.Sesija.PrijavljenKorisnik.id_korisnik;
             dokument.korisnik = (uiInputKlijenti.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
-            Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajNarudzbu(dokument);
-
+            Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajRacun(dokument);
+            foreach (var item in odabraniArtikli)
+            {
+                Sloj_pristupa_podacima.Usluga usluga = new Sloj_pristupa_podacima.Usluga();
+                if (item.naziv_artikla.EndsWith("a"))
+                {
+                    usluga.naziv_usluge = "Prodaja " + item.naziv_artikla;
+                }
+                else
+                {
+                    usluga.naziv_usluge = "Prodaja " + item.naziv_artikla + "a";
+                }                
+                if (item.vrsta_artikla==1)
+                {
+                    usluga.vrsta_usluge = 3;
+                }
+                else
+                {
+                    usluga.vrsta_usluge = 2;
+                }
+                Sloj_pristupa_podacima.Upravljanje_uslugama.UpravljanjeUslugamaDAL.KreiranjeUsluge(usluga);
+                Sloj_pristupa_podacima.Stavke_dokumenta stavke_Dokumenta = new Sloj_pristupa_podacima.Stavke_dokumenta();
+                stavke_Dokumenta.usluga=Sloj_pristupa_podacima.Upravljanje_uslugama.UpravljanjeUslugamaDAL.VratiZadnjiUnos(usluga.naziv_usluge).id_usluga;
+                stavke_Dokumenta.dokument = Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.VratiZadnjiRacun(dokument).id_dokument;
+                stavke_Dokumenta.artikl = item.id_artikl;
+                Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreiranjeStavkeDokumenta(stavke_Dokumenta);
+            }
         }       
         
         private void dgvProdajniArtikli_DoubleClick(object sender, EventArgs e)
@@ -81,6 +106,7 @@ namespace Prezentacijski_sloj
                 odabraniArtikli.Add(odabraniArtikl);
                 suma += odabraniArtikl.cijena_artikla;
                 OsvjeziOdabraneArtikle();
+
             }
             else
             {
