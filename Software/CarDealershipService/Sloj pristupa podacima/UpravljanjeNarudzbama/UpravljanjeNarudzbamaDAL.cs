@@ -68,5 +68,35 @@ namespace Sloj_pristupa_podacima.UpravljanjeNarudzbama
             }
             return NarudzbeUPoslovnici;
         }
+        public static void KreiranjeStavkeDokumenta(Stavke_dokumenta stavka_Dokumenta)
+        {
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                db.Stavke_dokumenta.Add(stavka_Dokumenta);
+                db.SaveChanges();
+            }
+        }
+        public static void KreirajRacun(Dokument racun)
+        {
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                db.Dokuments.Add(racun);
+                db.SaveChanges();
+            }
+        }
+        public static Dokument VratiZadnjiRacun(Dokument racun)
+        {
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                foreach (var item in db.Dokuments)
+                {
+                    if (racun.id_dokument==item.id_dokument)
+                    {
+                        return item as Dokument;
+                    }
+                }
+                return null;
+            }
+        }
     }
 }
