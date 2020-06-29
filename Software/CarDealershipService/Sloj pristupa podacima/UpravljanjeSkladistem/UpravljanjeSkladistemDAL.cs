@@ -103,5 +103,35 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
             }
             return SkladisteKorisnika;
         }
+        public static void ProdajaArtikla(List<Artikl> artikli)
+        {
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                foreach (var item in artikli)
+                {
+                    Artikli_na_skladistu artiklNaSkladistu = (from a in db.Artikli_na_skladistu
+                                      where a.artikl == item.id_artikl
+                                      select a).SingleOrDefault();                   
+                    db.Artikli_na_skladistu.Attach(artiklNaSkladistu);
+                    artiklNaSkladistu.kolicina = artiklNaSkladistu.kolicina - 1;
+                }                
+                db.SaveChanges();
+            }
+        }
+        public static bool ProvjeraDostupnostiArtikla(Artikl artikl)
+        {
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                Artikli_na_skladistu artiklNaSkladistu = (from a in db.Artikli_na_skladistu
+                                                          where a.artikl == artikl.id_artikl
+                                                          select a).SingleOrDefault();
+                if (artiklNaSkladistu.kolicina > 0)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+        }
     }
 }
