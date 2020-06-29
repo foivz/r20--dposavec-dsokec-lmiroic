@@ -92,6 +92,7 @@ namespace Prezentacijski_sloj
 
         private void GlavnaForma_Load(object sender, EventArgs e)
         {
+            
             if (Sloj_poslovne_logike.Sesija.PrijavljenKorisnik.tip_korisnika!=2)
             {
                 uiActionUpravljanjeKorisnicima.Enabled = false;
