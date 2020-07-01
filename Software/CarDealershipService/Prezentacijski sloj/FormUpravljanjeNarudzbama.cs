@@ -98,6 +98,7 @@ namespace Prezentacijski_sloj
             Sloj_pristupa_podacima.Dokument narudzba = new Sloj_pristupa_podacima.Dokument();
             narudzba = dgvUpravljanjeNarudzbamaSveNarudzbe.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Dokument;
             Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.BrisanjeNarudzbe(narudzba);
+            Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.BRISANJE_NARUDZBE);
             OsvjeziPrikaz();
         }
         private void PrikazFormeAzuriranjaNarudzbe(FormKreirajNarudzbu form, object sender, Sloj_pristupa_podacima.Dokument narudzba)

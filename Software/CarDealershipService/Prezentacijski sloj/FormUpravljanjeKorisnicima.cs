@@ -87,6 +87,7 @@ namespace Prezentacijski_sloj
             Sloj_pristupa_podacima.Korisnik korisnik = new Sloj_pristupa_podacima.Korisnik();
             korisnik = dgvUpravljanjeKorisnicima.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Korisnik;
             Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.BrisanjeKorisnika(korisnik);
+            Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.BRISANJE_KORISNIKA);
             OsvjeziPopisKorisnika();
         }
 

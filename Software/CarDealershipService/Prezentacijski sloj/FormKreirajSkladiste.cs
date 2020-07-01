@@ -52,6 +52,7 @@ namespace Prezentacijski_sloj
                 if (Sloj_poslovne_logike.UpravljanjePoslovnicama.UpravljanjePoslovnicamaBLL.ProvjeraUnosaSkladista(skladiste) == true)
                 {
                     Sloj_pristupa_podacima.UpravljanjePoslovnicama.UpravljanjePoslovnicamaDAL.KreiranjeSkladištaPoslovnice(skladiste, Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
+                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.KREIRANO_SKLADISTE);
                 }
                 else
                 {

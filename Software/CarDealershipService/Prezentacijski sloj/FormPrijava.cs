@@ -42,6 +42,7 @@ namespace Prezentacijski_sloj
                 if (Sloj_poslovne_logike.UpravljanjeKorisnicima.UpravljanjeKorisnicimaBLL.PrijaviKorisnika(korisnickoIme, lozinka))
                 {
                     GlavnaForma glavnaForma = new GlavnaForma();
+                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.PRIJAVA_U_SUSTAV);
                     this.Hide();
                     glavnaForma.ShowDialog();
                     

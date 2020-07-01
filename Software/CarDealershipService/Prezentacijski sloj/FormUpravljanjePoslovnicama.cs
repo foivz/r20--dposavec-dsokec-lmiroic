@@ -126,6 +126,7 @@ namespace Prezentacijski_sloj
             Sloj_pristupa_podacima.Poslovnica poslovnica = new Sloj_pristupa_podacima.Poslovnica();
             poslovnica = dgvUpravljanjePoslovnicama.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Poslovnica;
             Sloj_pristupa_podacima.UpravljanjePoslovnicama.UpravljanjePoslovnicamaDAL.BrisanjePoslovnice(poslovnica);
+            Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.BRISANJE_POSLOVNICE);
             OsvjeziPopisPoslovnica();
         }
 
