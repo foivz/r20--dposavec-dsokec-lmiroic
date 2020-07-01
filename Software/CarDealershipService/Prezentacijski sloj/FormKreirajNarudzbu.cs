@@ -81,6 +81,7 @@ namespace Prezentacijski_sloj
                 {
                     Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajNarudzbu(narudzba);
                     FormUpravljanjeNarudzbama.OsvjeziPrikaz();
+                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.KREIRANA_NARUDZBA);
                 }
                 else
                 {

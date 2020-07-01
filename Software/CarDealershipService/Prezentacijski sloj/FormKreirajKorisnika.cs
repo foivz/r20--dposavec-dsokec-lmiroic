@@ -51,6 +51,7 @@ namespace Prezentacijski_sloj
                 {
                     Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.KreiranjeKorisnika(korisnik);
                     FormUpravljanjeKorisnicima.OsvjeziPopisKorisnika();
+                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.KREIRAN_KORISNIK);
                 }
                 else
                 {

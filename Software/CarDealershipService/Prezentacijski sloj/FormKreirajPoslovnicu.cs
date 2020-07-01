@@ -51,6 +51,7 @@ namespace Prezentacijski_sloj
                 {
                     Sloj_pristupa_podacima.UpravljanjePoslovnicama.UpravljanjePoslovnicamaDAL.KreirajPoslovnicu(poslovnica);
                     FormUpravljanjePoslovnicama.OsvjeziPopisPoslovnica();
+                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.KREIRANA_POSLOVNICA);
                 }
                 else
                 {
