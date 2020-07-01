@@ -108,6 +108,7 @@ namespace Prezentacijski_sloj
                 {
                     Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.AzurirajRezervaciju(rezervacija);
                     FormUpravljanjeRezervacijama.OsvjeziPrikaz();
+                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.AZURIRAJ_REZERVACIJU);
                 }
                 else
                 {

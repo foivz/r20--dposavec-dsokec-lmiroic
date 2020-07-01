@@ -129,6 +129,7 @@ namespace Prezentacijski_sloj
                 {
                     Sloj_pristupa_podacima.UpravljanjeKorisnicima.UpravljanjeKorisnicima.AzurirajKorisnika(korisnik);
                     FormUpravljanjeKorisnicima.OsvjeziPopisKorisnika();
+                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.AZURIRAJ_KORISNIKA);
                 }
                 else
                 {
