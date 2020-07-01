@@ -73,6 +73,26 @@ namespace Sloj_poslovne_logike.UpravljanjeDnevnikom
                     dnevnik.opis_rada = "Izbrisana rezervacija";
                     dnevnik.radnja_dnevnika = (int)radnja;
                     break;
+                case RadnjaDnevnika.AZURIRAJ_KORISNIKA:
+                    dnevnik.opis_rada = "Azuriran korisnik";
+                    dnevnik.radnja_dnevnika = (int)radnja;
+                    break;
+                case RadnjaDnevnika.AZURIRAJ_NARUDZBU:
+                    dnevnik.opis_rada = "Azurirana narudzba";
+                    dnevnik.radnja_dnevnika = (int)radnja;
+                    break;
+                case RadnjaDnevnika.AZURIRAJ_POSLOVNICU:
+                    dnevnik.opis_rada = "Azurirana poslovnica";
+                    dnevnik.radnja_dnevnika = (int)radnja;
+                    break;
+                case RadnjaDnevnika.AZURIRAJ_REZERVACIJU:
+                    dnevnik.opis_rada = "Azurirana rezervacija";
+                    dnevnik.radnja_dnevnika = (int)radnja;
+                    break;
+                case RadnjaDnevnika.AZURIRAJ_ARTIKL:
+                    dnevnik.opis_rada = "Azuriran artikl";
+                    dnevnik.radnja_dnevnika = (int)radnja;
+                    break;
             }
             return dnevnik;
         }

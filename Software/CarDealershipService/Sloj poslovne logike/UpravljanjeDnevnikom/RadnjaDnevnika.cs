@@ -22,6 +22,11 @@ namespace Sloj_poslovne_logike.UpravljanjeDnevnikom
         BRISANJE_NARUDZBE = 1008,
         BRISANJE_KORISNIKA = 1009,
         BRISANJE_POSLOVNICE = 1010,
-        PRODAN_ARTIKL = 1011
+        PRODAN_ARTIKL = 1011,
+        AZURIRAJ_KORISNIKA = 1012,
+        AZURIRAJ_NARUDZBU = 1013,
+        AZURIRAJ_POSLOVNICU = 1014,
+        AZURIRAJ_REZERVACIJU = 1015,
+        AZURIRAJ_ARTIKL = 1016
     }
 }
