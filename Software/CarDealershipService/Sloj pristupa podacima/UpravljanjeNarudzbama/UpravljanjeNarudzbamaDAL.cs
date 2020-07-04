@@ -98,5 +98,18 @@ namespace Sloj_pristupa_podacima.UpravljanjeNarudzbama
                 return null;
             }
         }
+        public static List<Dokument> DohvatiRacun(Korisnik korisnik)
+        {
+            List<Dokument> sviRacuni = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var DohvacenRacun = from d in db.Dokuments
+                                    from ps in db.Poslovnicas
+                                    where d.zaposlenik == korisnik.id_korisnik && ps.id_poslovnica == korisnik.poslovnica && d.tip_dokumenta == 1
+                                    select d;
+                sviRacuni = DohvacenRacun.ToList();
+            }
+            return sviRacuni;
+        }
     }
 }
