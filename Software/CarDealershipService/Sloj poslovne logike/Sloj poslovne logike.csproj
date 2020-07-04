@@ -54,6 +54,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesija.cs" />
+    <Compile Include="UpravljanjeDnevnikom\DnevnikLog.cs" />
+    <Compile Include="UpravljanjeDnevnikom\RadnjaDnevnika.cs" />
     <Compile Include="UpravljanjeKorisnicima\ParserTipKorisnika.cs" />
     <Compile Include="UpravljanjeKorisnicima\TipKorisnika.cs" />
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicimaBLL.cs" />
