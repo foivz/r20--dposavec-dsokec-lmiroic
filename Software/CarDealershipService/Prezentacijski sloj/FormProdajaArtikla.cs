@@ -41,7 +41,7 @@ namespace Prezentacijski_sloj
 
         private void FormProdajaArtikla_Load(object sender, EventArgs e)
         {
-            label3.Hide();
+            lblSuma.Hide();
             List<Sloj_poslovne_logike.UpravljanjeRezervacijama.Korisnik> listaKorisnika = Sloj_poslovne_logike.UpravljanjeRezervacijama.ParserKorisnik.ParsirajKorisnika();
             uiInputKlijenti.DataSource = null;
             uiInputKlijenti.DataSource = listaKorisnika;
@@ -122,7 +122,7 @@ namespace Prezentacijski_sloj
             dgvOdabraniArtikli.Columns[10].Visible = false;
             dgvOdabraniArtikli.Columns[11].Visible = false;
             lblSuma.Text = "Ukupna cijena = " + suma;
-            label3.Show();
+            lblSuma.Show();
         }
     }
 }
