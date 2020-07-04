@@ -112,8 +112,6 @@ namespace Prezentacijski_sloj
 
         private void GlavnaForma_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Sloj_poslovne_logike.Sesija.PrijavljenKorisnik = null;
-            Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.ODJAVA_IZ_SUSTAVA);
             Application.Exit();
         }
     }
