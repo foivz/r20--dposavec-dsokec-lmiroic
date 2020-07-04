@@ -72,7 +72,7 @@ namespace Prezentacijski_sloj
 
         private void uiActionIzdavanjeDokumenata_Click(object sender, EventArgs e)
         {
-            PrikaziFormu(FormIzdajDokumente.instance, sender);
+            PrikaziFormu(FormIzvjesca.instance, sender);
         }
 
         private void uiActionUpravljanjeNarudzbama_Click(object sender, EventArgs e)

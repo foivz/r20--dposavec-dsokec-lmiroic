@@ -35,7 +35,7 @@
             this.uiActionUpravljanjeNarudzbama = new System.Windows.Forms.Button();
             this.uiActionUpravljanjePoslovnicama = new System.Windows.Forms.Button();
             this.uiActionUpravljanjeKorisnicima = new System.Windows.Forms.Button();
-            this.uiActionIzdavanjeDokumenata = new System.Windows.Forms.Button();
+            this.uiActionPrikazIzvjesca = new System.Windows.Forms.Button();
             this.uiActionRezervacija = new System.Windows.Forms.Button();
             this.uiActionUpravljanjeSkladištem = new System.Windows.Forms.Button();
             this.uiActionProdaja = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.panelGlFormaIzbornik.Controls.Add(this.panelGlFormaLogo);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjePoslovnicama);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjeKorisnicima);
-            this.panelGlFormaIzbornik.Controls.Add(this.uiActionIzdavanjeDokumenata);
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionPrikazIzvjesca);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionRezervacija);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjeSkladištem);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionProdaja);
@@ -127,19 +127,19 @@
             this.uiActionUpravljanjeKorisnicima.UseVisualStyleBackColor = true;
             this.uiActionUpravljanjeKorisnicima.Click += new System.EventHandler(this.uiActionUpravljanjeKorisnicima_Click);
             // 
-            // uiActionIzdavanjeDokumenata
+            // uiActionPrikazIzvjesca
             // 
-            this.uiActionIzdavanjeDokumenata.FlatAppearance.BorderSize = 0;
-            this.uiActionIzdavanjeDokumenata.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionIzdavanjeDokumenata.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiActionIzdavanjeDokumenata.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionIzdavanjeDokumenata.Location = new System.Drawing.Point(0, 246);
-            this.uiActionIzdavanjeDokumenata.Name = "uiActionIzdavanjeDokumenata";
-            this.uiActionIzdavanjeDokumenata.Size = new System.Drawing.Size(200, 45);
-            this.uiActionIzdavanjeDokumenata.TabIndex = 0;
-            this.uiActionIzdavanjeDokumenata.Text = "Izdavanje dokumenata";
-            this.uiActionIzdavanjeDokumenata.UseVisualStyleBackColor = true;
-            this.uiActionIzdavanjeDokumenata.Click += new System.EventHandler(this.uiActionIzdavanjeDokumenata_Click);
+            this.uiActionPrikazIzvjesca.FlatAppearance.BorderSize = 0;
+            this.uiActionPrikazIzvjesca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionPrikazIzvjesca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionPrikazIzvjesca.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionPrikazIzvjesca.Location = new System.Drawing.Point(0, 246);
+            this.uiActionPrikazIzvjesca.Name = "uiActionPrikazIzvjesca";
+            this.uiActionPrikazIzvjesca.Size = new System.Drawing.Size(200, 45);
+            this.uiActionPrikazIzvjesca.TabIndex = 0;
+            this.uiActionPrikazIzvjesca.Text = "Prikaz izvješća";
+            this.uiActionPrikazIzvjesca.UseVisualStyleBackColor = true;
+            this.uiActionPrikazIzvjesca.Click += new System.EventHandler(this.uiActionIzdavanjeDokumenata_Click);
             // 
             // uiActionRezervacija
             // 
@@ -231,7 +231,7 @@
         private System.Windows.Forms.Panel panelGlFormaNaslov;
         private System.Windows.Forms.Button uiActionUpravljanjePoslovnicama;
         private System.Windows.Forms.Button uiActionUpravljanjeKorisnicima;
-        private System.Windows.Forms.Button uiActionIzdavanjeDokumenata;
+        private System.Windows.Forms.Button uiActionPrikazIzvjesca;
         private System.Windows.Forms.Button uiActionRezervacija;
         private System.Windows.Forms.Button uiActionUpravljanjeSkladištem;
         private System.Windows.Forms.Button uiActionProdaja;
