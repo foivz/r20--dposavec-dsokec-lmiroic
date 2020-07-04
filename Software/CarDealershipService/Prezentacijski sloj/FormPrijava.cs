@@ -55,5 +55,10 @@ namespace Prezentacijski_sloj
                 MessageBox.Show("Podaci nisu uneseni!");
             }           
         }
+
+        private void FormPrijava_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
