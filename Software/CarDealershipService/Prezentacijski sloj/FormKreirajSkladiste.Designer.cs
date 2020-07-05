@@ -87,6 +87,7 @@
             this.uiActionBrisiSkladiste.TabIndex = 1;
             this.uiActionBrisiSkladiste.Text = "Brisanje";
             this.uiActionBrisiSkladiste.UseVisualStyleBackColor = true;
+            this.uiActionBrisiSkladiste.Click += new System.EventHandler(this.uiActionBrisiSkladiste_Click);
             // 
             // uiActionKreirajSkladiste
             // 

@@ -52,7 +52,7 @@ namespace Prezentacijski_sloj
                 if (Sloj_poslovne_logike.UpravljanjePoslovnicama.UpravljanjePoslovnicamaBLL.ProvjeraUnosaSkladista(skladiste) == true)
                 {
                     Sloj_pristupa_podacima.UpravljanjePoslovnicama.UpravljanjePoslovnicamaDAL.KreiranjeSkladištaPoslovnice(skladiste, Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
-                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.KREIRANO_SKLADISTE);
+                    DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.KREIRANO_SKLADISTE);
                 }
                 else
                 {
@@ -72,6 +72,14 @@ namespace Prezentacijski_sloj
             dgvSkladistaPoslovnice.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiSkladisteKorisnika(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
             dgvSkladistaPoslovnice.Columns[3].Visible = false;
             dgvSkladistaPoslovnice.Columns[4].Visible = false;
+        }
+
+        private void uiActionBrisiSkladiste_Click(object sender, EventArgs e)
+        {
+            Sloj_pristupa_podacima.Skladiste skladiste = dgvSkladistaPoslovnice.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Skladiste;
+            Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.BrisanjeSkladista(skladiste);
+            DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.BRISANJE_SKLADISTA);
+            OsvjeziPrikazSkladista();
         }
     }
 }
