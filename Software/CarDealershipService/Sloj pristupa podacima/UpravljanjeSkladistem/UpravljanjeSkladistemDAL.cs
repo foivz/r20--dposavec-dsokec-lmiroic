@@ -111,13 +111,16 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                 {
                     Artikli_na_skladistu artiklNaSkladistu = (from a in db.Artikli_na_skladistu
                                       where a.artikl == item.id_artikl
-                                      select a).SingleOrDefault();                   
+                                      select a).SingleOrDefault();
                     db.Artikli_na_skladistu.Attach(artiklNaSkladistu);
                     artiklNaSkladistu.kolicina = artiklNaSkladistu.kolicina - 1;
+
+                    
                 }                
                 db.SaveChanges();
             }
         }
+
         public static bool ProvjeraDostupnostiArtikla(Artikl artikl)
         {
             using (var db = new CarDealershipandServiceEntities())
@@ -131,6 +134,41 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                 }
                 else
                     return false;
+            }
+        }
+        public static void BrisanjeSkladista(Skladiste skladiste)
+        {
+            using(var db=new CarDealershipandServiceEntities())
+            {
+                BrisanjeArtikalaSaSkladista(skladiste);
+                BrisanjeSkladistaPoslovnice(skladiste);
+                var selectedItem = db.Skladistes.Where(s => s.id_skladiste == skladiste.id_skladiste).FirstOrDefault();
+                db.Skladistes.Remove(selectedItem);
+                db.SaveChanges();
+            }
+        }
+        public static void BrisanjeArtikalaSaSkladista(Skladiste skladiste)
+        {
+           
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                List<Artikli_na_skladistu> artikliNaSkladistu = (from a in db.Artikli_na_skladistu
+                                                          where a.skladiste == skladiste.id_skladiste
+                                                          select a).ToList();
+                foreach (var item in artikliNaSkladistu)
+                {
+                    db.Artikli_na_skladistu.Remove(item);
+                }
+                db.SaveChanges();
+            }
+        }
+        public static void BrisanjeSkladistaPoslovnice(Skladiste skladiste)
+        {
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var selectedItem = db.Skladiste_poslovnice.Where(sp => sp.skladiste == skladiste.id_skladiste).FirstOrDefault();
+                db.Skladiste_poslovnice.Remove(selectedItem);
+                db.SaveChanges();
             }
         }
     }
