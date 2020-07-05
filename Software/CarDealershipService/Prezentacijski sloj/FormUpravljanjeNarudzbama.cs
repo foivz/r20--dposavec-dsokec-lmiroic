@@ -125,6 +125,12 @@ namespace Prezentacijski_sloj
             dgvUpravljanjeNarudzbamaSveNarudzbe.Columns[9].Visible = false;
             dgvUpravljanjeNarudzbamaSveNarudzbe.Columns[10].Visible = false;
         }
+
+        private void FormUpravljanjeNarudzbama_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "UpravljanjeNarudzbama.html");
+
+        }
     }
     
 }

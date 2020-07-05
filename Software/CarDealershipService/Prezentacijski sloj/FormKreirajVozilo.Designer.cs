@@ -251,6 +251,7 @@
             this.Text = "Kreiranje artikala";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajArtikl_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajArtikl_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormKreirajVozilo_HelpRequested);
             this.panelKreirajArtiklHeader.ResumeLayout(false);
             this.panelKreirajArtiklHeader.PerformLayout();
             this.panelKreirajArtiklFooter.ResumeLayout(false);

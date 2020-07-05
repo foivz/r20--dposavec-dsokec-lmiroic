@@ -148,5 +148,11 @@ namespace Prezentacijski_sloj
             _Instance = null;
             ProsljedeniKorisnik = null;
         }
+
+        private void FormKreirajKorisnika_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "KreirajKorisnika.html");
+
+        }
     }
 }

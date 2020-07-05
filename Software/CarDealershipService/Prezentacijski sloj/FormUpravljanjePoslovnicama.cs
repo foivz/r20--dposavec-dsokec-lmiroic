@@ -142,5 +142,11 @@ namespace Prezentacijski_sloj
         {
             PrikazFormeKreirajSkladiste(FormKreirajSkladiste.instance, sender);
         }
+
+        private void FormUpravljanjePoslovnicama_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "UpravljanjePoslovnicama.html");
+
+        }
     }
 }

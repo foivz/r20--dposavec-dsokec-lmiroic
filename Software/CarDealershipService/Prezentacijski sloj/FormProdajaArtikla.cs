@@ -124,5 +124,11 @@ namespace Prezentacijski_sloj
             lblSuma.Text = "Ukupna cijena = " + suma;
             lblSuma.Show();
         }
+
+        private void FormProdajaArtikla_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "Prodaja.html");
+
+        }
     }
 }

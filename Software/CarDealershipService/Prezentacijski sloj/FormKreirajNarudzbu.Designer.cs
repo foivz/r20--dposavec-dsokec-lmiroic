@@ -209,6 +209,7 @@
             this.Text = "Kreiranje narudzbe";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajNarudzbu_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajNarudzbu_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormKreirajNarudzbu_HelpRequested);
             this.panelKreirajNarudzbuHeader.ResumeLayout(false);
             this.panelKreirajNarudzbuHeader.PerformLayout();
             this.panelKreirajNarudzbuFooter.ResumeLayout(false);

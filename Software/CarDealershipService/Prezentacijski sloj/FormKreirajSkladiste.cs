@@ -81,5 +81,11 @@ namespace Prezentacijski_sloj
             DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.BRISANJE_SKLADISTA);
             OsvjeziPrikazSkladista();
         }
+
+        private void FormKreirajSkladiste_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "KreiranjeSkladista.html");
+
+        }
     }
 }

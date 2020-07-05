@@ -157,6 +157,7 @@
             this.Text = "Upravljanje skladistem";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjeSkladistem_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjeSkladistem_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormUpravljanjeSkladistem_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSviArtikliNaSkladistu)).EndInit();
             this.panelUpravSkladistemHeader.ResumeLayout(false);
             this.panelUpravSkladistemHeader.PerformLayout();

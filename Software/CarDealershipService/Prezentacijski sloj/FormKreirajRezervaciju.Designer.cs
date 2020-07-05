@@ -190,6 +190,7 @@
             this.Text = "Kreiranje rezervacije";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajRezervaciju_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajRezervaciju_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormKreirajRezervaciju_HelpRequested);
             this.panelKreirajRezervacijuHeader.ResumeLayout(false);
             this.panelKreirajRezervacijuHeader.PerformLayout();
             this.paneKreirajRezervacijuFooter.ResumeLayout(false);

@@ -133,6 +133,7 @@
             this.Text = "Upravljanje narudzbama";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjeNarudzbama_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjeNarudzbama_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormUpravljanjeNarudzbama_HelpRequested);
             this.panelUpravljanjeNarudzbamaHeader.ResumeLayout(false);
             this.panelUpravljanjeNarudzbamaHeader.PerformLayout();
             this.panelUpravljanjeNarudzbamaFooter.ResumeLayout(false);

@@ -121,5 +121,11 @@ namespace Prezentacijski_sloj
                 MessageBox.Show("Morate unijeti sve parametre!");
             }          
         }
+
+        private void FormKreirajRezervaciju_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "KreirajRezervaciju.html");
+
+        }
     }
 }

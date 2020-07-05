@@ -49,5 +49,11 @@ namespace Prezentacijski_sloj
             this.reportViewer2.RefreshReport();
             this.reportViewer2.RefreshReport();
         }
+
+        private void FormIzvjesca_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "PrikazIzvjesca.html");
+
+        }
     }
 }

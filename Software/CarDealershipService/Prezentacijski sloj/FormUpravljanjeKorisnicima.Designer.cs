@@ -140,6 +140,7 @@
             this.Text = "Upravljanje korisnicima";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjeKorisnicima_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjeKorisnicima_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormUpravljanjeKorisnicima_HelpRequested);
             this.panelUpravKorisnicimaHeader.ResumeLayout(false);
             this.panelUpravKorisnicimaHeader.PerformLayout();
             this.panelUpravKorisnicimaFooter.ResumeLayout(false);

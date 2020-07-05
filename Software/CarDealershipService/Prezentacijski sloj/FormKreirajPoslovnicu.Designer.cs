@@ -169,6 +169,7 @@
             this.Text = "Kreiranje poslovnice";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajPoslovnicu_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajPoslovnicu_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormKreirajPoslovnicu_HelpRequested);
             this.panelKreirajPoslovnicuHeader.ResumeLayout(false);
             this.panelKreirajPoslovnicuHeader.PerformLayout();
             this.panelKreirajPoslovnicuFooter.ResumeLayout(false);

@@ -31,15 +31,23 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DokumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.KorisnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label1 = new System.Windows.Forms.Label();
-            this.DokumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.KorisnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DokumentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DokumentBindingSource
+            // 
+            this.DokumentBindingSource.DataSource = typeof(Sloj_pristupa_podacima.Dokument);
+            // 
+            // KorisnikBindingSource
+            // 
+            this.KorisnikBindingSource.DataSource = typeof(Sloj_pristupa_podacima.Korisnik);
             // 
             // reportViewer1
             // 
@@ -63,10 +71,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Popis računa";
             // 
-            // DokumentBindingSource
-            // 
-            this.DokumentBindingSource.DataSource = typeof(Sloj_pristupa_podacima.Dokument);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -89,10 +93,6 @@
             this.reportViewer2.Size = new System.Drawing.Size(776, 277);
             this.reportViewer2.TabIndex = 2;
             // 
-            // KorisnikBindingSource
-            // 
-            this.KorisnikBindingSource.DataSource = typeof(Sloj_pristupa_podacima.Korisnik);
-            // 
             // FormIzvjesca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +106,7 @@
             this.Text = "Izvješća";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormIzdajDokumente_FormClosed);
             this.Load += new System.EventHandler(this.FormIzvjesca_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormIzvjesca_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.DokumentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -138,5 +138,11 @@ namespace Prezentacijski_sloj
             }            
             
         }
+
+        private void FormKreirajVozilo_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "KreirajVozilo.html");
+
+        }
     }
 }

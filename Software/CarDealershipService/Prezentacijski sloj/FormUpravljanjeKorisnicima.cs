@@ -126,5 +126,11 @@ namespace Prezentacijski_sloj
             korisnik = dgvUpravljanjeKorisnicima.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Korisnik;
             PrikaziFormuAzuriranjeKorisnika(FormKreirajKorisnika.Instance, sender, korisnik);
         }
+
+        private void FormUpravljanjeKorisnicima_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "UpravljanjeKorisnicima.html");
+
+        }
     }
 }

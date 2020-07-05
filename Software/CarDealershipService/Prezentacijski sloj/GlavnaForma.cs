@@ -114,5 +114,11 @@ namespace Prezentacijski_sloj
         {
             Application.Exit();
         }
+
+        private void GlavnaForma_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "GlavnaForma.html");
+
+        }
     }
 }

@@ -226,3 +226,4 @@ C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\DnevnikRadaDLL.dll
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\CarAppHelp.chm
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski sloj.csproj.CoreCompileInputs.cache
+C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\CarAppHelp.chm

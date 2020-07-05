@@ -139,6 +139,7 @@
             this.Text = "Upravljanje rezervacijama";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjeRezervacijama_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjeRezervacijama_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormUpravljanjeRezervacijama_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpravRezervacijamaSveRezervacije)).EndInit();
             this.panelUpravRezervacijamaHeader.ResumeLayout(false);
             this.panelUpravRezervacijamaHeader.PerformLayout();

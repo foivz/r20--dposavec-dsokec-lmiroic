@@ -32,13 +32,13 @@
             this.panelProdajaArtikalaHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelProdajaArtikalaFooter = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.uiInputKlijenti = new System.Windows.Forms.ComboBox();
+            this.lblSuma = new System.Windows.Forms.Label();
             this.uiActionProdaja = new System.Windows.Forms.Button();
             this.dgvOdabraniArtikli = new System.Windows.Forms.DataGridView();
             this.panelProdajaArtiklaOdabraniArtikli = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblSuma = new System.Windows.Forms.Label();
-            this.uiInputKlijenti = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdajniArtikli)).BeginInit();
             this.panelProdajaArtikalaHeader.SuspendLayout();
             this.panelProdajaArtikalaFooter.SuspendLayout();
@@ -92,6 +92,36 @@
             this.panelProdajaArtikalaFooter.Size = new System.Drawing.Size(1101, 100);
             this.panelProdajaArtikalaFooter.TabIndex = 3;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
+            this.label3.Location = new System.Drawing.Point(767, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Klijent";
+            // 
+            // uiInputKlijenti
+            // 
+            this.uiInputKlijenti.FormattingEnabled = true;
+            this.uiInputKlijenti.Location = new System.Drawing.Point(836, 46);
+            this.uiInputKlijenti.Name = "uiInputKlijenti";
+            this.uiInputKlijenti.Size = new System.Drawing.Size(150, 21);
+            this.uiInputKlijenti.TabIndex = 2;
+            // 
+            // lblSuma
+            // 
+            this.lblSuma.AutoSize = true;
+            this.lblSuma.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuma.ForeColor = System.Drawing.Color.LightGray;
+            this.lblSuma.Location = new System.Drawing.Point(108, 42);
+            this.lblSuma.Name = "lblSuma";
+            this.lblSuma.Size = new System.Drawing.Size(57, 22);
+            this.lblSuma.TabIndex = 1;
+            this.lblSuma.Text = "label3";
+            // 
             // uiActionProdaja
             // 
             this.uiActionProdaja.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -141,36 +171,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Odabrani artikli";
             // 
-            // lblSuma
-            // 
-            this.lblSuma.AutoSize = true;
-            this.lblSuma.Font = new System.Drawing.Font("Modern No. 20", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuma.ForeColor = System.Drawing.Color.LightGray;
-            this.lblSuma.Location = new System.Drawing.Point(108, 42);
-            this.lblSuma.Name = "lblSuma";
-            this.lblSuma.Size = new System.Drawing.Size(57, 22);
-            this.lblSuma.TabIndex = 1;
-            this.lblSuma.Text = "label3";
-            // 
-            // uiInputKlijenti
-            // 
-            this.uiInputKlijenti.FormattingEnabled = true;
-            this.uiInputKlijenti.Location = new System.Drawing.Point(836, 46);
-            this.uiInputKlijenti.Name = "uiInputKlijenti";
-            this.uiInputKlijenti.Size = new System.Drawing.Size(150, 21);
-            this.uiInputKlijenti.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(767, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Klijent";
-            // 
             // FormProdajaArtikla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +185,7 @@
             this.Text = "Prodaja artikla";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProdajaArtikla_FormClosed);
             this.Load += new System.EventHandler(this.FormProdajaArtikla_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormProdajaArtikla_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdajniArtikli)).EndInit();
             this.panelProdajaArtikalaHeader.ResumeLayout(false);
             this.panelProdajaArtikalaHeader.PerformLayout();

@@ -130,5 +130,11 @@ namespace Prezentacijski_sloj
             dgvUpravRezervacijamaSveRezervacije.Columns[9].Visible = false;
             dgvUpravRezervacijamaSveRezervacije.Columns[10].Visible = false;
         }
+
+        private void FormUpravljanjeRezervacijama_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "Rezervacije.html");
+
+        }
     }
 }

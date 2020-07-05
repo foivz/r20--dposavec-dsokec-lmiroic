@@ -190,6 +190,7 @@
             this.Text = "Kreiranje rezervnih dijelova";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajRezervniDio_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajRezervniDio_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormKreirajRezervniDio_HelpRequested);
             this.panelKreirajRezervniDioHeader.ResumeLayout(false);
             this.panelKreirajRezervniDioHeader.PerformLayout();
             this.panelKreirajRezervniDioFooter.ResumeLayout(false);

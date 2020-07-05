@@ -129,6 +129,7 @@
             this.Text = "Prijava";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPrijava_FormClosed);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormPrijava_HelpRequested);
             this.panelFrmPrijava.ResumeLayout(false);
             this.panelFrmPrijava.PerformLayout();
             this.ResumeLayout(false);

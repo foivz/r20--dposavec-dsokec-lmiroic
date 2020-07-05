@@ -217,6 +217,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GlavnaForma_FormClosed);
             this.Load += new System.EventHandler(this.GlavnaForma_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.GlavnaForma_HelpRequested);
             this.panelGlFormaIzbornik.ResumeLayout(false);
             this.panelGlFormaNaslov.ResumeLayout(false);
             this.panelGlFormaNaslov.PerformLayout();

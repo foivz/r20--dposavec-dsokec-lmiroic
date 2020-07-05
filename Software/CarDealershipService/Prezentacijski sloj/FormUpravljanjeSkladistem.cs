@@ -151,5 +151,11 @@ namespace Prezentacijski_sloj
             dgvSviArtikliNaSkladistu.Columns[11].Visible = false;
 
         }
+
+        private void FormUpravljanjeSkladistem_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "Skladiste.html");
+
+        }
     }
 }

@@ -291,6 +291,7 @@
             this.Text = "Kreiranje korisnika";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajKorisnika_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajKorisnika_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormKreirajKorisnika_HelpRequested);
             this.panelUpravKorisnicimaHeader.ResumeLayout(false);
             this.panelUpravKorisnicimaHeader.PerformLayout();
             this.panelUpravKorisnicimaFooter.ResumeLayout(false);

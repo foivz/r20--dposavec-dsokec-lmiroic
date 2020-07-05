@@ -124,5 +124,11 @@ namespace Prezentacijski_sloj
                 MessageBox.Show("Morate unijeti sve parametre!");
             }
         }
+
+        private void FormKreirajNarudzbu_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "KreirajNarudzbu.html");
+
+        }
     }
 }

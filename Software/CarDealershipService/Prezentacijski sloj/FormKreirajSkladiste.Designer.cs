@@ -167,6 +167,7 @@
             this.Text = "FormKreirajSkladiste";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajSkladiste_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajSkladiste_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormKreirajSkladiste_HelpRequested);
             this.panelKreirajSkladistePoslovniceHeader.ResumeLayout(false);
             this.panelKreirajSkladistePoslovniceHeader.PerformLayout();
             this.panelKreirajSkladistePoslovniceFooter.ResumeLayout(false);

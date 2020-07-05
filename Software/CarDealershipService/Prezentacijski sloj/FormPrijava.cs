@@ -56,5 +56,10 @@ namespace Prezentacijski_sloj
         {
             Application.Exit();
         }
+
+        private void FormPrijava_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "Prijava.html");
+        }
     }
 }

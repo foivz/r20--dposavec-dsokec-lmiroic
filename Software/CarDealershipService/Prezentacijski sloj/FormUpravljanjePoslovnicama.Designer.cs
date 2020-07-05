@@ -31,11 +31,11 @@
             this.panelUpravljanjePoslovnicamaHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelUpravljanjePoslovnicamaFooter = new System.Windows.Forms.Panel();
+            this.uiActionUpravljanjeSkladistima = new System.Windows.Forms.Button();
             this.uiActionFrmUpravPoslovnicamaAzuriranje = new System.Windows.Forms.Button();
             this.uiActionFrmUpravPoslovnicamaKreiranje = new System.Windows.Forms.Button();
             this.uiActionFrmUpravPoslovnicamaBrisanje = new System.Windows.Forms.Button();
             this.dgvUpravljanjePoslovnicama = new System.Windows.Forms.DataGridView();
-            this.uiActionUpravljanjeSkladistima = new System.Windows.Forms.Button();
             this.panelUpravljanjePoslovnicamaHeader.SuspendLayout();
             this.panelUpravljanjePoslovnicamaFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUpravljanjePoslovnicama)).BeginInit();
@@ -73,6 +73,21 @@
             this.panelUpravljanjePoslovnicamaFooter.Name = "panelUpravljanjePoslovnicamaFooter";
             this.panelUpravljanjePoslovnicamaFooter.Size = new System.Drawing.Size(1084, 100);
             this.panelUpravljanjePoslovnicamaFooter.TabIndex = 5;
+            // 
+            // uiActionUpravljanjeSkladistima
+            // 
+            this.uiActionUpravljanjeSkladistima.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.uiActionUpravljanjeSkladistima.FlatAppearance.BorderSize = 0;
+            this.uiActionUpravljanjeSkladistima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionUpravljanjeSkladistima.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionUpravljanjeSkladistima.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionUpravljanjeSkladistima.Location = new System.Drawing.Point(53, 26);
+            this.uiActionUpravljanjeSkladistima.Name = "uiActionUpravljanjeSkladistima";
+            this.uiActionUpravljanjeSkladistima.Size = new System.Drawing.Size(201, 52);
+            this.uiActionUpravljanjeSkladistima.TabIndex = 1;
+            this.uiActionUpravljanjeSkladistima.Text = "Kreiraj skladište";
+            this.uiActionUpravljanjeSkladistima.UseVisualStyleBackColor = true;
+            this.uiActionUpravljanjeSkladistima.Click += new System.EventHandler(this.uiActionUpravljanjeSkladistima_Click);
             // 
             // uiActionFrmUpravPoslovnicamaAzuriranje
             // 
@@ -130,21 +145,6 @@
             this.dgvUpravljanjePoslovnicama.Size = new System.Drawing.Size(1084, 289);
             this.dgvUpravljanjePoslovnicama.TabIndex = 6;
             // 
-            // uiActionUpravljanjeSkladistima
-            // 
-            this.uiActionUpravljanjeSkladistima.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.uiActionUpravljanjeSkladistima.FlatAppearance.BorderSize = 0;
-            this.uiActionUpravljanjeSkladistima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uiActionUpravljanjeSkladistima.Font = new System.Drawing.Font("Modern No. 20", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.uiActionUpravljanjeSkladistima.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionUpravljanjeSkladistima.Location = new System.Drawing.Point(53, 26);
-            this.uiActionUpravljanjeSkladistima.Name = "uiActionUpravljanjeSkladistima";
-            this.uiActionUpravljanjeSkladistima.Size = new System.Drawing.Size(201, 52);
-            this.uiActionUpravljanjeSkladistima.TabIndex = 1;
-            this.uiActionUpravljanjeSkladistima.Text = "Kreiraj skladište";
-            this.uiActionUpravljanjeSkladistima.UseVisualStyleBackColor = true;
-            this.uiActionUpravljanjeSkladistima.Click += new System.EventHandler(this.uiActionUpravljanjeSkladistima_Click);
-            // 
             // FormUpravljanjePoslovnicama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +157,7 @@
             this.Text = "Upravljanje poslovnicama";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUpravljanjePoslovnicama_FormClosed);
             this.Load += new System.EventHandler(this.FormUpravljanjePoslovnicama_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormUpravljanjePoslovnicama_HelpRequested);
             this.panelUpravljanjePoslovnicamaHeader.ResumeLayout(false);
             this.panelUpravljanjePoslovnicamaHeader.PerformLayout();
             this.panelUpravljanjePoslovnicamaFooter.ResumeLayout(false);
