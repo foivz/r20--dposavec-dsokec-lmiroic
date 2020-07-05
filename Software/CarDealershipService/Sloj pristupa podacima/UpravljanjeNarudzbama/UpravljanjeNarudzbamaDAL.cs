@@ -50,9 +50,9 @@ namespace Sloj_pristupa_podacima.UpravljanjeNarudzbama
                 narudzbe.datum_izdavanja = narudzba.datum_izdavanja;
                 narudzbe.opis_dokumenta = narudzba.opis_dokumenta;
                 narudzbe.korisnik = narudzba.korisnik;
+                narudzbe.ukupni_saldo = narudzba.ukupni_saldo;
                 narudzbe.zaposlenik = narudzba.zaposlenik;
                 db.SaveChanges();
-
             }
         }
         public static List<Dokument> DohvatiSveNarudzbePoslovnice(Korisnik korisnik)
