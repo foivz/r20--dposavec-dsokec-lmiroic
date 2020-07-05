@@ -242,6 +242,9 @@
     </Compile>
     <EmbeddedResource Include="ReportRacun.rdlc" />
     <EmbeddedResource Include="ReportZaposlenici.rdlc" />
+    <Content Include="CarAppHelp.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Sloj_pristupa_podacima.Dokument.datasource" />
     <None Include="Properties\DataSources\Sloj_pristupa_podacima.Korisnik.datasource" />
