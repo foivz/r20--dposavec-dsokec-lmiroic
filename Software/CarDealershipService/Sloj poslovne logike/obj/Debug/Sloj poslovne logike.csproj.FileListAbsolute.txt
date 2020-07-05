@@ -40,3 +40,4 @@ C:\Users\Miroic.DESKTOP-7BQA0ED\Desktop\Pi projekt\Software\CarDealershipService
 C:\Users\Miroic.DESKTOP-7BQA0ED\Desktop\Pi projekt\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.csproj.CopyComplete
 C:\Users\Miroic.DESKTOP-7BQA0ED\Desktop\Pi projekt\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.dll
 C:\Users\Miroic.DESKTOP-7BQA0ED\Desktop\Pi projekt\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.pdb
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj poslovne logike\obj\Debug\Sloj poslovne logike.csproj.CoreCompileInputs.cache
