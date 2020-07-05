@@ -79,7 +79,7 @@ namespace Prezentacijski_sloj
                 {
                     Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.KreirajRezervaciju(rezervacija);
                     FormUpravljanjeRezervacijama.OsvjeziPrikaz();
-                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.KREIRANA_REZERVACIJA);
+                    DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.KREIRANA_REZERVACIJA);
                 }
                 else
                 {
@@ -108,17 +108,17 @@ namespace Prezentacijski_sloj
                 {
                     Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.AzurirajRezervaciju(rezervacija);
                     FormUpravljanjeRezervacijama.OsvjeziPrikaz();
-                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.AZURIRAJ_REZERVACIJU);
+                    DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.AZURIRAJ_REZERVACIJU);
                 }
                 else
                 {
                     MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Morate unijeti sve parametre!");
             }          
         }
     }

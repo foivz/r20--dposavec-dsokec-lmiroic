@@ -106,7 +106,7 @@ namespace Prezentacijski_sloj
             this.Hide();
             this.Close();
             formPrijava.ShowDialog();
-            Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.ODJAVA_IZ_SUSTAVA);
+            DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.ODJAVA_IZ_SUSTAVA);
             Sloj_poslovne_logike.Sesija.PrijavljenKorisnik = null;
         }
 

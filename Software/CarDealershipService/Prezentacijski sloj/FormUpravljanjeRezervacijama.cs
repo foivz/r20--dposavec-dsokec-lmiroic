@@ -111,7 +111,7 @@ namespace Prezentacijski_sloj
             Sloj_pristupa_podacima.Dokument dokument = new Sloj_pristupa_podacima.Dokument();
             dokument = dgvUpravRezervacijamaSveRezervacije.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Dokument;
             Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.BrisanjeRezervacije(dokument);
-            Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.BRISANJE_REZERVACIJE);
+            DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.BRISANJE_REZERVACIJE);
             OsvjeziPrikaz();
         }
 

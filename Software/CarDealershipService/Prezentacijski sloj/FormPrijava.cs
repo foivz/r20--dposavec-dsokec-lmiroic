@@ -23,8 +23,6 @@ namespace Prezentacijski_sloj
         {
             string korisnickoIme = uiInputKorisnickoIme.Text;
             string lozinka = uiInputLozinka.Text;
-            //string korisnickoIme = "mmarkic";
-            //string lozinka = "marko";
             if (korisnickoIme.Trim().Length != 0 && lozinka.Trim().Length != 0)
                 return true;
             else
@@ -37,12 +35,10 @@ namespace Prezentacijski_sloj
             {
                 string korisnickoIme = uiInputKorisnickoIme.Text;
                 string lozinka = uiInputLozinka.Text;
-                //string korisnickoIme = "mmarkic";
-                //string lozinka = "marko";
                 if (Sloj_poslovne_logike.UpravljanjeKorisnicima.UpravljanjeKorisnicimaBLL.PrijaviKorisnika(korisnickoIme, lozinka))
                 {
                     GlavnaForma glavnaForma = new GlavnaForma();
-                    Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.PRIJAVA_U_SUSTAV);
+                    DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.PRIJAVA_U_SUSTAV);
                     this.Hide();
                     glavnaForma.ShowDialog();
                     

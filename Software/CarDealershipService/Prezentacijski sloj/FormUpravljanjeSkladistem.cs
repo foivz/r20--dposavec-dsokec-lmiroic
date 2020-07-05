@@ -116,7 +116,7 @@ namespace Prezentacijski_sloj
             Sloj_pristupa_podacima.Artikl artikl = new Sloj_pristupa_podacima.Artikl();
             artikl = dgvSviArtikliNaSkladistu.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Artikl;
             Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.BrisanjeArtikla(artikl);
-            Sloj_poslovne_logike.UpravljanjeDnevnikom.DnevnikLog.ZapisiZapis(Sloj_poslovne_logike.UpravljanjeDnevnikom.RadnjaDnevnika.BRISANJE_ARTIKLA);
+            DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.BRISANJE_ARTIKLA);
             OsvjeziPopisArtikala();
         }
 
