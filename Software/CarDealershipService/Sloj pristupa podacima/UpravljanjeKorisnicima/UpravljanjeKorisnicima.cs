@@ -37,7 +37,6 @@ namespace Sloj_pristupa_podacima.UpravljanjeKorisnicima
 
                 foreach (byte b in hash)
                 {
-                    // can be "x2" if you want lowercase
                     sb.Append(b.ToString("x2"));
                 }
 
@@ -62,13 +61,6 @@ namespace Sloj_pristupa_podacima.UpravljanjeKorisnicima
         public static Korisnik DohvatiKorisnika(string korisnickoIme,string lozinka)
         {
             Korisnik pronadenKorisnik = null;
-            /*using(var db=new CarDealershipandServiceEntities())
-            {
-                var dohvaceniKorisnik = from k in db.Korisniks
-                                        where k.korisnicko_ime == korisnickoIme && k.lozinka == HashirajLozinku(lozinka)
-                                        select k;
-                pronadenKorisnik = dohvaceniKorisnik as Korisnik;
-            }*/
             pronadenKorisnik = DohvatiSveKorisnike().Find(k => k.korisnicko_ime == korisnickoIme && k.lozinka == HashirajLozinku(lozinka));
             return pronadenKorisnik;
         }
