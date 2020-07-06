@@ -1,4 +1,5 @@
-﻿using Sloj_poslovne_logike.UpravljanjeRezervacijama;
+﻿using Sloj_poslovne_logike;
+using Sloj_poslovne_logike.UpravljanjeRezervacijama;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,9 @@ namespace Prezentacijski_sloj
     public partial class FormKreirajNarudzbu : Form
     {
         public FormUpravljanjeNarudzbama FormUpravljanjeNarudzbama;
+        public FormProdajaArtikla FormProdajaArtikla;
         public Sloj_pristupa_podacima.Dokument proslijedeniDokument;
+        public Sloj_pristupa_podacima.Artikl prosljedeniArtikl;
         private static FormKreirajNarudzbu _Instance;
         public static FormKreirajNarudzbu Instance
         {
@@ -38,6 +41,7 @@ namespace Prezentacijski_sloj
         {
             _Instance = null;
             proslijedeniDokument = null;
+            prosljedeniArtikl = null;
         }
 
         private void FormKreirajNarudzbu_Load(object sender, EventArgs e)
@@ -46,6 +50,17 @@ namespace Prezentacijski_sloj
             List<Korisnik> listaZaposlenika = ParserKorisnik.ParsirajKorisnika();
             cbInputKorisnikKreirajNarudzbu.DataSource = listaKorisnika;
             cbInputZaposlenikKreirajNarudzbu.DataSource = listaZaposlenika;
+            if (prosljedeniArtikl!=null)
+            {
+                dateTimeInputDatumIzdavanjaKreirajNarudzbu.Value = DateTime.Now;
+                uiInputOpisDokumentaKn.Text = prosljedeniArtikl.naziv_artikla+" "+prosljedeniArtikl.opis_artikla.ToString();
+                uiInputUkupniSaldo.Text = prosljedeniArtikl.cijena_artikla.ToString();
+                label5.Hide();
+                cbInputZaposlenikKreirajNarudzbu.Enabled = false;
+                cbInputZaposlenikKreirajNarudzbu.Hide();
+                uiActionAzurirajNarudzbu.Enabled = false;
+                uiActionAzurirajNarudzbu.Hide();
+            }
             if (proslijedeniDokument != null)
             {
                 dateTimeInputDatumIzdavanjaKreirajNarudzbu.Value = proslijedeniDokument.datum_izdavanja;
@@ -76,11 +91,14 @@ namespace Prezentacijski_sloj
                 narudzba.ukupni_saldo = float.Parse(uiInputUkupniSaldo.Text);
                 narudzba.tip_dokumenta = 2;
                 narudzba.korisnik = (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
-                narudzba.zaposlenik = Sloj_poslovne_logike.Sesija.PrijavljenKorisnik.id_korisnik;
+                narudzba.zaposlenik = Sesija.PrijavljenKorisnik.id_korisnik;
                 if (Sloj_poslovne_logike.UpravljanjeNarudzbama.UpravljanjeNarudzbamaBLL.ProvjeraUnosaNarudzbe(narudzba)==true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajNarudzbu(narudzba);
-                    FormUpravljanjeNarudzbama.OsvjeziPrikaz();
+                    if (prosljedeniArtikl==null)
+                    {
+                        FormUpravljanjeNarudzbama.OsvjeziPrikaz();
+                    }                    
                     DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.KREIRANA_NARUDZBA);
                 }
                 else
@@ -88,10 +106,10 @@ namespace Prezentacijski_sloj
                     MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                MessageBox.Show("Morate unijeti sve parametre!");
+                MessageBox.Show(ex.Message);
             }
         }
 

@@ -112,6 +112,7 @@ namespace Prezentacijski_sloj
             else
             {
                 MessageBox.Show("Odabrani artikl nije dostupan na skladištu.");
+                PrikazFormeKreiranjaNarudzbe(FormKreirajNarudzbu.Instance,sender,odabraniArtikl);
             }
         }
         private void OsvjeziOdabraneArtikle()
@@ -129,6 +130,15 @@ namespace Prezentacijski_sloj
         {
             System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "Prodaja.html");
 
+        }
+        private void PrikazFormeKreiranjaNarudzbe(FormKreirajNarudzbu form, object sender, Sloj_pristupa_podacima.Artikl artikl)
+        {
+            form.prosljedeniArtikl = artikl;
+            form.FormProdajaArtikla = this;
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
+            form.Activate();
         }
     }
 }
