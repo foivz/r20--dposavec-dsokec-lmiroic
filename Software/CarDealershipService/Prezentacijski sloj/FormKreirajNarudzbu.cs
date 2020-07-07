@@ -53,7 +53,7 @@ namespace Prezentacijski_sloj
             if (prosljedeniArtikl!=null)
             {
                 dateTimeInputDatumIzdavanjaKreirajNarudzbu.Value = DateTime.Now;
-                uiInputOpisDokumentaKn.Text = prosljedeniArtikl.naziv_artikla+" "+prosljedeniArtikl.opis_artikla.ToString();
+                uiInputOpisDokumentaKn.Text = "Narudzba za "+prosljedeniArtikl.naziv_artikla.ToLower()+" "+prosljedeniArtikl.opis_artikla.ToString();
                 uiInputUkupniSaldo.Text = prosljedeniArtikl.cijena_artikla.ToString();
                 label5.Hide();
                 cbInputZaposlenikKreirajNarudzbu.Enabled = false;
