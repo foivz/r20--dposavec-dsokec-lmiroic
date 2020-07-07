@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c98b0ecb600f45a28fa234acaf24c00c" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Artikl" Width="1.5" PointX="8.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Artikli_na_skladistu" Width="1.5" PointX="10.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Dnevnik_rada" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Dokument" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Korisnik" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Poslovnica" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Radnja_dnevnika" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Skladiste" Width="1.5" PointX="3.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Skladiste_poslovnice" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Stavke_dokumenta" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Tip_dokumenta" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Tip_korisnika" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Usluga" Width="1.5" PointX="8.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Vrsta_usluge" Width="1.5" PointX="6" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Vrste_artikla" Width="1.5" PointX="6" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.Artikl_Vrste_artikla_id_vrste_artikla_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Artikli_na_skladistu_Artikl_id_artikl_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Stavke_dokumenta_Artikl_id_artikl_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Artikli_na_skladistu_Skladiste_id_skladiste_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Dnevnik_rada_Korisnik_id_korisnik_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Dnevnik_rada_Radnja_dnevnika_id_rad_zaposlenika_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Dokument_Korisnik_id_korisnik_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Dokument_Korisnik_id_korisnik_fk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Dokument_Tip_dokumenta_id_tip_dokumenta_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Stavke_dokumenta_Dokument_id_dokument_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Korisnik_Poslovnica_id_poslovnica_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Korisnik_Tip_korisnika_id_tip_korisnika_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Skladiste_poslovnice_Poslovnica_id_poslovnica_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Skladiste_poslovnice_Skladiste_id_skladiste_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Stavke_dokumenta_Usluga_id_usluga_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Usluga_Vrsta_usluge_id_vrsta_usluge_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

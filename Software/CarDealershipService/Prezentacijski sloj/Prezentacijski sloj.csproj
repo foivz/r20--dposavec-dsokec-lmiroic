@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44FF7B39-AB2F-47F9-89EB-F2B1E374EBA0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Prezentacijski_sloj</RootNamespace>
+    <AssemblyName>Prezentacijski sloj</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DnevnikRadaDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\DnevnikRadaDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIzvjesca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIzvjesca.Designer.cs">
+      <DependentUpon>FormIzvjesca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKreirajKorisnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajKorisnika.Designer.cs">
+      <DependentUpon>FormKreirajKorisnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKreirajNarudzbu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajNarudzbu.Designer.cs">
+      <DependentUpon>FormKreirajNarudzbu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKreirajPoslovnicu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajPoslovnicu.Designer.cs">
+      <DependentUpon>FormKreirajPoslovnicu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKreirajRezervniDio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajRezervniDio.Designer.cs">
+      <DependentUpon>FormKreirajRezervniDio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKreirajRezervaciju.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajRezervaciju.Designer.cs">
+      <DependentUpon>FormKreirajRezervaciju.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKreirajSkladiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajSkladiste.Designer.cs">
+      <DependentUpon>FormKreirajSkladiste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKreirajVozilo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKreirajVozilo.Designer.cs">
+      <DependentUpon>FormKreirajVozilo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrijava.Designer.cs">
+      <DependentUpon>FormPrijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProdajaArtikla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProdajaArtikla.Designer.cs">
+      <DependentUpon>FormProdajaArtikla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpravljanjeKorisnicima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjeKorisnicima.Designer.cs">
+      <DependentUpon>FormUpravljanjeKorisnicima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpravljanjeNarudzbama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjeNarudzbama.Designer.cs">
+      <DependentUpon>FormUpravljanjeNarudzbama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpravljanjePoslovnicama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjePoslovnicama.Designer.cs">
+      <DependentUpon>FormUpravljanjePoslovnicama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpravljanjeRezervacijama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjeRezervacijama.Designer.cs">
+      <DependentUpon>FormUpravljanjeRezervacijama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUpravljanjeSkladistem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpravljanjeSkladistem.Designer.cs">
+      <DependentUpon>FormUpravljanjeSkladistem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlavnaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlavnaForma.Designer.cs">
+      <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="FormIzvjesca.resx">
+      <DependentUpon>FormIzvjesca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajKorisnika.resx">
+      <DependentUpon>FormKreirajKorisnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajNarudzbu.resx">
+      <DependentUpon>FormKreirajNarudzbu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajPoslovnicu.resx">
+      <DependentUpon>FormKreirajPoslovnicu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajRezervniDio.resx">
+      <DependentUpon>FormKreirajRezervniDio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajRezervaciju.resx">
+      <DependentUpon>FormKreirajRezervaciju.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajSkladiste.resx">
+      <DependentUpon>FormKreirajSkladiste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKreirajVozilo.resx">
+      <DependentUpon>FormKreirajVozilo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrijava.resx">
+      <DependentUpon>FormPrijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProdajaArtikla.resx">
+      <DependentUpon>FormProdajaArtikla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeKorisnicima.resx">
+      <DependentUpon>FormUpravljanjeKorisnicima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeNarudzbama.resx">
+      <DependentUpon>FormUpravljanjeNarudzbama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjePoslovnicama.resx">
+      <DependentUpon>FormUpravljanjePoslovnicama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeRezervacijama.resx">
+      <DependentUpon>FormUpravljanjeRezervacijama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpravljanjeSkladistem.resx">
+      <DependentUpon>FormUpravljanjeSkladistem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlavnaForma.resx">
+      <DependentUpon>GlavnaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReportRacun.rdlc" />
+    <EmbeddedResource Include="ReportZaposlenici.rdlc" />
+    <Content Include="CarAppHelp.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Sloj_pristupa_podacima.Dokument.datasource" />
+    <None Include="Properties\DataSources\Sloj_pristupa_podacima.Korisnik.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sloj poslovne logike\Sloj poslovne logike.csproj">
+      <Project>{ec6e5823-fa49-47e5-b4a7-f6dfc6d6ae30}</Project>
+      <Name>Sloj poslovne logike</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sloj pristupa podacima\Sloj pristupa podacima.csproj">
+      <Project>{efdece8c-675f-4395-a018-d4dcb78a94e5}</Project>
+      <Name>Sloj pristupa podacima</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
