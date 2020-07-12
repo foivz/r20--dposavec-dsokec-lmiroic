@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sloj_poslovne_logike;
+using Sloj_pristupa_podacima;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -93,11 +95,11 @@ namespace Prezentacijski_sloj
         private void GlavnaForma_Load(object sender, EventArgs e)
         {
             
-            if (Sloj_poslovne_logike.Sesija.PrijavljenKorisnik.tip_korisnika!=2)
+            if (Sesija.PrijavljenKorisnik.tip_korisnika!=2)
             {
                 uiActionUpravljanjeKorisnicima.Enabled = false;
                 uiActionUpravljanjePoslovnicama.Enabled = false;
-            }           
+            }               
         }
 
         private void uiActionOdjava_Click(object sender, EventArgs e)

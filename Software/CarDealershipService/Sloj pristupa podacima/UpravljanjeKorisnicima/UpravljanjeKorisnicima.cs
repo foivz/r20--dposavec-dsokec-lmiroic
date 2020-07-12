@@ -103,5 +103,11 @@ namespace Sloj_pristupa_podacima.UpravljanjeKorisnicima
                 db.SaveChanges();
             }
         }
+        public static Korisnik DohvatiKorisnikovMail(Korisnik korisnik)
+        {
+            Korisnik pronadenKorisnik = null;
+            pronadenKorisnik = DohvatiSveKorisnike().Find(k => k.email == korisnik.email && k.id_korisnik == korisnik.id_korisnik);
+            return pronadenKorisnik;
+        }
     }
 }
