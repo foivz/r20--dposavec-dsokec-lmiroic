@@ -107,20 +107,18 @@ namespace Prezentacijski_sloj
 
         private void uiActionOdjava_Click(object sender, EventArgs e)
         {
+            DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.ODJAVA_IZ_SUSTAVA);
             FormPrijava formPrijava = new FormPrijava();
             this.Hide();
             this.Close();
-            formPrijava.ShowDialog();
-            DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.ODJAVA_IZ_SUSTAVA);
-            Sloj_poslovne_logike.Sesija.PrijavljenKorisnik = null;
+            formPrijava.ShowDialog();          
             ProvjeraObavijesti.Interrupt();
             dretva.Interrupt();
         }
 
         private void GlavnaForma_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ProvjeraObavijesti.Interrupt();
-            dretva.Interrupt();
+            
             Application.Exit();
         }
 

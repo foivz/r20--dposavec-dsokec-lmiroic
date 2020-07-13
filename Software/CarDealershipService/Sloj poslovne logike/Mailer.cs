@@ -31,5 +31,24 @@ namespace Sloj_poslovne_logike
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.Send(mail);
         }
+        public static void PosaljiObavijestNaMail(Korisnik korisnik, string opis, string naslov)
+        {
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(Sesija.PrijavljenKorisnik.email, Konfiguracija.DajPostavku("mail.naslov"), Encoding.UTF8);
+            mail.To.Add(new MailAddress(korisnik.email, korisnik.ime_korisnika + " " + korisnik.prezime_korisnika, Encoding.UTF8));
+            mail.Subject = naslov;
+            mail.SubjectEncoding = Encoding.UTF8;
+            mail.IsBodyHtml = true;
+            mail.Body = opis;
+            mail.BodyEncoding = Encoding.UTF8;
+            SmtpClient client = new SmtpClient();
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new System.Net.NetworkCredential(Konfiguracija.DajPostavku("korisnik.email"), Konfiguracija.DajPostavku("korisnik.lozinka"));
+            client.Host = Konfiguracija.DajPostavku("mail.smtp");
+            client.Port = int.Parse(Konfiguracija.DajPostavku("mail.port"));
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.Send(mail);
+        }
     }
 }
