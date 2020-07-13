@@ -100,6 +100,14 @@ namespace Prezentacijski_sloj
                         FormUpravljanjeNarudzbama.OsvjeziPrikaz();
                     }                    
                     DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.KREIRANA_NARUDZBA);
+                    Sloj_pristupa_podacima.Obavijest obavijest = new Sloj_pristupa_podacima.Obavijest();
+                    obavijest.Korisnik= (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
+                    obavijest.Naslov = "Kreirana narudzba";
+                    obavijest.Opis = uiInputOpisDokumentaKn.Text;
+                    obavijest.Procitano = 0;
+                    obavijest.Vrijeme_kreiranja= DateTime.Parse(dateTimeInputDatumIzdavanjaKreirajNarudzbu.Text.ToString());
+                    obavijest.Zaposlenik = Sesija.PrijavljenKorisnik.id_korisnik;
+                    Sloj_pristupa_podacima.UpravljanjeObavijestima.UpravljanjeObavijestimaDAL.KreirajObavijest(obavijest);
                 }
                 else
                 {

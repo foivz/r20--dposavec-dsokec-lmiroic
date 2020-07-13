@@ -103,6 +103,9 @@
     <Compile Include="Korisnik.cs">
       <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
     </Compile>
+    <Compile Include="Obavijest.cs">
+      <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
+    </Compile>
     <Compile Include="Poslovnica.cs">
       <DependentUpon>EvidencijaAutokuce.tt</DependentUpon>
     </Compile>
@@ -129,6 +132,7 @@
     <Compile Include="UpravljanjeDnevnikom\UpravljanjeDnevnikomRada.cs" />
     <Compile Include="UpravljanjeKorisnicima\UpravljanjeKorisnicima.cs" />
     <Compile Include="UpravljanjeNarudzbama\UpravljanjeNarudzbamaDAL.cs" />
+    <Compile Include="UpravljanjeObavijestima\UpravljanjeObavijestimaDAL.cs" />
     <Compile Include="UpravljanjePoslovnicama\UpravljanjePoslovnicamaDAL.cs" />
     <Compile Include="UpravljanjeRezervacijama\UpravljanjeRezervacijamaDAL.cs" />
     <Compile Include="UpravljanjeSkladistem\UpravljanjeSkladistemDAL.cs" />

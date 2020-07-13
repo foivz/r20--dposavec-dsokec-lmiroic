@@ -30,6 +30,7 @@ namespace Sloj_pristupa_podacima
         public virtual DbSet<Dnevnik_rada> Dnevnik_rada { get; set; }
         public virtual DbSet<Dokument> Dokuments { get; set; }
         public virtual DbSet<Korisnik> Korisniks { get; set; }
+        public virtual DbSet<Obavijest> Obavijests { get; set; }
         public virtual DbSet<Poslovnica> Poslovnicas { get; set; }
         public virtual DbSet<Radnja_dnevnika> Radnja_dnevnika { get; set; }
         public virtual DbSet<Skladiste> Skladistes { get; set; }

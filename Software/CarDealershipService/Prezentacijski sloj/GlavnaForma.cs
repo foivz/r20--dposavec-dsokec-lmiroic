@@ -2,12 +2,14 @@
 using Sloj_pristupa_podacima;
 using System;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Prezentacijski_sloj
 {
     public partial class GlavnaForma : Form
     {
+        private Thread dretva = new Thread(new ThreadStart(ProvjeraObavijesti.Run));
         private Button currentButton;
         public GlavnaForma()
         {
@@ -94,7 +96,8 @@ namespace Prezentacijski_sloj
 
         private void GlavnaForma_Load(object sender, EventArgs e)
         {
-            
+            ProvjeraObavijesti.Start(uiNotification);
+            dretva.Start();
             if (Sesija.PrijavljenKorisnik.tip_korisnika!=2)
             {
                 uiActionUpravljanjeKorisnicima.Enabled = false;
@@ -110,10 +113,14 @@ namespace Prezentacijski_sloj
             formPrijava.ShowDialog();
             DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.ODJAVA_IZ_SUSTAVA);
             Sloj_poslovne_logike.Sesija.PrijavljenKorisnik = null;
+            ProvjeraObavijesti.Interrupt();
+            dretva.Interrupt();
         }
 
         private void GlavnaForma_FormClosed(object sender, FormClosedEventArgs e)
         {
+            ProvjeraObavijesti.Interrupt();
+            dretva.Interrupt();
             Application.Exit();
         }
 

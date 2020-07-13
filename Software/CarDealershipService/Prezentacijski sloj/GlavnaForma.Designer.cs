@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GlavnaForma));
             this.panelGlFormaLogo = new System.Windows.Forms.Panel();
             this.panelGlFormaIzbornik = new System.Windows.Forms.Panel();
@@ -41,6 +42,7 @@
             this.uiActionProdaja = new System.Windows.Forms.Button();
             this.panelGlFormaNaslov = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.uiNotification = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelGlFormaIzbornik.SuspendLayout();
             this.panelGlFormaNaslov.SuspendLayout();
             this.SuspendLayout();
@@ -204,6 +206,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Glavni izbornik";
             // 
+            // uiNotification
+            // 
+            this.uiNotification.Text = "notifyIcon1";
+            this.uiNotification.Visible = true;
+            // 
             // GlavnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,5 +246,6 @@
         private System.Windows.Forms.Button uiActionUpravljanjeNarudzbama;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button uiActionOdjava;
+        private System.Windows.Forms.NotifyIcon uiNotification;
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="PI20_023_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Artikl">
     <Key>
       <PropertyRef Name="id_artikl" />
@@ -59,6 +59,18 @@
     <Property Name="lozinka" Type="char" MaxLength="40" />
     <Property Name="tip_korisnika" Type="int" Nullable="false" />
     <Property Name="poslovnica" Type="int" />
+  </EntityType>
+  <EntityType Name="Obavijest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naslov" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Opis" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Zaposlenik" Type="int" Nullable="false" />
+    <Property Name="Korisnik" Type="int" Nullable="false" />
+    <Property Name="Procitano" Type="tinyint" Nullable="false" />
+    <Property Name="Vrijeme kreiranja" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Poslovnica">
     <Key>
@@ -257,6 +269,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Obavijest_Korisnik_id_korisnik_fk">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Obavijest" Type="Self.Obavijest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="id_korisnik" />
+      </Principal>
+      <Dependent Role="Obavijest">
+        <PropertyRef Name="Korisnik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Obavijest_Korisnik_id_korisnik_fk_2">
+    <End Role="Korisnik" Type="Self.Korisnik" Multiplicity="1" />
+    <End Role="Obavijest" Type="Self.Obavijest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Korisnik">
+        <PropertyRef Name="id_korisnik" />
+      </Principal>
+      <Dependent Role="Obavijest">
+        <PropertyRef Name="Zaposlenik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="Skladiste_poslovnice_Poslovnica_id_poslovnica_fk">
     <End Role="Poslovnica" Type="Self.Poslovnica" Multiplicity="1" />
     <End Role="Skladiste_poslovnice" Type="Self.Skladiste_poslovnice" Multiplicity="*" />
@@ -329,12 +365,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ModelStoreContainer">
+  <EntityContainer Name="PI20_023_DBModelStoreContainer">
     <EntitySet Name="Artikl" EntityType="Self.Artikl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Artikli_na_skladistu" EntityType="Self.Artikli_na_skladistu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dnevnik_rada" EntityType="Self.Dnevnik_rada" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dokument" EntityType="Self.Dokument" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Obavijest" EntityType="Self.Obavijest" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Poslovnica" EntityType="Self.Poslovnica" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Radnja_dnevnika" EntityType="Self.Radnja_dnevnika" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Skladiste" EntityType="Self.Skladiste" Schema="dbo" store:Type="Tables" />
@@ -384,6 +421,14 @@
     <AssociationSet Name="Korisnik_Tip_korisnika_id_tip_korisnika_fk" Association="Self.Korisnik_Tip_korisnika_id_tip_korisnika_fk">
       <End Role="Tip_korisnika" EntitySet="Tip_korisnika" />
       <End Role="Korisnik" EntitySet="Korisnik" />
+    </AssociationSet>
+    <AssociationSet Name="Obavijest_Korisnik_id_korisnik_fk" Association="Self.Obavijest_Korisnik_id_korisnik_fk">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Obavijest" EntitySet="Obavijest" />
+    </AssociationSet>
+    <AssociationSet Name="Obavijest_Korisnik_id_korisnik_fk_2" Association="Self.Obavijest_Korisnik_id_korisnik_fk_2">
+      <End Role="Korisnik" EntitySet="Korisnik" />
+      <End Role="Obavijest" EntitySet="Obavijest" />
     </AssociationSet>
     <AssociationSet Name="Skladiste_poslovnice_Poslovnica_id_poslovnica_fk" Association="Self.Skladiste_poslovnice_Poslovnica_id_poslovnica_fk">
       <End Role="Poslovnica" EntitySet="Poslovnica" />

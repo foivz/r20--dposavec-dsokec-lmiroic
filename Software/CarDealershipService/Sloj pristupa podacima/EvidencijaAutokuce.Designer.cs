@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\EvidencijaAutokuce.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\EvidencijaAutokuce.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
