@@ -31,14 +31,19 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.DokumentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.KorisnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.uiGrafikon = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.DokumentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiGrafikon)).BeginInit();
             this.SuspendLayout();
             // 
             // DokumentBindingSource
@@ -93,11 +98,28 @@
             this.reportViewer2.Size = new System.Drawing.Size(776, 277);
             this.reportViewer2.TabIndex = 2;
             // 
+            // uiGrafikon
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.uiGrafikon.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.uiGrafikon.Legends.Add(legend1);
+            this.uiGrafikon.Location = new System.Drawing.Point(70, 685);
+            this.uiGrafikon.Name = "uiGrafikon";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.uiGrafikon.Series.Add(series1);
+            this.uiGrafikon.Size = new System.Drawing.Size(666, 278);
+            this.uiGrafikon.TabIndex = 3;
+            this.uiGrafikon.Text = "Grafikon";
+            // 
             // FormIzvjesca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 672);
+            this.ClientSize = new System.Drawing.Size(800, 1031);
+            this.Controls.Add(this.uiGrafikon);
             this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -109,6 +131,7 @@
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormIzvjesca_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.DokumentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiGrafikon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +145,6 @@
         private System.Windows.Forms.Label label2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
         private System.Windows.Forms.BindingSource KorisnikBindingSource;
+        private System.Windows.Forms.DataVisualization.Charting.Chart uiGrafikon;
     }
 }

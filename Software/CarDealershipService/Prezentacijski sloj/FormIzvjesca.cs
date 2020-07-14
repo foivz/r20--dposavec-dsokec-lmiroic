@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Prezentacijski_sloj
 {
@@ -48,6 +49,14 @@ namespace Prezentacijski_sloj
             KorisnikBindingSource.DataSource = sviKorisnici;
             this.reportViewer2.RefreshReport();
             this.reportViewer2.RefreshReport();
+
+            List<Sloj_pristupa_podacima.Artikl> artikli = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiProdaneArtikle();
+            uiGrafikon.Series.Clear();
+            foreach (var item in artikli)
+            {
+                Series s = this.uiGrafikon.Series.Add(item.naziv_artikla);
+                s.Points.Add(Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.BrojProdanihArtikala(item));
+            }
         }
 
         private void FormIzvjesca_HelpRequested(object sender, HelpEventArgs hlpevent)
