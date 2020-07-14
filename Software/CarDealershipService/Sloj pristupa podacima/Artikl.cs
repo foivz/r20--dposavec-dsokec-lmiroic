@@ -30,6 +30,8 @@ namespace Sloj_pristupa_podacima
         public string naziv_artikla { get; set; }
         public double cijena_artikla { get; set; }
         public int vrsta_artikla { get; set; }
+        public int vrijeme_dostave { get; set; }
+        public int minimalna_kolicina { get; set; }
     
         public virtual Vrste_artikla Vrste_artikla { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

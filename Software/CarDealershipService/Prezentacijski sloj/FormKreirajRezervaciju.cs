@@ -110,7 +110,7 @@ namespace Prezentacijski_sloj
                     Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.AzurirajRezervaciju(rezervacija);
                     FormUpravljanjeRezervacijama.OsvjeziPrikaz();
                     DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.AZURIRAJ_REZERVACIJU);
-                    Sloj_poslovne_logike.Mailer.PosaljiObavijestNaMail(cbInputKorisnik.SelectedItem as Sloj_pristupa_podacima.Korisnik, rezervacija.opis_dokumenta, "Azurirana rezervacija");
+                    Sloj_poslovne_logike.Mailer.PosaljiObavijestNaMail(cbInputKorisnik.SelectedItem as Sloj_pristupa_podacima.Korisnik, rezervacija.opis_dokumenta, "Azurirana rezervacija"); 
                 }
                 else
                 {

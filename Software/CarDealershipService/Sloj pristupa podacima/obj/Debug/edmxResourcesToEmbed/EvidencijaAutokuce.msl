@@ -13,6 +13,8 @@
           <ScalarProperty Name="naziv_artikla" ColumnName="naziv_artikla" />
           <ScalarProperty Name="cijena_artikla" ColumnName="cijena_artikla" />
           <ScalarProperty Name="vrsta_artikla" ColumnName="vrsta_artikla" />
+          <ScalarProperty Name="vrijeme_dostave" ColumnName="vrijeme_dostave" />
+          <ScalarProperty Name="minimalna_kolicina" ColumnName="minimalna_kolicina" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

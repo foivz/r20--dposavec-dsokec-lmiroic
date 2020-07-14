@@ -13,6 +13,8 @@
     <Property Name="naziv_artikla" Type="varchar" MaxLength="45" Nullable="false" />
     <Property Name="cijena_artikla" Type="float" Nullable="false" />
     <Property Name="vrsta_artikla" Type="int" Nullable="false" />
+    <Property Name="vrijeme_dostave" Type="int" Nullable="false" />
+    <Property Name="minimalna_kolicina" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Artikli_na_skladistu">
     <Key>

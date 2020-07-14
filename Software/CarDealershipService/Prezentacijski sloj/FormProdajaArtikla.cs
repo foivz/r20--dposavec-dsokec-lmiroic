@@ -48,9 +48,9 @@ namespace Prezentacijski_sloj
             uiInputKlijenti.DataSource = listaKorisnika;
             dgvProdajniArtikli.DataSource = null;
             dgvProdajniArtikli.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiArtiklePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
-            dgvProdajniArtikli.Columns[9].Visible = false;
-            dgvProdajniArtikli.Columns[10].Visible = false;
             dgvProdajniArtikli.Columns[11].Visible = false;
+            dgvProdajniArtikli.Columns[12].Visible = false;
+            dgvProdajniArtikli.Columns[13].Visible = false;
         }
 
         private void uiActionProdaja_Click(object sender, EventArgs e)
@@ -121,9 +121,9 @@ namespace Prezentacijski_sloj
         {
             dgvOdabraniArtikli.DataSource = null;
             dgvOdabraniArtikli.DataSource = odabraniArtikli;
-            dgvOdabraniArtikli.Columns[9].Visible = false;
-            dgvOdabraniArtikli.Columns[10].Visible = false;
             dgvOdabraniArtikli.Columns[11].Visible = false;
+            dgvOdabraniArtikli.Columns[12].Visible = false;
+            dgvOdabraniArtikli.Columns[13].Visible = false;
             lblSuma.Text = "Ukupna cijena = " + suma;
             lblSuma.Show();
         }

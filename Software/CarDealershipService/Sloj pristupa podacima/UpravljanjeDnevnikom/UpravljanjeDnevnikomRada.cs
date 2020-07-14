@@ -18,7 +18,7 @@ namespace Sloj_pristupa_podacima.UpravljanjeDnevnikom
                     db.SaveChanges();
                 }
             }
-			catch (Exception ex)
+			catch (Exception)
 			{
                 
 			}

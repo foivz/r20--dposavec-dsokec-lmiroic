@@ -87,9 +87,11 @@
     <Compile Include="UpravljanjePoslovnicama\Poslovnica.cs" />
     <Compile Include="UpravljanjePoslovnicama\UpravljanjePoslovnicamaBLL.cs" />
     <Compile Include="UpravljanjeRezervacijama\UpravljanjeRezervacijamaBLL.cs" />
+    <Compile Include="UpravljanjeSkladistem\ParserSkladista.cs" />
     <Compile Include="UpravljanjeSkladistem\ParserVrsteArtikla.cs" />
     <Compile Include="UpravljanjeRezervacijama\Korisnik.cs" />
     <Compile Include="UpravljanjeRezervacijama\ParserKorisnik.cs" />
+    <Compile Include="UpravljanjeSkladistem\Skladiste.cs" />
     <Compile Include="UpravljanjeSkladistem\UpravljanjeSkladistemBLL.cs" />
     <Compile Include="UpravljanjeSkladistem\VrstaArtikla.cs" />
     <Compile Include="UpravljanjeSkladistem\VrsteGoriva.cs" />

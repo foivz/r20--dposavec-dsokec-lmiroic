@@ -68,9 +68,9 @@ namespace Prezentacijski_sloj
         {
             dgvSviArtikliNaSkladistu.DataSource = null;
             dgvSviArtikliNaSkladistu.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiArtiklePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
-            dgvSviArtikliNaSkladistu.Columns[9].Visible = false;
-            dgvSviArtikliNaSkladistu.Columns[10].Visible = false;
             dgvSviArtikliNaSkladistu.Columns[11].Visible = false;
+            dgvSviArtikliNaSkladistu.Columns[12].Visible = false;
+            dgvSviArtikliNaSkladistu.Columns[13].Visible = false;
         }
         private void PrikaziFormuAzuriranjeRezervnogDijela(FormKreirajRezervniDio form, object sender,Sloj_pristupa_podacima.Artikl artikl)
         {
@@ -146,9 +146,9 @@ namespace Prezentacijski_sloj
         {
             dgvSviArtikliNaSkladistu.DataSource = null;
             dgvSviArtikliNaSkladistu.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiArtiklePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
-            dgvSviArtikliNaSkladistu.Columns[9].Visible = false;
-            dgvSviArtikliNaSkladistu.Columns[10].Visible = false;
             dgvSviArtikliNaSkladistu.Columns[11].Visible = false;
+            dgvSviArtikliNaSkladistu.Columns[12].Visible = false;
+            dgvSviArtikliNaSkladistu.Columns[13].Visible = false;
 
         }
 

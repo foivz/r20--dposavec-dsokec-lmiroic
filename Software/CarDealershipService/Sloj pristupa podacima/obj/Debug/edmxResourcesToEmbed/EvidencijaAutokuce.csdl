@@ -13,6 +13,8 @@
     <Property Name="naziv_artikla" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="cijena_artikla" Type="Double" Nullable="false" />
     <Property Name="vrsta_artikla" Type="Int32" Nullable="false" />
+    <Property Name="vrijeme_dostave" Type="Int32" Nullable="false" />
+    <Property Name="minimalna_kolicina" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Vrste_artikla" Relationship="Self.Artikl_Vrste_artikla_id_vrste_artikla_fk" FromRole="Artikl" ToRole="Vrste_artikla" />
     <NavigationProperty Name="Artikli_na_skladistu" Relationship="Self.Artikli_na_skladistu_Artikl_id_artikl_fk" FromRole="Artikl" ToRole="Artikli_na_skladistu" />
     <NavigationProperty Name="Stavke_dokumenta" Relationship="Self.Stavke_dokumenta_Artikl_id_artikl_fk" FromRole="Artikl" ToRole="Stavke_dokumenta" />

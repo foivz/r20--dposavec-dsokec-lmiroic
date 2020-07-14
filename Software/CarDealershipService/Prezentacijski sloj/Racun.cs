@@ -61,6 +61,7 @@ namespace Prezentacijski_sloj
             try
             {
                 Mailer.PosaljiMail(prosljedeniKorisnik, filePath, "Racun za "+prosljedeniKorisnik.ime_korisnika+" "+prosljedeniKorisnik.prezime_korisnika);
+                MessageBox.Show("Mail je uspješno poslan");
             }
             catch (Exception)
             {
