@@ -53,6 +53,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cbinputSkladiste = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.uiInputKolicina = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.panelKreirajArtiklHeader.SuspendLayout();
             this.panelKreirajArtiklFooter.SuspendLayout();
             this.SuspendLayout();
@@ -281,11 +283,29 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "Odabir skladista";
             // 
+            // uiInputKolicina
+            // 
+            this.uiInputKolicina.Location = new System.Drawing.Point(476, 364);
+            this.uiInputKolicina.Name = "uiInputKolicina";
+            this.uiInputKolicina.Size = new System.Drawing.Size(204, 20);
+            this.uiInputKolicina.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(473, 347);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Kolicina";
+            // 
             // FormKreirajVozilo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 519);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.uiInputKolicina);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cbinputSkladiste);
             this.Controls.Add(this.label10);
@@ -348,5 +368,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cbinputSkladiste;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox uiInputKolicina;
+        private System.Windows.Forms.Label label12;
     }
 }

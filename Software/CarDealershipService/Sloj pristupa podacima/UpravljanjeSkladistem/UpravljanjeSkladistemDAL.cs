@@ -26,21 +26,15 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
             }
             return SveVrsteArtikla;
         }
-        public static void KreiranjeArtikla(Artikl artikl,Skladiste skladiste)
+        public static void KreiranjeArtikla(Artikl artikl,Skladiste skladiste,int kolicina)
         {
-            //List<Skladiste> listaSkladista = DohvatiSkladisteKorisnika(korisnik);
             Artikli_na_skladistu artikli_Na_Skladistu = new Artikli_na_skladistu();
             using (var db = new CarDealershipandServiceEntities())
             {
                 db.Artikls.Add(artikl);
-                /*foreach (var item in listaSkladista)
-                {
-                    artikli_Na_Skladistu.skladiste = item.id_skladiste;
-                    
-                }*/
                 artikli_Na_Skladistu.skladiste = skladiste.id_skladiste;
                 artikli_Na_Skladistu.artikl = artikl.id_artikl;
-                artikli_Na_Skladistu.kolicina = 1;
+                artikli_Na_Skladistu.kolicina = kolicina;
                 db.Artikli_na_skladistu.Add(artikli_Na_Skladistu);
                 db.SaveChanges();
             }
@@ -73,6 +67,8 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                 artikl1.vrsta_artikla = artikl.vrsta_artikla;
                 artikl1.vrsta_goriva = artikl.vrsta_goriva;
                 artikl1.cijena_artikla = artikl.cijena_artikla;
+                artikl1.minimalna_kolicina = artikl.minimalna_kolicina;
+                artikl1.vrijeme_dostave = artikl.vrijeme_dostave;
                 db.SaveChanges();
             }
         }
