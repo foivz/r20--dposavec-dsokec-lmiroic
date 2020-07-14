@@ -185,5 +185,29 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                 db.SaveChanges();
             }
         }
+        public static List<Artikl> DohvatiProdaneArtikle()
+        {
+            List<Artikl> prodaniArtikli = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var artikli = from a in db.Artikls
+                              from sd in db.Stavke_dokumenta
+                              where sd.artikl == a.id_artikl
+                              select a;
+                prodaniArtikli = artikli.Distinct().ToList();
+            }
+            return prodaniArtikli;
+        }
+        public static int BrojProdanihArtikala(Artikl artikl)
+        {
+            int brojac = 0;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                brojac = (from sd in db.Stavke_dokumenta
+                          where sd.artikl == artikl.id_artikl
+                          select sd).ToList().Count;
+            }
+            return brojac;
+        }
     }
 }
