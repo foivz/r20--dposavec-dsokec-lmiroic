@@ -26,18 +26,19 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
             }
             return SveVrsteArtikla;
         }
-        public static void KreiranjeArtikla(Artikl artikl,Korisnik korisnik)
+        public static void KreiranjeArtikla(Artikl artikl,Skladiste skladiste)
         {
-            List<Skladiste> listaSkladista = DohvatiSkladisteKorisnika(korisnik);
+            //List<Skladiste> listaSkladista = DohvatiSkladisteKorisnika(korisnik);
             Artikli_na_skladistu artikli_Na_Skladistu = new Artikli_na_skladistu();
             using (var db = new CarDealershipandServiceEntities())
             {
                 db.Artikls.Add(artikl);
-                foreach (var item in listaSkladista)
+                /*foreach (var item in listaSkladista)
                 {
                     artikli_Na_Skladistu.skladiste = item.id_skladiste;
                     
-                }
+                }*/
+                artikli_Na_Skladistu.skladiste = skladiste.id_skladiste;
                 artikli_Na_Skladistu.artikl = artikl.id_artikl;
                 artikli_Na_Skladistu.kolicina = 1;
                 db.Artikli_na_skladistu.Add(artikli_Na_Skladistu);
@@ -102,6 +103,19 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                 SkladisteKorisnika = skladiste.ToList();
             }
             return SkladisteKorisnika;
+        }
+        public static List<Skladiste> DohvatiSkladistePoslovnice(Poslovnica poslovnica)
+        {
+            List<Skladiste> SkladistePoslovnice = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var skladiste = from s in db.Skladistes
+                                from sp in db.Skladiste_poslovnice
+                                where poslovnica.id_poslovnica == sp.poslovnica && sp.skladiste == s.id_skladiste
+                                select s;
+                SkladistePoslovnice = skladiste.ToList();
+            }
+            return SkladistePoslovnice;
         }
         public static void ProdajaArtikla(List<Artikl> artikli)
         {
