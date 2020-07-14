@@ -77,8 +77,9 @@ namespace Prezentacijski_sloj
             form.Show();
             form.Activate();
         }
-        private void PrikazFormeKreirajSkladiste(FormKreirajSkladiste form, object sender)
+        private void PrikazFormeKreirajSkladiste(FormKreirajSkladiste form, object sender,Sloj_pristupa_podacima.Poslovnica poslovnica)
         {
+            form.prosljedenaPoslovnica = poslovnica;
             form.FormUpravljanjePoslovnicama = this;
             form.MdiParent = this.MdiParent;
             form.StartPosition = FormStartPosition.CenterScreen;
@@ -140,7 +141,7 @@ namespace Prezentacijski_sloj
 
         private void uiActionUpravljanjeSkladistima_Click(object sender, EventArgs e)
         {
-            PrikazFormeKreirajSkladiste(FormKreirajSkladiste.instance, sender);
+            PrikazFormeKreirajSkladiste(FormKreirajSkladiste.instance, sender, dgvUpravljanjePoslovnicama.CurrentRow.DataBoundItem as Sloj_pristupa_podacima.Poslovnica);
         }
 
         private void FormUpravljanjePoslovnicama_HelpRequested(object sender, HelpEventArgs hlpevent)
