@@ -11,6 +11,7 @@ namespace Sloj_poslovne_logike
 {
     public class DinamicController
     {
+        private static List<Control> sveKontrolePredikcije = new List<Control>();
         private static int VERT_SPACE = 30;
         private static int INITIAL_VERT = 0;
         private static int HORIZ_SPACE = 230;
@@ -79,8 +80,11 @@ namespace Sloj_poslovne_logike
             btnNaruci.Location = new Point(INITIAL_HORIZ + 400, INITIAL_VERT + VERT_SPACE);
             INITIAL_VERT += VERT_SPACE;
             forma.Controls.Add(lblNaziv);
+            sveKontrolePredikcije.Add(lblNaziv);
             forma.Controls.Add(lblDatum);
+            sveKontrolePredikcije.Add(lblDatum);
             forma.Controls.Add(btnNaruci);
+            sveKontrolePredikcije.Add(btnNaruci);
         }
         private static bool ProvjeriDaLiJeMoguceNaruciti(string datum)
         {
@@ -90,6 +94,17 @@ namespace Sloj_poslovne_logike
             }
             else
                 return false;
+        }
+        public static List<Control> DohvatiSveKontrole()
+        {
+            return sveKontrolePredikcije;
+        }
+        public static void ResetirajVarijablePozicioniranja()
+        {
+            VERT_SPACE = 30;
+            INITIAL_VERT = 0;
+            HORIZ_SPACE = 230;
+            INITIAL_HORIZ = 20;
         }
     }
 }

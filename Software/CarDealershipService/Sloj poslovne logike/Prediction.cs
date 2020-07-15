@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sloj_poslovne_logike
 {
     public class Prediction
     {
+        private static int INTERVAL_NARUDZBE = 1;
         private static int MINIMALNA_KOLICINA = 1;
         private static int MINIMALNA_DONJA_GRANICA_U_DANIMA = 2;
+        public static void PostaviInterval(int interval)
+        {
+            INTERVAL_NARUDZBE = interval;
+        }
         public static string PredvidiVrijemeNarudzbe(Sloj_pristupa_podacima.Artikli_na_skladistu ans)
         {
             Sloj_pristupa_podacima.Artikl artikl = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiArtikl(ans.artikl);
@@ -51,7 +57,7 @@ namespace Sloj_poslovne_logike
             int sumaIntervalaNarudzbe = 0;
             if (ukupnoDanaProdaje>0)
             {
-                List<Sloj_pristupa_podacima.Stavke_dokumenta> stavke = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiStavkeDokumentaOdabranogArtikla(artikl);
+                List<Sloj_pristupa_podacima.Stavke_dokumenta> stavke = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiStavkeDokumentaOdabranogArtikla(artikl,INTERVAL_NARUDZBE);
                 for (int i = stavke.Count - 1; i > 0; i--)
                 {
                     Sloj_pristupa_podacima.Dokument d1 = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiDokument(stavke[i].dokument);
@@ -76,7 +82,7 @@ namespace Sloj_poslovne_logike
         private static DateTime PredvidiDanNarudzbe(Sloj_pristupa_podacima.Artikli_na_skladistu ans, int sljedecaNarudzba, int kolicinaNarudzbe)
         {
             Sloj_pristupa_podacima.Artikl artikl = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiArtikl(ans.artikl);
-            List<Sloj_pristupa_podacima.Stavke_dokumenta> stavke = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiStavkeDokumentaOdabranogArtikla(artikl);
+            List<Sloj_pristupa_podacima.Stavke_dokumenta> stavke = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiStavkeDokumentaOdabranogArtikla(artikl,INTERVAL_NARUDZBE);
             if (stavke.Count > 0)
             {
                 Sloj_pristupa_podacima.Dokument d3 = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiDokument(stavke.Last().dokument);

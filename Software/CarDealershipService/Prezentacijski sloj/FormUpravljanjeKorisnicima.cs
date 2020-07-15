@@ -102,6 +102,8 @@ namespace Prezentacijski_sloj
             dgvUpravljanjeKorisnicima.Columns[12].Visible = false;
             dgvUpravljanjeKorisnicima.Columns[13].Visible = false;
             dgvUpravljanjeKorisnicima.Columns[14].Visible = false;
+            dgvUpravljanjeKorisnicima.Columns[15].Visible = false;
+            dgvUpravljanjeKorisnicima.Columns[16].Visible = false;
         }
 
         private void uiActionKreiraj_Click(object sender, EventArgs e)
@@ -117,6 +119,8 @@ namespace Prezentacijski_sloj
             dgvUpravljanjeKorisnicima.Columns[12].Visible = false;
             dgvUpravljanjeKorisnicima.Columns[13].Visible = false;
             dgvUpravljanjeKorisnicima.Columns[14].Visible = false;
+            dgvUpravljanjeKorisnicima.Columns[15].Visible = false;
+            dgvUpravljanjeKorisnicima.Columns[16].Visible = false;
         }
 
         private void uiActionAzuriranje_Click(object sender, EventArgs e)

@@ -51,7 +51,7 @@ namespace Prezentacijski_sloj
             List<Korisnik> listaZaposlenika = ParserKorisnik.ParsirajKorisnika();
             cbInputKorisnikKreirajNarudzbu.DataSource = listaKorisnika;
             cbInputZaposlenikKreirajNarudzbu.DataSource = listaZaposlenika;
-            List<Sloj_poslovne_logike.UpravljanjeSkladistem.Artikl> artikli = Sloj_poslovne_logike.UpravljanjeSkladistem.ParserArtikla.ParsirajArtikl();
+            List<Artikl> artikli = ParserArtikla.ParsirajArtikl();
             cbInputArtiklZaNaruciti.DataSource = null;
             cbInputArtiklZaNaruciti.DataSource = artikli;
             if (prosljedeniArtikl!=null)

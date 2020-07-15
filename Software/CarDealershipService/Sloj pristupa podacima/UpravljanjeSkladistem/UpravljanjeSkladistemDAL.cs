@@ -243,13 +243,16 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
             }
             return artikl;
         }
-        public static List<Stavke_dokumenta> DohvatiStavkeDokumentaOdabranogArtikla(Artikl artikl)
+        public static List<Stavke_dokumenta> DohvatiStavkeDokumentaOdabranogArtikla(Artikl artikl,int brojDana)
         {
             List<Stavke_dokumenta> stavkeArtikla = null;
+            DateTime datum = DateTime.Now.AddDays(-brojDana);
             using (var db = new CarDealershipandServiceEntities())
             {
+
                 var stavkaArtikla = from sd in db.Stavke_dokumenta
-                              where sd.artikl == artikl.id_artikl
+                                    from d in db.Dokuments
+                              where sd.artikl == artikl.id_artikl&&sd.dokument==d.id_dokument&&d.datum_izdavanja>=datum&&d.tip_dokumenta==1
                               select sd;
                 stavkeArtikla = stavkaArtikla.Distinct().ToList();
             }
