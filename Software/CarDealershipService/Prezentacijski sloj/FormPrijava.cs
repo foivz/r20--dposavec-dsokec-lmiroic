@@ -48,7 +48,7 @@ namespace Prezentacijski_sloj
             }
             else
             {
-                MessageBox.Show("Podaci nisu uneseni!");
+                MessageBox.Show("Podaci nisu uneseni!");                
             }           
         }
 

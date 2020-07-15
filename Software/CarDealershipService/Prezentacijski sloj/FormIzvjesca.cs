@@ -56,7 +56,11 @@ namespace Prezentacijski_sloj
             {
                 Series s = this.uiGrafikon.Series.Add(item.naziv_artikla);
                 s.Points.Add(Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.BrojProdanihArtikala(item));
+                int brojRacuna = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.BrojRacunaProdanogArtikala(item);
+                MessageBox.Show(item.naziv_artikla+"-"+brojRacuna);
             }
+            
+            
         }
 
         private void FormIzvjesca_HelpRequested(object sender, HelpEventArgs hlpevent)

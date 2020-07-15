@@ -139,6 +139,12 @@
     <Compile Include="FormKreirajVozilo.Designer.cs">
       <DependentUpon>FormKreirajVozilo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPredvidanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPredvidanje.Designer.cs">
+      <DependentUpon>FormPredvidanje.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKreirajVozilo.resx">
       <DependentUpon>FormKreirajVozilo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPredvidanje.resx">
+      <DependentUpon>FormPredvidanje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrijava.resx">
       <DependentUpon>FormPrijava.cs</DependentUpon>

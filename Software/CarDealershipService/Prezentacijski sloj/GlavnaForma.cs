@@ -102,7 +102,7 @@ namespace Prezentacijski_sloj
             {
                 uiActionUpravljanjeKorisnicima.Enabled = false;
                 uiActionUpravljanjePoslovnicama.Enabled = false;
-            }               
+            }
         }
 
         private void uiActionOdjava_Click(object sender, EventArgs e)
@@ -126,6 +126,11 @@ namespace Prezentacijski_sloj
         {
             System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "GlavnaForma.html");
 
+        }
+
+        private void uiActionPredvidanje_Click(object sender, EventArgs e)
+        {
+            PrikaziFormu(FormPredvidanje.Instance, sender);
         }
     }
 }

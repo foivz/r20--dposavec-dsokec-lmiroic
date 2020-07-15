@@ -235,3 +235,4 @@ C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\Doko\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.Racun.resources
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Prezentacijski sloj\obj\Debug\Prezentacijski_sloj.FormPredvidanje.resources

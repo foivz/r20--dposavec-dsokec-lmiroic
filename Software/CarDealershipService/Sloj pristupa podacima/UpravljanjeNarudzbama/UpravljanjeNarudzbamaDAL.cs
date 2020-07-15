@@ -33,6 +33,8 @@ namespace Sloj_pristupa_podacima.UpravljanjeNarudzbama
             using(var db=new CarDealershipandServiceEntities())
             {
                 var selectedItem = db.Dokuments.Where(d => d.id_dokument == narudzba.id_dokument).FirstOrDefault();
+                var selectedItem1 = db.Stavke_dokumenta.Where(sd => sd.dokument == narudzba.id_dokument).FirstOrDefault();
+                db.Stavke_dokumenta.Remove(selectedItem1);
                 db.Dokuments.Remove(selectedItem);
                 db.SaveChanges();
             }

@@ -43,6 +43,7 @@
             this.panelGlFormaNaslov = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.uiNotification = new System.Windows.Forms.NotifyIcon(this.components);
+            this.uiActionPredvidanje = new System.Windows.Forms.Button();
             this.panelGlFormaIzbornik.SuspendLayout();
             this.panelGlFormaNaslov.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // panelGlFormaIzbornik
             // 
+            this.panelGlFormaIzbornik.Controls.Add(this.uiActionPredvidanje);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionOdjava);
             this.panelGlFormaIzbornik.Controls.Add(this.uiActionUpravljanjeNarudzbama);
             this.panelGlFormaIzbornik.Controls.Add(this.panelGlFormaLogo);
@@ -79,7 +81,7 @@
             this.uiActionOdjava.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uiActionOdjava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uiActionOdjava.ForeColor = System.Drawing.Color.LightGray;
-            this.uiActionOdjava.Location = new System.Drawing.Point(0, 413);
+            this.uiActionOdjava.Location = new System.Drawing.Point(0, 471);
             this.uiActionOdjava.Name = "uiActionOdjava";
             this.uiActionOdjava.Size = new System.Drawing.Size(200, 45);
             this.uiActionOdjava.TabIndex = 2;
@@ -211,6 +213,20 @@
             this.uiNotification.Text = "notifyIcon1";
             this.uiNotification.Visible = true;
             // 
+            // uiActionPredvidanje
+            // 
+            this.uiActionPredvidanje.FlatAppearance.BorderSize = 0;
+            this.uiActionPredvidanje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uiActionPredvidanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uiActionPredvidanje.ForeColor = System.Drawing.Color.LightGray;
+            this.uiActionPredvidanje.Location = new System.Drawing.Point(0, 420);
+            this.uiActionPredvidanje.Name = "uiActionPredvidanje";
+            this.uiActionPredvidanje.Size = new System.Drawing.Size(200, 45);
+            this.uiActionPredvidanje.TabIndex = 3;
+            this.uiActionPredvidanje.Text = "Predvidanje";
+            this.uiActionPredvidanje.UseVisualStyleBackColor = true;
+            this.uiActionPredvidanje.Click += new System.EventHandler(this.uiActionPredvidanje_Click);
+            // 
             // GlavnaForma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,5 +263,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button uiActionOdjava;
         private System.Windows.Forms.NotifyIcon uiNotification;
+        private System.Windows.Forms.Button uiActionPredvidanje;
     }
 }

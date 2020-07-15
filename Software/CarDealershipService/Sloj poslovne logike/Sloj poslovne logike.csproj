@@ -73,8 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DinamicController.cs" />
     <Compile Include="Konfiguracija.cs" />
     <Compile Include="Mailer.cs" />
+    <Compile Include="Prediction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvjeraObavijesti.cs" />
     <Compile Include="Sesija.cs" />
@@ -87,6 +89,8 @@
     <Compile Include="UpravljanjePoslovnicama\Poslovnica.cs" />
     <Compile Include="UpravljanjePoslovnicama\UpravljanjePoslovnicamaBLL.cs" />
     <Compile Include="UpravljanjeRezervacijama\UpravljanjeRezervacijamaBLL.cs" />
+    <Compile Include="UpravljanjeSkladistem\Artikl.cs" />
+    <Compile Include="UpravljanjeSkladistem\ParserArtikla.cs" />
     <Compile Include="UpravljanjeSkladistem\ParserSkladista.cs" />
     <Compile Include="UpravljanjeSkladistem\ParserVrsteArtikla.cs" />
     <Compile Include="UpravljanjeRezervacijama\Korisnik.cs" />

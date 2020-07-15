@@ -1,5 +1,6 @@
 ﻿using Sloj_poslovne_logike;
 using Sloj_poslovne_logike.UpravljanjeRezervacijama;
+using Sloj_poslovne_logike.UpravljanjeSkladistem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,8 +51,13 @@ namespace Prezentacijski_sloj
             List<Korisnik> listaZaposlenika = ParserKorisnik.ParsirajKorisnika();
             cbInputKorisnikKreirajNarudzbu.DataSource = listaKorisnika;
             cbInputZaposlenikKreirajNarudzbu.DataSource = listaZaposlenika;
+            List<Sloj_poslovne_logike.UpravljanjeSkladistem.Artikl> artikli = Sloj_poslovne_logike.UpravljanjeSkladistem.ParserArtikla.ParsirajArtikl();
+            cbInputArtiklZaNaruciti.DataSource = null;
+            cbInputArtiklZaNaruciti.DataSource = artikli;
             if (prosljedeniArtikl!=null)
             {
+                
+                cbInputArtiklZaNaruciti.SelectedIndex= artikli.IndexOf(artikli.Find(x => x.id_artikl == prosljedeniArtikl.id_artikl));
                 dateTimeInputDatumIzdavanjaKreirajNarudzbu.Value = DateTime.Now;
                 uiInputOpisDokumentaKn.Text = "Narudzba za "+prosljedeniArtikl.naziv_artikla.ToLower()+" "+prosljedeniArtikl.opis_artikla.ToString();
                 uiInputUkupniSaldo.Text = prosljedeniArtikl.cijena_artikla.ToString();
@@ -70,6 +76,9 @@ namespace Prezentacijski_sloj
                 cbInputZaposlenikKreirajNarudzbu.SelectedIndex = listaZaposlenika.IndexOf(listaZaposlenika.Find(x => x.id_korisnik == proslijedeniDokument.zaposlenik));
                 uiActionSpremiNarudzbu.Enabled = false;
                 uiActionSpremiNarudzbu.Hide();
+                cbInputArtiklZaNaruciti.Enabled = false;
+                cbInputArtiklZaNaruciti.Hide();
+                label7.Hide();
             }
             else
             {
@@ -95,6 +104,17 @@ namespace Prezentacijski_sloj
                 if (Sloj_poslovne_logike.UpravljanjeNarudzbama.UpravljanjeNarudzbamaBLL.ProvjeraUnosaNarudzbe(narudzba)==true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajNarudzbu(narudzba);
+
+                    Sloj_pristupa_podacima.Usluga usluga = new Sloj_pristupa_podacima.Usluga();
+                    usluga.naziv_usluge = narudzba.opis_dokumenta;
+                    usluga.vrsta_usluge = 1;
+                    Sloj_pristupa_podacima.Upravljanje_uslugama.UpravljanjeUslugamaDAL.KreiranjeUsluge(usluga);
+                    Sloj_pristupa_podacima.Stavke_dokumenta stavke_Dokumenta = new Sloj_pristupa_podacima.Stavke_dokumenta();
+                    stavke_Dokumenta.usluga = Sloj_pristupa_podacima.Upravljanje_uslugama.UpravljanjeUslugamaDAL.VratiZadnjiUnos(usluga.naziv_usluge).id_usluga;
+                    stavke_Dokumenta.dokument = Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.VratiZadnjiRacun(narudzba).id_dokument;
+                    stavke_Dokumenta.artikl = (cbInputArtiklZaNaruciti.SelectedItem as Artikl).id_artikl;
+                    Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreiranjeStavkeDokumenta(stavke_Dokumenta);
+
                     if (prosljedeniArtikl==null)
                     {
                         FormUpravljanjeNarudzbama.OsvjeziPrikaz();
@@ -115,10 +135,9 @@ namespace Prezentacijski_sloj
                     MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Morate unijeti sve parametre!");
             }
         }
 
