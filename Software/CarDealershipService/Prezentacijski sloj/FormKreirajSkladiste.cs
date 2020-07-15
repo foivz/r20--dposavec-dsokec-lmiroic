@@ -13,6 +13,7 @@ namespace Prezentacijski_sloj
     public partial class FormKreirajSkladiste : Form
     {
         public FormUpravljanjePoslovnicama FormUpravljanjePoslovnicama;
+        public Sloj_pristupa_podacima.Poslovnica prosljedenaPoslovnica;
         private static FormKreirajSkladiste _instance;
         public static FormKreirajSkladiste instance
         {
@@ -69,7 +70,7 @@ namespace Prezentacijski_sloj
         private void OsvjeziPrikazSkladista()
         {
             dgvSkladistaPoslovnice.DataSource = null;
-            dgvSkladistaPoslovnice.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiSkladisteKorisnika(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
+            dgvSkladistaPoslovnice.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiSkladistePoslovnice(prosljedenaPoslovnica);
             dgvSkladistaPoslovnice.Columns[3].Visible = false;
             dgvSkladistaPoslovnice.Columns[4].Visible = false;
         }

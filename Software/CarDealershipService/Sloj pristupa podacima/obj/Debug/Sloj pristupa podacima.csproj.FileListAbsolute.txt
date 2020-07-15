@@ -32,3 +32,11 @@ C:\Users\Miroic.DESKTOP-7BQA0ED\Desktop\Pi projekt\Software\CarDealershipService
 C:\Users\Miroic.DESKTOP-7BQA0ED\Desktop\Pi projekt\Software\CarDealershipService\Sloj pristupa podacima\obj\Debug\Sloj pristupa podacima.dll
 C:\Users\Miroic.DESKTOP-7BQA0ED\Desktop\Pi projekt\Software\CarDealershipService\Sloj pristupa podacima\obj\Debug\Sloj pristupa podacima.pdb
 C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\obj\Debug\Sloj pristupa podacima.csproj.CoreCompileInputs.cache
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\bin\Debug\System.Security.Permissions.dll
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\bin\Debug\System.Security.Permissions.xml
+C:\Users\Miroic.DESKTOP-7BQA0ED\Documents\r20--dposavec-dsokec-lmiroic\Software\CarDealershipService\Sloj pristupa podacima\bin\Debug\System.Security.Principal.Windows.xml

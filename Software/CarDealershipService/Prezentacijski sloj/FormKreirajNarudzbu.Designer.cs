@@ -43,6 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.uiInputUkupniSaldo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbInputArtiklZaNaruciti = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelKreirajNarudzbuHeader.SuspendLayout();
             this.panelKreirajNarudzbuFooter.SuspendLayout();
             this.SuspendLayout();
@@ -107,14 +109,14 @@
             // 
             // dateTimeInputDatumIzdavanjaKreirajNarudzbu
             // 
-            this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.Location = new System.Drawing.Point(150, 160);
+            this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.Location = new System.Drawing.Point(154, 130);
             this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.Name = "dateTimeInputDatumIzdavanjaKreirajNarudzbu";
             this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.Size = new System.Drawing.Size(187, 20);
             this.dateTimeInputDatumIzdavanjaKreirajNarudzbu.TabIndex = 3;
             // 
             // uiInputOpisDokumentaKn
             // 
-            this.uiInputOpisDokumentaKn.Location = new System.Drawing.Point(147, 231);
+            this.uiInputOpisDokumentaKn.Location = new System.Drawing.Point(151, 201);
             this.uiInputOpisDokumentaKn.Multiline = true;
             this.uiInputOpisDokumentaKn.Name = "uiInputOpisDokumentaKn";
             this.uiInputOpisDokumentaKn.Size = new System.Drawing.Size(190, 68);
@@ -123,7 +125,7 @@
             // cbInputKorisnikKreirajNarudzbu
             // 
             this.cbInputKorisnikKreirajNarudzbu.FormattingEnabled = true;
-            this.cbInputKorisnikKreirajNarudzbu.Location = new System.Drawing.Point(499, 210);
+            this.cbInputKorisnikKreirajNarudzbu.Location = new System.Drawing.Point(503, 180);
             this.cbInputKorisnikKreirajNarudzbu.Name = "cbInputKorisnikKreirajNarudzbu";
             this.cbInputKorisnikKreirajNarudzbu.Size = new System.Drawing.Size(168, 21);
             this.cbInputKorisnikKreirajNarudzbu.TabIndex = 5;
@@ -131,7 +133,7 @@
             // cbInputZaposlenikKreirajNarudzbu
             // 
             this.cbInputZaposlenikKreirajNarudzbu.FormattingEnabled = true;
-            this.cbInputZaposlenikKreirajNarudzbu.Location = new System.Drawing.Point(499, 278);
+            this.cbInputZaposlenikKreirajNarudzbu.Location = new System.Drawing.Point(503, 248);
             this.cbInputZaposlenikKreirajNarudzbu.Name = "cbInputZaposlenikKreirajNarudzbu";
             this.cbInputZaposlenikKreirajNarudzbu.Size = new System.Drawing.Size(168, 21);
             this.cbInputZaposlenikKreirajNarudzbu.TabIndex = 6;
@@ -139,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 144);
+            this.label2.Location = new System.Drawing.Point(151, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 7;
@@ -148,7 +150,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(147, 210);
+            this.label3.Location = new System.Drawing.Point(151, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 7;
@@ -157,7 +159,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(496, 194);
+            this.label4.Location = new System.Drawing.Point(500, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 7;
@@ -166,7 +168,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(496, 257);
+            this.label5.Location = new System.Drawing.Point(500, 227);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 7;
@@ -174,7 +176,7 @@
             // 
             // uiInputUkupniSaldo
             // 
-            this.uiInputUkupniSaldo.Location = new System.Drawing.Point(499, 163);
+            this.uiInputUkupniSaldo.Location = new System.Drawing.Point(503, 133);
             this.uiInputUkupniSaldo.Name = "uiInputUkupniSaldo";
             this.uiInputUkupniSaldo.Size = new System.Drawing.Size(168, 20);
             this.uiInputUkupniSaldo.TabIndex = 8;
@@ -182,17 +184,36 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(496, 147);
+            this.label6.Location = new System.Drawing.Point(500, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 9;
             this.label6.Text = "Ukupni saldo";
+            // 
+            // cbInputArtiklZaNaruciti
+            // 
+            this.cbInputArtiklZaNaruciti.FormattingEnabled = true;
+            this.cbInputArtiklZaNaruciti.Location = new System.Drawing.Point(154, 303);
+            this.cbInputArtiklZaNaruciti.Name = "cbInputArtiklZaNaruciti";
+            this.cbInputArtiklZaNaruciti.Size = new System.Drawing.Size(187, 21);
+            this.cbInputArtiklZaNaruciti.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(151, 287);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Artikl za naruciti";
             // 
             // FormKreirajNarudzbu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbInputArtiklZaNaruciti);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.uiInputUkupniSaldo);
             this.Controls.Add(this.label5);
@@ -235,5 +256,7 @@
         private System.Windows.Forms.Button uiActionAzurirajNarudzbu;
         private System.Windows.Forms.TextBox uiInputUkupniSaldo;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbInputArtiklZaNaruciti;
+        private System.Windows.Forms.Label label7;
     }
 }

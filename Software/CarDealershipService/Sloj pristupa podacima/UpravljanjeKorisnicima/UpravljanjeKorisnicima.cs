@@ -103,5 +103,22 @@ namespace Sloj_pristupa_podacima.UpravljanjeKorisnicima
                 db.SaveChanges();
             }
         }
+        public static Korisnik DohvatiKorisnikovMail(Korisnik korisnik)
+        {
+            Korisnik pronadenKorisnik = null;
+            pronadenKorisnik = DohvatiSveKorisnike().Find(k => k.email == korisnik.email && k.id_korisnik == korisnik.id_korisnik);
+            return pronadenKorisnik;
+        }
+        public static List<Korisnik> DohvatiSveDobavljace()
+        {
+            List<Korisnik> SviDobavljaci = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                SviDobavljaci = (from k in db.Korisniks
+                                where k.tip_korisnika == 3
+                                select k).ToList();
+            }
+            return SviDobavljaci;
+        }
     }
 }

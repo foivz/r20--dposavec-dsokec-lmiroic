@@ -79,7 +79,8 @@ namespace Prezentacijski_sloj
                 {
                     Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.KreirajRezervaciju(rezervacija);
                     FormUpravljanjeRezervacijama.OsvjeziPrikaz();
-                    DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.KREIRANA_REZERVACIJA);
+                    DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.KREIRANA_REZERVACIJA);                    
+                    Sloj_poslovne_logike.Mailer.PosaljiObavijestNaMail(cbInputKorisnik.SelectedItem as Sloj_pristupa_podacima.Korisnik, rezervacija.opis_dokumenta , "Kreirana rezervacija");
                 }
                 else
                 {
@@ -109,6 +110,7 @@ namespace Prezentacijski_sloj
                     Sloj_pristupa_podacima.UpravljanjeRezervacijama.UpravljanjeRezervacijamaDAL.AzurirajRezervaciju(rezervacija);
                     FormUpravljanjeRezervacijama.OsvjeziPrikaz();
                     DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.AZURIRAJ_REZERVACIJU);
+                    Sloj_poslovne_logike.Mailer.PosaljiObavijestNaMail(cbInputKorisnik.SelectedItem as Sloj_pristupa_podacima.Korisnik, rezervacija.opis_dokumenta, "Azurirana rezervacija"); 
                 }
                 else
                 {

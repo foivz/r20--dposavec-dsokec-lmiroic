@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sloj_poslovne_logike.UpravljanjeRezervacijama;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,9 +48,9 @@ namespace Prezentacijski_sloj
             uiInputKlijenti.DataSource = listaKorisnika;
             dgvProdajniArtikli.DataSource = null;
             dgvProdajniArtikli.DataSource = Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.DohvatiArtiklePoslovnice(Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
-            dgvProdajniArtikli.Columns[9].Visible = false;
-            dgvProdajniArtikli.Columns[10].Visible = false;
             dgvProdajniArtikli.Columns[11].Visible = false;
+            dgvProdajniArtikli.Columns[12].Visible = false;
+            dgvProdajniArtikli.Columns[13].Visible = false;
         }
 
         private void uiActionProdaja_Click(object sender, EventArgs e)
@@ -93,8 +94,9 @@ namespace Prezentacijski_sloj
                 stavke_Dokumenta.dokument = Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.VratiZadnjiRacun(dokument).id_dokument;
                 stavke_Dokumenta.artikl = item.id_artikl;
                 Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreiranjeStavkeDokumenta(stavke_Dokumenta);
-                DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.PRODAN_ARTIKL);
+                DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.PRODAN_ARTIKL);                
             }
+            PrikazFormeRacuna(Racun.instance, sender, Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.VratiZadnjiRacun(dokument), uiInputKlijenti.SelectedItem as Sloj_pristupa_podacima.Korisnik);
         }       
         
         private void dgvProdajniArtikli_DoubleClick(object sender, EventArgs e)
@@ -119,9 +121,9 @@ namespace Prezentacijski_sloj
         {
             dgvOdabraniArtikli.DataSource = null;
             dgvOdabraniArtikli.DataSource = odabraniArtikli;
-            dgvOdabraniArtikli.Columns[9].Visible = false;
-            dgvOdabraniArtikli.Columns[10].Visible = false;
             dgvOdabraniArtikli.Columns[11].Visible = false;
+            dgvOdabraniArtikli.Columns[12].Visible = false;
+            dgvOdabraniArtikli.Columns[13].Visible = false;
             lblSuma.Text = "Ukupna cijena = " + suma;
             lblSuma.Show();
         }
@@ -134,6 +136,16 @@ namespace Prezentacijski_sloj
         private void PrikazFormeKreiranjaNarudzbe(FormKreirajNarudzbu form, object sender, Sloj_pristupa_podacima.Artikl artikl)
         {
             form.prosljedeniArtikl = artikl;
+            form.FormProdajaArtikla = this;
+            form.MdiParent = this.MdiParent;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Show();
+            form.Activate();
+        }
+        private void PrikazFormeRacuna(Racun form, object sender, Sloj_pristupa_podacima.Dokument racun,Sloj_pristupa_podacima.Korisnik korisnik)
+        {
+            form.prosljedeniKorisnik = korisnik;
+            form.prosljedeniDokument = racun;
             form.FormProdajaArtikla = this;
             form.MdiParent = this.MdiParent;
             form.StartPosition = FormStartPosition.CenterScreen;

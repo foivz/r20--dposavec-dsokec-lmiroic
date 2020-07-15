@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Sloj_poslovne_logike;
+using Sloj_poslovne_logike.UpravljanjeSkladistem;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,9 +51,12 @@ namespace Prezentacijski_sloj
                 artikl.naziv_artikla = uiInputNazivRezervnogDijela.Text;
                 artikl.cijena_artikla = double.Parse(uiInputCijenaRezervnogDijela.Text);
                 artikl.vrsta_artikla = 1;
-                if (Sloj_poslovne_logike.UpravljanjeSkladistem.UpravljanjeSkladistemBLL.ProvjeraUnosaRezervnogDijela(artikl) == true)
+                artikl.minimalna_kolicina = int.Parse(uiInputMinimalnaKolicina.Text);
+                artikl.vrijeme_dostave = int.Parse(uiInputVrijemeDostave.Text);
+                int kolicina = int.Parse(uiInputKolicina.Text);
+                if (Sloj_poslovne_logike.UpravljanjeSkladistem.UpravljanjeSkladistemBLL.ProvjeraUnosaRezervnogDijela(artikl,kolicina) == true)
                 {
-                    Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl,Sloj_poslovne_logike.Sesija.PrijavljenKorisnik);
+                    Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.KreiranjeArtikla(artikl,cbInputSkladiste.SelectedItem as Sloj_pristupa_podacima.Skladiste,kolicina);
                     FormUpravljanjeSkladistem.OsvjeziPopisArtikala();
                     DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.KREIRANJE_REZERVNOG_DIJELA);
                 }
@@ -69,17 +74,28 @@ namespace Prezentacijski_sloj
 
         private void FormKreirajRezervniDio_Load(object sender, EventArgs e)
         {
+            
             if (proslijedeniArtikl != null)
             {
+                label9.Hide();
+                uiInputKolicina.Hide();
                 uiInputCijenaRezervnogDijela.Text = proslijedeniArtikl.cijena_artikla.ToString();
                 uiInputGodinaProizvodnjeDijela.Text = proslijedeniArtikl.godina_proizvodnje.ToString();
                 uiInputNazivRezervnogDijela.Text = proslijedeniArtikl.naziv_artikla;
                 uiInputOpisRezervnogDijela.Text = proslijedeniArtikl.opis_artikla;
+                uiInputMinimalnaKolicina.Text = proslijedeniArtikl.minimalna_kolicina.ToString();
+                uiInputVrijemeDostave.Text = proslijedeniArtikl.vrijeme_dostave.ToString();
                 uiActionSpremi.Enabled = false;
                 uiActionSpremi.Hide();
+                cbInputSkladiste.Enabled = false;
+                cbInputSkladiste.Hide();
+                label8.Hide();
             }
             else
             {
+                List<Skladiste> listaSkladista = ParserSkladista.ParsirajSkladista();
+                cbInputSkladiste.DataSource = null;
+                cbInputSkladiste.DataSource = listaSkladista;
                 uiActionAzuriraj.Enabled = false;
                 uiActionAzuriraj.Hide();
             }
@@ -97,7 +113,9 @@ namespace Prezentacijski_sloj
                 artikl.naziv_artikla = uiInputNazivRezervnogDijela.Text;
                 artikl.cijena_artikla = double.Parse(uiInputCijenaRezervnogDijela.Text);
                 artikl.vrsta_artikla = 1;
-                if (Sloj_poslovne_logike.UpravljanjeSkladistem.UpravljanjeSkladistemBLL.ProvjeraUnosaRezervnogDijela(artikl) == true)
+                artikl.minimalna_kolicina = int.Parse(uiInputMinimalnaKolicina.Text);
+                artikl.vrijeme_dostave = int.Parse(uiInputVrijemeDostave.Text);
+                if (Sloj_poslovne_logike.UpravljanjeSkladistem.UpravljanjeSkladistemBLL.ProvjeraUnosaRezervnogDijelaKodAzuriranja(artikl) == true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeSkladistem.UpravljanjeSkladistemDAL.AzurirajArtikl(artikl);
                     FormUpravljanjeSkladistem.OsvjeziPopisArtikala();

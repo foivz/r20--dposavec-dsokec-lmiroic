@@ -47,6 +47,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.uiInputVrstaGoriva = new System.Windows.Forms.ComboBox();
+            this.uiInputMinimalnaKolicina = new System.Windows.Forms.TextBox();
+            this.uiInputVrijemeDostave = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbinputSkladiste = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.uiInputKolicina = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.panelKreirajArtiklHeader.SuspendLayout();
             this.panelKreirajArtiklFooter.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +85,7 @@
             this.panelKreirajArtiklFooter.Controls.Add(this.uiActionAzurirajVozilo);
             this.panelKreirajArtiklFooter.Controls.Add(this.uiActionSpremi);
             this.panelKreirajArtiklFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelKreirajArtiklFooter.Location = new System.Drawing.Point(0, 350);
+            this.panelKreirajArtiklFooter.Location = new System.Drawing.Point(0, 419);
             this.panelKreirajArtiklFooter.Name = "panelKreirajArtiklFooter";
             this.panelKreirajArtiklFooter.Size = new System.Drawing.Size(800, 100);
             this.panelKreirajArtiklFooter.TabIndex = 4;
@@ -135,7 +143,7 @@
             // 
             // uiInputOpisArtikla
             // 
-            this.uiInputOpisArtikla.Location = new System.Drawing.Point(324, 290);
+            this.uiInputOpisArtikla.Location = new System.Drawing.Point(179, 281);
             this.uiInputOpisArtikla.Multiline = true;
             this.uiInputOpisArtikla.Name = "uiInputOpisArtikla";
             this.uiInputOpisArtikla.Size = new System.Drawing.Size(204, 54);
@@ -185,7 +193,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(324, 274);
+            this.label5.Location = new System.Drawing.Point(179, 265);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 6;
@@ -226,11 +234,84 @@
             this.uiInputVrstaGoriva.Size = new System.Drawing.Size(204, 21);
             this.uiInputVrstaGoriva.TabIndex = 7;
             // 
+            // uiInputMinimalnaKolicina
+            // 
+            this.uiInputMinimalnaKolicina.Location = new System.Drawing.Point(476, 281);
+            this.uiInputMinimalnaKolicina.Name = "uiInputMinimalnaKolicina";
+            this.uiInputMinimalnaKolicina.Size = new System.Drawing.Size(204, 20);
+            this.uiInputMinimalnaKolicina.TabIndex = 8;
+            // 
+            // uiInputVrijemeDostave
+            // 
+            this.uiInputVrijemeDostave.Location = new System.Drawing.Point(476, 324);
+            this.uiInputVrijemeDostave.Name = "uiInputVrijemeDostave";
+            this.uiInputVrijemeDostave.Size = new System.Drawing.Size(204, 20);
+            this.uiInputVrijemeDostave.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(473, 265);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Minimalna kolicina na skladistu";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(473, 308);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Vrijeme dostave artikla";
+            // 
+            // cbinputSkladiste
+            // 
+            this.cbinputSkladiste.FormattingEnabled = true;
+            this.cbinputSkladiste.Location = new System.Drawing.Point(179, 363);
+            this.cbinputSkladiste.Name = "cbinputSkladiste";
+            this.cbinputSkladiste.Size = new System.Drawing.Size(204, 21);
+            this.cbinputSkladiste.TabIndex = 10;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(179, 347);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Odabir skladista";
+            // 
+            // uiInputKolicina
+            // 
+            this.uiInputKolicina.Location = new System.Drawing.Point(476, 364);
+            this.uiInputKolicina.Name = "uiInputKolicina";
+            this.uiInputKolicina.Size = new System.Drawing.Size(204, 20);
+            this.uiInputKolicina.TabIndex = 12;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(473, 347);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Kolicina";
+            // 
             // FormKreirajVozilo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 519);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.uiInputKolicina);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cbinputSkladiste);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.uiInputVrijemeDostave);
+            this.Controls.Add(this.uiInputMinimalnaKolicina);
             this.Controls.Add(this.uiInputVrstaGoriva);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -281,5 +362,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox uiInputVrstaGoriva;
         private System.Windows.Forms.Button uiActionAzurirajVozilo;
+        private System.Windows.Forms.TextBox uiInputMinimalnaKolicina;
+        private System.Windows.Forms.TextBox uiInputVrijemeDostave;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbinputSkladiste;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox uiInputKolicina;
+        private System.Windows.Forms.Label label12;
     }
 }

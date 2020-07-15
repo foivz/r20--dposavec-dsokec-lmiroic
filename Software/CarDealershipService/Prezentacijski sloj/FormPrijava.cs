@@ -48,13 +48,21 @@ namespace Prezentacijski_sloj
             }
             else
             {
-                MessageBox.Show("Podaci nisu uneseni!");
+                MessageBox.Show("Podaci nisu uneseni!");                
             }           
         }
 
         private void FormPrijava_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception)
+            {
+                
+            }
+            
         }
 
         private void FormPrijava_HelpRequested(object sender, HelpEventArgs hlpevent)

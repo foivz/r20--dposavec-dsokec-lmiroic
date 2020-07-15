@@ -20,6 +20,8 @@ namespace Sloj_pristupa_podacima
             this.Dnevnik_rada = new HashSet<Dnevnik_rada>();
             this.Dokuments = new HashSet<Dokument>();
             this.Dokuments1 = new HashSet<Dokument>();
+            this.Obavijests = new HashSet<Obavijest>();
+            this.Obavijests1 = new HashSet<Obavijest>();
         }
     
         public int id_korisnik { get; set; }
@@ -41,5 +43,9 @@ namespace Sloj_pristupa_podacima
         public virtual ICollection<Dokument> Dokuments1 { get; set; }
         public virtual Poslovnica Poslovnica1 { get; set; }
         public virtual Tip_korisnika Tip_korisnika1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Obavijest> Obavijests { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Obavijest> Obavijests1 { get; set; }
     }
 }

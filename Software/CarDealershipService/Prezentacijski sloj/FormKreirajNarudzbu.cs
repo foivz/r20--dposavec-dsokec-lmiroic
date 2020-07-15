@@ -1,5 +1,6 @@
 ﻿using Sloj_poslovne_logike;
 using Sloj_poslovne_logike.UpravljanjeRezervacijama;
+using Sloj_poslovne_logike.UpravljanjeSkladistem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,8 +51,13 @@ namespace Prezentacijski_sloj
             List<Korisnik> listaZaposlenika = ParserKorisnik.ParsirajKorisnika();
             cbInputKorisnikKreirajNarudzbu.DataSource = listaKorisnika;
             cbInputZaposlenikKreirajNarudzbu.DataSource = listaZaposlenika;
+            List<Artikl> artikli = ParserArtikla.ParsirajArtikl();
+            cbInputArtiklZaNaruciti.DataSource = null;
+            cbInputArtiklZaNaruciti.DataSource = artikli;
             if (prosljedeniArtikl!=null)
             {
+                
+                cbInputArtiklZaNaruciti.SelectedIndex= artikli.IndexOf(artikli.Find(x => x.id_artikl == prosljedeniArtikl.id_artikl));
                 dateTimeInputDatumIzdavanjaKreirajNarudzbu.Value = DateTime.Now;
                 uiInputOpisDokumentaKn.Text = "Narudzba za "+prosljedeniArtikl.naziv_artikla.ToLower()+" "+prosljedeniArtikl.opis_artikla.ToString();
                 uiInputUkupniSaldo.Text = prosljedeniArtikl.cijena_artikla.ToString();
@@ -70,6 +76,9 @@ namespace Prezentacijski_sloj
                 cbInputZaposlenikKreirajNarudzbu.SelectedIndex = listaZaposlenika.IndexOf(listaZaposlenika.Find(x => x.id_korisnik == proslijedeniDokument.zaposlenik));
                 uiActionSpremiNarudzbu.Enabled = false;
                 uiActionSpremiNarudzbu.Hide();
+                cbInputArtiklZaNaruciti.Enabled = false;
+                cbInputArtiklZaNaruciti.Hide();
+                label7.Hide();
             }
             else
             {
@@ -95,21 +104,40 @@ namespace Prezentacijski_sloj
                 if (Sloj_poslovne_logike.UpravljanjeNarudzbama.UpravljanjeNarudzbamaBLL.ProvjeraUnosaNarudzbe(narudzba)==true)
                 {
                     Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreirajNarudzbu(narudzba);
+
+                    Sloj_pristupa_podacima.Usluga usluga = new Sloj_pristupa_podacima.Usluga();
+                    usluga.naziv_usluge = narudzba.opis_dokumenta;
+                    usluga.vrsta_usluge = 1;
+                    Sloj_pristupa_podacima.Upravljanje_uslugama.UpravljanjeUslugamaDAL.KreiranjeUsluge(usluga);
+                    Sloj_pristupa_podacima.Stavke_dokumenta stavke_Dokumenta = new Sloj_pristupa_podacima.Stavke_dokumenta();
+                    stavke_Dokumenta.usluga = Sloj_pristupa_podacima.Upravljanje_uslugama.UpravljanjeUslugamaDAL.VratiZadnjiUnos(usluga.naziv_usluge).id_usluga;
+                    stavke_Dokumenta.dokument = Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.VratiZadnjiRacun(narudzba).id_dokument;
+                    stavke_Dokumenta.artikl = (cbInputArtiklZaNaruciti.SelectedItem as Artikl).id_artikl;
+                    Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.KreiranjeStavkeDokumenta(stavke_Dokumenta);
+
                     if (prosljedeniArtikl==null)
                     {
                         FormUpravljanjeNarudzbama.OsvjeziPrikaz();
                     }                    
                     DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.KREIRANA_NARUDZBA);
+                    Sloj_pristupa_podacima.Obavijest obavijest = new Sloj_pristupa_podacima.Obavijest();
+                    obavijest.Korisnik= (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
+                    obavijest.Naslov = "Kreirana narudzba";
+                    obavijest.Opis = uiInputOpisDokumentaKn.Text;
+                    obavijest.Procitano = 0;
+                    obavijest.Vrijeme_kreiranja= DateTime.Parse(dateTimeInputDatumIzdavanjaKreirajNarudzbu.Text.ToString());
+                    obavijest.Zaposlenik = Sesija.PrijavljenKorisnik.id_korisnik;
+                    Sloj_pristupa_podacima.UpravljanjeObavijestima.UpravljanjeObavijestimaDAL.KreirajObavijest(obavijest);
+                    Mailer.PosaljiObavijestNaMail(cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik, obavijest.Opis, obavijest.Naslov);
                 }
                 else
                 {
                     MessageBox.Show("Niste unijeli odgovarajuće parametre! Za pomoć pritisnite F1.");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Morate unijeti sve parametre!");
             }
         }
 
@@ -130,6 +158,15 @@ namespace Prezentacijski_sloj
                     Sloj_pristupa_podacima.UpravljanjeNarudzbama.UpravljanjeNarudzbamaDAL.AzurirajNarudzbu(narudzba);
                     FormUpravljanjeNarudzbama.OsvjeziPrikaz();
                     DnevnikRadaDLL.DnevnikLogin.ZapisiZapis(DnevnikRadaDLL.RadnjaDnevnika.AZURIRAJ_NARUDZBU);
+                    Sloj_pristupa_podacima.Obavijest obavijest = new Sloj_pristupa_podacima.Obavijest();
+                    obavijest.Korisnik = (cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik).id_korisnik;
+                    obavijest.Naslov = "Azurirana narudzba";
+                    obavijest.Opis = uiInputOpisDokumentaKn.Text;
+                    obavijest.Procitano = 0;
+                    obavijest.Vrijeme_kreiranja = DateTime.Parse(dateTimeInputDatumIzdavanjaKreirajNarudzbu.Text.ToString());
+                    obavijest.Zaposlenik = Sesija.PrijavljenKorisnik.id_korisnik;
+                    Sloj_pristupa_podacima.UpravljanjeObavijestima.UpravljanjeObavijestimaDAL.KreirajObavijest(obavijest);
+                    Mailer.PosaljiObavijestNaMail(cbInputKorisnikKreirajNarudzbu.SelectedItem as Sloj_pristupa_podacima.Korisnik, obavijest.Opis, obavijest.Naslov);
                 }
                 else
                 {
