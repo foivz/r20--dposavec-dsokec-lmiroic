@@ -49,5 +49,10 @@ namespace Prezentacijski_sloj
             _Instance = null;
             this.Controls.Clear();
         }
+
+        private void FormPredvidanje_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "Predvidanje.html");
+        }
     }
 }

@@ -63,14 +63,14 @@
             this.reportViewer1.Location = new System.Drawing.Point(12, 61);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 253);
+            this.reportViewer1.Size = new System.Drawing.Size(636, 253);
             this.reportViewer1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(283, 29);
+            this.label1.Location = new System.Drawing.Point(236, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 29);
             this.label1.TabIndex = 1;
@@ -80,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(283, 339);
+            this.label2.Location = new System.Drawing.Point(206, 335);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(227, 29);
             this.label2.TabIndex = 1;
@@ -95,7 +95,7 @@
             this.reportViewer2.Location = new System.Drawing.Point(12, 383);
             this.reportViewer2.Name = "reportViewer2";
             this.reportViewer2.ServerReport.BearerToken = null;
-            this.reportViewer2.Size = new System.Drawing.Size(776, 277);
+            this.reportViewer2.Size = new System.Drawing.Size(636, 277);
             this.reportViewer2.TabIndex = 2;
             // 
             // uiGrafikon
@@ -104,7 +104,7 @@
             this.uiGrafikon.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.uiGrafikon.Legends.Add(legend1);
-            this.uiGrafikon.Location = new System.Drawing.Point(70, 685);
+            this.uiGrafikon.Location = new System.Drawing.Point(692, 202);
             this.uiGrafikon.Name = "uiGrafikon";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 1031);
+            this.ClientSize = new System.Drawing.Size(1395, 672);
             this.Controls.Add(this.uiGrafikon);
             this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.label2);

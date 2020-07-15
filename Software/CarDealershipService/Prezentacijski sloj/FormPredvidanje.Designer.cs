@@ -82,9 +82,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbInputDobavljaci);
             this.Name = "FormPredvidanje";
-            this.Text = "FormPredvidanje";
+            this.Text = "Predvidanje";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPredvidanje_FormClosed);
             this.Load += new System.EventHandler(this.FormPredvidanje_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormPredvidanje_HelpRequested);
             this.ResumeLayout(false);
             this.PerformLayout();
 

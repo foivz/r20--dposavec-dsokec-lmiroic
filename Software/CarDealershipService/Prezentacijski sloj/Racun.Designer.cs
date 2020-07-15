@@ -89,6 +89,7 @@
             this.Text = "Racun";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Racun_FormClosed);
             this.Load += new System.EventHandler(this.Racun_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Racun_HelpRequested);
             ((System.ComponentModel.ISupportInitialize)(this.DokumentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KorisnikBindingSource)).EndInit();
             this.ResumeLayout(false);

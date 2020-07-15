@@ -70,5 +70,10 @@ namespace Prezentacijski_sloj
             }
             
         }
+
+        private void Racun_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            System.Windows.Forms.Help.ShowHelp(this, "CarAppHelp.chm", HelpNavigator.Topic, "ProdajaRacun.html");
+        }
     }
 }

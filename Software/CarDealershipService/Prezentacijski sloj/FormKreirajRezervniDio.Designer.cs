@@ -268,7 +268,7 @@
             this.Controls.Add(this.panelKreirajRezervniDioFooter);
             this.Controls.Add(this.panelKreirajRezervniDioHeader);
             this.Name = "FormKreirajRezervniDio";
-            this.Text = "t";
+            this.Text = "Kreiraj rezervni dio";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKreirajRezervniDio_FormClosed);
             this.Load += new System.EventHandler(this.FormKreirajRezervniDio_Load);
             this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.FormKreirajRezervniDio_HelpRequested);
