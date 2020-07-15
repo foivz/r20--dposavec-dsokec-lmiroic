@@ -87,6 +87,21 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
             }
             return ArtikliNaSkladistu;
         }
+        public static List<Artikl> DohvatiUnikatneArtiklePoslovnice(Korisnik korisnik)
+        {
+            List<Artikl> ArtikliNaSkladistu = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var artikli = from sp in db.Skladiste_poslovnice
+                              from s in db.Skladistes
+                              from artS in db.Artikli_na_skladistu
+                              from a in db.Artikls
+                              where sp.poslovnica == korisnik.poslovnica && artS.skladiste == s.id_skladiste && artS.artikl == a.id_artikl && sp.skladiste == s.id_skladiste
+                              select a;
+                ArtikliNaSkladistu = artikli.Distinct().ToList();
+            }
+            return ArtikliNaSkladistu;
+        }
         public static List<Skladiste> DohvatiSkladisteKorisnika(Korisnik korisnik)
         {
             List<Skladiste> SkladisteKorisnika = null;
@@ -204,6 +219,74 @@ namespace Sloj_pristupa_podacima.UpravljanjeSkladistem
                           select sd).ToList().Count;
             }
             return brojac;
+        }
+        public static int BrojRacunaProdanogArtikala(Artikl artikl)
+        {
+            int brojac = 0;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                brojac = (from sd in db.Stavke_dokumenta
+                          from d in db.Dokuments
+                          where sd.artikl == artikl.id_artikl&&d.tip_dokumenta==1&&sd.dokument==d.id_dokument
+                          select sd).Distinct().ToList().Count;
+            }
+            return brojac;
+        }
+        public static Artikl DohvatiArtikl(int id)
+        {
+            Artikl artikl = new Artikl();
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                artikl = (from a in db.Artikls
+                          where a.id_artikl == id
+                          select a).ToList().FirstOrDefault();
+            }
+            return artikl;
+        }
+        public static List<Stavke_dokumenta> DohvatiStavkeDokumentaOdabranogArtikla(Artikl artikl)
+        {
+            List<Stavke_dokumenta> stavkeArtikla = null;
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                var stavkaArtikla = from sd in db.Stavke_dokumenta
+                              where sd.artikl == artikl.id_artikl
+                              select sd;
+                stavkeArtikla = stavkaArtikla.Distinct().ToList();
+            }
+            return stavkeArtikla;
+        }
+        public static List<Artikli_na_skladistu> DohvatiSveArtikleNaSkladistu()
+        {
+            List<Artikli_na_skladistu> artikli = new List<Artikli_na_skladistu>();
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                artikli = db.Artikli_na_skladistu.ToList();
+            }
+            return artikli;
+        }
+        public static Dokument DohvatiDokument(int id)
+        {
+            Dokument dokument = new Dokument();
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                dokument = (from d in db.Dokuments
+                          where  d.id_dokument== id
+                          select d).ToList().FirstOrDefault();
+            }
+            return dokument;
+        }
+        public static List<Artikli_na_skladistu> DohvatiSveProdaneArtikleNaSkladistu(Korisnik korisnik)
+        {
+            List<Artikli_na_skladistu> artikli = new List<Artikli_na_skladistu>();
+            using (var db = new CarDealershipandServiceEntities())
+            {
+                artikli = (from ans in db.Artikli_na_skladistu
+                           from sd in db.Stavke_dokumenta
+                           from d in db.Dokuments
+                           where ans.artikl == sd.artikl && sd.dokument == d.id_dokument && d.tip_dokumenta == 1&&d.zaposlenik==korisnik.id_korisnik
+                           select ans).Distinct().ToList();
+            }
+            return artikli;
         }
     }
 }
